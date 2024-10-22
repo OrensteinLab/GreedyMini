@@ -171,5 +171,5 @@ Note that running the tests will produce some orders with `min_alpha` > 1, which
 
 ### Loading the Minimizers to Memory
 
-For convinience, we added a python notebook which showcases loading a minimizer to memory and prints the order of each k-mer in the `minimizer loading example` folder. Additionaly, for C++ we reccomend looking at the following functions: `load_order()` and `load_vector_from_file()` which are both located inside the file `tools.cpp`.
+For convinience, we added a python notebook which showcases loading a minimizer to memory and printing the order of each k-mer in the `minimizer loading example` folder. Additionaly, for C++ we reccomend looking at the following functions: `load_order()` and `load_vector_from_file()` which are both located inside the file `tools.cpp`.
 
