@@ -1,7 +1,5 @@
 # GreedyMini
 
-ADD DESCRIPTION LATER.
-
 ## Table of Contents
 
 - [Introduction](#introduction)
