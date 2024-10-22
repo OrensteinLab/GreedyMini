@@ -15,6 +15,8 @@
   - [Generating Minimizers For Particular Density](#generating-minimizers-for-particular-density)
   - [Additional Parameters](#additional-parameters)
 - [Accesing the Minimizers](#accessing-the-minimizers)
+  -[Locating the Minimizers](#locating-the-minimizers)
+  -[Loading the Minimizers to Memory](#loading-the-minimizers-to-memory)
 
 
 ## Introduction
@@ -153,6 +155,8 @@ You can customize the behavior of GreedyMini and GreedyMiniParticular using addi
 
 
 ## Accessing the Minimizers
+
+### Locating the Minimizers
 Generated minimizers will appear inside the `output/minimizers` folder. In case of particular density minimizers, they will appear inside a subfolder with the corresponding picked name.
 
 As a rule of thumb, the most useful minimizer will be named 
@@ -165,5 +169,7 @@ Other minimizers are saved as steps when building the best ones.
 
 Note that running the tests will produce some orders with `min_alpha` > 1, which are used for internal naming.
 
-For convinience, we added C++ (uncompiled) code and a python notebook which loads the minimizers to memory and prints the order of each k-mer, both are located in side the `minimizer loading example` folder.
+### Loading the Minimizers to Memory
+
+For convinience, we added a python notebook which showcases loading a minimizer to memory and prints the order of each k-mer in the `minimizer loading example` folder. Additionaly, for C++ we reccomend looking at the following functions: `load_order()` and `load_vector_from_file()` which are both located inside the file `tools.cpp`.
 
