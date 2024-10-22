@@ -14,6 +14,7 @@
   - [Generating Minimizers](#generating-minimizers)
   - [Generating Minimizers For Particular Density](#generating-minimizers-for-particular-density)
   - [Additional Parameters](#additional-parameters)
+- [Accesing the Minimizers](#accessing-the-minimizers)
 
 
 ## Introduction
@@ -151,7 +152,7 @@ You can customize the behavior of GreedyMini and GreedyMiniParticular using addi
 
 
 
-### Accessing the Minimizers
+## Accessing the Minimizers
 Generated minimizers will appear inside the `output/minimizers` folder. In case of particular density minimizers, they will appear inside a subfolder with the corresponding picked name.
 
 As a rule of thumb, the most useful minimizer will be named 
