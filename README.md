@@ -13,7 +13,6 @@
   - [Generating Minimizers](#generating-minimizers)
   - [Generating Minimizers For Particular Density](#generating-minimizers-for-particular-density)
   - [Additional Parameters](#additional-parameters)
-  - [Sampling the Error Parameter](#sampling-the-error-parameter)
 
 
 ## Introduction
@@ -145,34 +144,9 @@ You can customize the behavior of GreedyMini and GreedyMiniParticular using addi
 
 - `-greedy_mini_runs`: **Number of runs of GreedyMini** (default: `4096`)
 - `-n_cores`: **Number of cores** for GreedyMini and swapper (defaults to half the number of available cores)
-- `-error`: **Center value** from which we sample the alpha parameter (as described in the paper)
-- `-noise_for_error`: **Variance control** around the center value for error sampling
+- `-min_alpha`: **Minimum of the range** in which we sample alpha (as described in the paper, defeault: 0.939088)
+- `-max_alpha`: **Maximum of the range** in which we sample alpha (default: 0.999590)
 - `-max_swapper_time_minutes`: **Maximum time for the swapper in minutes** (defaults to the runtime of GreedyMini, is only relevant for expected density minimizers) 
 
 
-
-
-
-## Sampling the Error Parameter
-
-Instead of using a constant error we define a center to the distribution of errors and some variable to control the variance and sample around it.
-
-1. **Define the sampling range for \(x\):**
-   ```math
-   x_{\text{min}} = \log(1 - \text{error}) - \text{noise}
-   ```
-  ```math
-   x_{\text{max}} = \min(0, \log(1 - \text{error}) + \text{noise})
-   ```
-
-
-2. **Sample \(x\) from the defined range:**
-   ```math
-   x \sim \text{Uniform}(x_{\text{min}}, x_{\text{max}})
-   ```
-
-3. **Calculate the sampled error:**
-   ```math
-   \text{actual\_error} = 1 - e^{x}
-   ```
 
