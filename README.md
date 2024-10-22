@@ -1,5 +1,6 @@
 # GreedyMini
 
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -149,4 +150,19 @@ You can customize the behavior of GreedyMini and GreedyMiniParticular using addi
 - `-max_swapper_time_minutes`: **Maximum time for the swapper in minutes** (defaults to the runtime of GreedyMini, is only relevant for expected density minimizers) 
 
 
+
+### Accessing the Minimizers
+Generated minimizers will appear inside the `output/minimizers` folder. In case of particular density minimizers, they will appear inside a subfolder with the corresponding picked name.
+
+As a rule of thumb, the most useful minimizer will be named 
+```
+{w}_{k}_{min_alpha}_{max_alpha}_swapped.bin
+```
+See [Additional Parameters](#additional-parameters) in order to see default values of `min_alpha` and `max_alpha`.
+
+Other minimizers are saved as steps when building the best ones.
+
+Note that running the tests will produce some orders with `min_alpha` > 1, which are used for internal naming.
+
+For convinience, we added C++ (uncompiled) code and a python notebook which loads the minimizers to memory and prints the order of each k-mer, both are located in side the `minimizer loading example` folder.
 
