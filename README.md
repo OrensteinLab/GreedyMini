@@ -15,8 +15,8 @@
   - [Generating Minimizers For Particular Density](#generating-minimizers-for-particular-density)
   - [Additional Parameters](#additional-parameters)
 - [Accesing the Minimizers](#accessing-the-minimizers)
-  -[Locating the Minimizers](#locating-the-minimizers)
-  -[Loading the Minimizers to Memory](#loading-the-minimizers-to-memory)
+  - [Locating the Minimizers](#locating-the-minimizers)
+  - [Loading the Minimizers to Memory](#loading-the-minimizers-to-memory)
 
 
 ## Introduction
