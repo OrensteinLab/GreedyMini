@@ -780,8 +780,8 @@ double density_particular_dna(uint32_t W, uint32_t K, std::string path, std::vec
     return density;
 }
 
-double density_dna(uint32_t W, uint32_t K, float err, bool swapped) {
-    std::vector<uint64_t> order = load_order(W, K, err, swapped);
+double density_dna(uint32_t W, uint32_t K, double min_alpha, double max_alpha, bool swapped) {
+    std::vector<uint64_t> order = load_order(W, K, min_alpha, max_alpha, swapped);
     uint64_t gc_count = prob_gc_dna(W, K, order);
     double density = calc_density<uint64_t>(gc_count, 2 * W, 2 * K);
     return density;

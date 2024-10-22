@@ -20,8 +20,8 @@ public:
     std::string name;
     uint32_t greedy_mini_runs;
     uint32_t max_mins_per_step;
-    double global_err;
-    double noise_for_error;
+    double min_alpha;
+    double max_alpha;
     std::string version_id;
     std::ofstream log_file;
     uint32_t w;
@@ -35,8 +35,8 @@ public:
         const std::string& name_,
         uint32_t greedy_mini_runs_,
         uint32_t max_mins_per_step_,
-        double global_err_,
-        double noise_for_error_,
+        double min_alpha_,
+        double max_alpha_,
         const std::string& version_id_,
         uint32_t w_,
         uint32_t k_,
@@ -47,8 +47,8 @@ public:
         name(name_),
         greedy_mini_runs(greedy_mini_runs_),
         max_mins_per_step(max_mins_per_step_),
-        global_err(global_err_),
-        noise_for_error(noise_for_error_),
+        min_alpha(min_alpha_),
+        max_alpha(max_alpha_),
         version_id(version_id_),
         w(w_),
         k(k_),

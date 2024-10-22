@@ -53,15 +53,17 @@ std::vector<std::string> split(const std::string& str, char delimiter);
 std::vector<uint64_t> get_explicitly_extended_order(const std::vector<uint64_t>& order);
 void save_vector_of_vectors_to_file(const std::vector<std::vector<uint64_t>>& vec_of_vecs, const std::string& filename);
 std::vector<std::vector<uint64_t>> load_vector_of_vectors_from_file(const std::string& filename);
-void save_order(uint32_t W, uint32_t K, double err, const std::vector<uint64_t>& order, bool swapped);
-bool does_order_exist(uint32_t W, uint32_t K, double err, bool swapped);
-bool does_order_exists_specific(uint32_t W, uint32_t K, double err, bool swapped, const std::string& name);
-std::vector<uint64_t> load_order(uint32_t W, uint32_t K, double err, bool swapped);
-void save_order_specific(uint32_t W, uint32_t K, double err, const std::vector<uint64_t>& order, bool swapped, const std::string& name);
-std::vector<uint64_t> load_order_specific(uint32_t W, uint32_t K, double err, bool swapped, std::string name);
+
+void save_order(uint32_t W, uint32_t K, double min_alpha, double max_alpha, const std::vector<uint64_t>& order, bool swapped);
+bool does_order_exist(uint32_t W, uint32_t K, double min_alpha, double max_alpha, bool swapped);
+bool does_order_exists_specific(uint32_t W, uint32_t K, double min_alpha, double max_alpha, bool swapped, const std::string& name);
+std::vector<uint64_t> load_order(uint32_t W, uint32_t K, double min_alpha, double max_alpha, bool swapped);
+void save_order_specific(uint32_t W, uint32_t K, double min_alpha, double max_alpha, const std::vector<uint64_t>& order, bool swapped, const std::string& name);
+std::vector<uint64_t> load_order_specific(uint32_t W, uint32_t K, double min_alpha, double max_alpha, bool swapped, std::string name);
 void ensure_directories_exist();
 
-double get_error_with_noise(double error, double noise);
+double sample_alpha(Config& config);
+
 
 void save_2d_to_csv(const std::map<uint32_t, std::map<uint32_t, double>>& data, const std::string& file_name, const std::string& row_name, const std::string& col_name, Config& config);
 

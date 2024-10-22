@@ -287,11 +287,11 @@ void short_compute_and_store_densities(uint32_t w, uint32_t k, Config& config) {
     print_to_both(config, "\nRunning for W = " + std::to_string(w) + " and K = " + std::to_string(k) + "\n");
 
     auto time_before_parallel_run = std::chrono::steady_clock::now();
-    parallel_run(config, w, k, config.global_err, config.greedy_mini_runs, true);
+    parallel_run(config, w, k, true);
     auto elapsed_seconds_parallel_run = std::chrono::duration<double>(
         std::chrono::steady_clock::now() - time_before_parallel_run).count();
 
-    std::vector<uint64_t> best_order = load_order(w, k, config.global_err, false);
+    std::vector<uint64_t> best_order = load_order(w, k, config.min_alpha, config.max_alpha, false);
     std::vector<uint64_t> best_order_reversed = get_reversed_order(best_order);
     double binary_density = density_expected_binary(w, k, best_order);
     double binary_density_reversed = density_expected_binary(w, k, best_order_reversed);
@@ -300,18 +300,18 @@ void short_compute_and_store_densities(uint32_t w, uint32_t k, Config& config) {
         print_to_both(config, "Reverse order is better (" +
             std::to_string(binary_density_reversed) + " < " + std::to_string(binary_density) + ")\n");
         best_order = best_order_reversed;
-        save_order(w, k, config.global_err, best_order_reversed, false);
+        save_order(w, k, config.min_alpha, config.max_alpha, best_order_reversed, false);
     }
 
     // this indicates same swapping time as the parallel run
     if (config.max_mins_per_step == std::numeric_limits<uint32_t>::max()) {
-        single_run_swapper(w, k, config.global_err, elapsed_seconds_parallel_run);
+        single_run_swapper(w, k, config.min_alpha, config.max_alpha, elapsed_seconds_parallel_run);
     }
     else {
-        single_run_swapper(w, k, config.global_err, config.max_swapper_time_minutes*60);
+        single_run_swapper(w, k, config.min_alpha, config.max_alpha, config.max_swapper_time_minutes*60);
     }
 
-    std::vector<uint64_t> best_order_after_swap = load_order(w, k, config.global_err, true);
+    std::vector<uint64_t> best_order_after_swap = load_order(w, k, config.min_alpha, config.max_alpha, true);
     double binary_density_after_swap = density_expected_binary(w, k, best_order_after_swap);
     double dna_density = density_expected_dna(w, k, best_order);
     double dna_density_after_swap = density_expected_dna(w, k, best_order_after_swap);
@@ -330,11 +330,11 @@ void compute_and_store_densities(uint32_t w, uint32_t k, Config& config, std::ma
     print_to_both(config, "\nRunning for W = " + std::to_string(w) + " and K = " + std::to_string(k) + "\n");
 
     auto time_before_parallel_run = std::chrono::steady_clock::now();
-    parallel_run(config, w, k, config.global_err, config.greedy_mini_runs, true);
+    parallel_run(config, w, k, true);
     auto elapsed_seconds_parallel_run = std::chrono::duration<double>(
         std::chrono::steady_clock::now() - time_before_parallel_run).count();
 
-    std::vector<uint64_t> best_order = load_order(w, k, config.global_err, false);
+    std::vector<uint64_t> best_order = load_order(w, k, config.min_alpha, config.max_alpha, false);
     std::vector<uint64_t> best_order_reversed = get_reversed_order(best_order);
     double binary_density = density_expected_binary(w, k, best_order);
     double binary_density_reversed = density_expected_binary(w, k, best_order_reversed);
@@ -343,11 +343,11 @@ void compute_and_store_densities(uint32_t w, uint32_t k, Config& config, std::ma
         print_to_both(config, "Reverse order is better (" +
             std::to_string(binary_density_reversed) + " < " + std::to_string(binary_density) + ")\n");
         best_order = best_order_reversed;
-        save_order(w, k, config.global_err, best_order_reversed, false);
+        save_order(w, k, config.min_alpha, config.max_alpha, best_order_reversed, false);
     }
 
-    single_run_swapper(w, k, config.global_err, elapsed_seconds_parallel_run);
-    std::vector<uint64_t> best_order_after_swap = load_order(w, k, config.global_err, true);
+    single_run_swapper(w, k, config.min_alpha, config.max_alpha, elapsed_seconds_parallel_run);
+    std::vector<uint64_t> best_order_after_swap = load_order(w, k, config.min_alpha, config.max_alpha, true);
     double binary_density_after_swap = density_expected_binary(w, k, best_order_after_swap);
     double dna_density = density_expected_dna(w, k, best_order);
     double dna_density_after_swap = density_expected_dna(w, k, best_order_after_swap);
@@ -385,7 +385,7 @@ void compute_and_store_densities(uint32_t w, uint32_t k, Config& config, std::ma
 	}
 
     // best between the order and the previous k's extension
-    best_order = load_order(w, k, config.global_err, true);
+    best_order = load_order(w, k, config.min_alpha, config.max_alpha, true);
     double best_binary_density = density_expected_binary(w, k, best_order);
     double best_dna_density = density_expected_dna(w, k, best_order);
 
@@ -404,7 +404,7 @@ void big_w_extension(Config& config, uint32_t initial_w, uint32_t k, uint32_t ma
     print_to_both(config, "\nRunning binary W extension for K = " + std::to_string(k) + ", starting W = " + std::to_string(initial_w) + "\n");
 
     // Load the best order for the initial w and k
-    std::vector<uint64_t> best_order = load_order(initial_w, k, config.global_err, true);
+    std::vector<uint64_t> best_order = load_order(initial_w, k, config.min_alpha, config.max_alpha, true);
     std::vector<uint64_t> reversed_order = get_reversed_order(best_order);
     std::unordered_map<uint32_t, double> w_to_density = density_expected_binary_wide(max_w, k, best_order, true);
     std::unordered_map<uint32_t, double> w_to_density_reversed = density_expected_binary_wide(max_w, k, reversed_order, true);
@@ -427,7 +427,7 @@ void big_k_extension(Config& config, uint32_t w, uint32_t initial_k, std::map<ui
     print_to_both(config, "\nRunning binary K extension for W = " + std::to_string(w) + ", starting K = " + std::to_string(initial_k) + "\n");
 
     // load the best order for w and the initial k
-    std::vector<uint64_t> best_order = load_order(w, initial_k, config.global_err, true);
+    std::vector<uint64_t> best_order = load_order(w, initial_k, config.min_alpha, config.max_alpha, true);
     std::vector<uint64_t> reversed_order = get_reversed_order(best_order);
 
     auto starting_time = std::chrono::high_resolution_clock::now();
@@ -453,16 +453,16 @@ void big_k_extension(Config& config, uint32_t w, uint32_t initial_k, std::map<ui
 }
 
 void improve_from_previous_k(Config& config,  uint32_t k, uint32_t w, double current_best_density, double max_swapping_time) {
-    std::vector<uint64_t> order = load_order(w, k-1, config.global_err, true);
+    std::vector<uint64_t> order = load_order(w, k-1, config.min_alpha, config.max_alpha, true);
     print_to_both(config, "Extending k and swapping for  (w,k) = (" + std::to_string(w) + ", " + std::to_string(k) + ")\n");
 
     std::vector<uint64_t> explicit_k_extension_order = get_explicitly_extended_order(order);
 
 
 
-    save_order(w, k, 2 + config.global_err, explicit_k_extension_order, false);
-    single_run_swapper(w, k, 2 + config.global_err, max_swapping_time);
-    std::vector<uint64_t> explicit_k_extension_order_after_swap = load_order(w, k, 2 + config.global_err, true);
+    save_order(w, k, 2 + config.min_alpha, config.max_alpha, explicit_k_extension_order, false);
+    single_run_swapper(w, k, 2 + config.min_alpha, config.max_alpha, max_swapping_time);
+    std::vector<uint64_t> explicit_k_extension_order_after_swap = load_order(w, k, 2 + config.min_alpha, config.max_alpha, true);
     double binary_density = density_expected_binary(w, k, explicit_k_extension_order_after_swap);
 
 
@@ -474,7 +474,7 @@ void improve_from_previous_k(Config& config,  uint32_t k, uint32_t w, double cur
 
     // if improved, save the order instead of the previous one (As if it was a normal order)
     print_to_both(config, "Improved binary density from " + std::to_string(current_best_density) + " to " + std::to_string(binary_density) + "\n");
-    save_order(w, k, config.global_err, explicit_k_extension_order_after_swap, true);
+    save_order(w, k, config.min_alpha, config.max_alpha, explicit_k_extension_order_after_swap, true);
 }
 
 void save_particular_density_csvs(std::map<uint32_t, std::map<uint32_t, double>>& normal_order, Config& config, std::map<uint32_t, std::map<uint32_t, double>>& specifically_trained_order, std::map<uint32_t, std::map<uint32_t, double>>& normal_order_on_expected, std::map<uint32_t, std::map<uint32_t, double>>& specifically_trained_order_on_expected)
@@ -493,10 +493,10 @@ void short_calculate_particular_density(uint32_t w, uint32_t k, Config& config) 
 
     print_to_both(config, "\nRunning for W = " + std::to_string(w) + " and K = " + std::to_string(k) + "\n");
 
-    parallel_run_specific(config, w, k, config.global_err, config.greedy_mini_runs, true, config.path, config.name);
+    parallel_run_specific(config, w, k, true);
 
     // Load the best orders
-    std::vector<uint64_t> best_specifically_trained_order = load_order_specific(w, k, config.global_err, false, config.name);
+    std::vector<uint64_t> best_specifically_trained_order = load_order_specific(w, k, config.min_alpha, config.max_alpha, false, config.name);
     std::vector<uint64_t> best_specifically_trained_order_reversed = get_reversed_order(best_specifically_trained_order);
 
     // Calculate densities
@@ -506,7 +506,7 @@ void short_calculate_particular_density(uint32_t w, uint32_t k, Config& config) 
         print_to_both(config, "Particular reverse order is better (" + std::to_string(particular_dna_density_specific_reversed) + " < " + std::to_string(particular_dna_density_specific) + ")\n");
         best_specifically_trained_order = best_specifically_trained_order_reversed;
         particular_dna_density_specific = particular_dna_density_specific_reversed;
-        save_order_specific(w, k, config.global_err, best_specifically_trained_order, false, config.name);
+        save_order_specific(w, k, config.min_alpha, config.max_alpha, best_specifically_trained_order, false, config.name);
     }
 
 
@@ -538,18 +538,18 @@ void calculate_particular_density_w_fixed_k_varying(uint32_t w, const int max_ti
         print_to_both(config, "\nRunning for W = " + std::to_string(w) + " and K = " + std::to_string(k) + "\n");
 
         // Check if the order already exists; if not, create it
-        if (!does_order_exist(w, k, config.global_err, false)) {
+        if (!does_order_exist(w, k, config.min_alpha, config.max_alpha, false)) {
             print_to_both(config, "Order does not exist for W = " + std::to_string(w) + " and K = " + std::to_string(k) + "\n");
             print_to_both(config, "Creating order\n");
-            parallel_run(config, w, k, config.global_err, config.greedy_mini_runs, false);
+            parallel_run(config, w, k, false);
         }
 
         // Run specific training
-        parallel_run_specific(config, w, k, config.global_err, config.greedy_mini_runs, true, config.path, config.name);
+        parallel_run_specific(config, w, k, true);
 
         // Load the best orders
-        std::vector<uint64_t> best_order = load_order(w, k, config.global_err, false);
-        std::vector<uint64_t> best_specifically_trained_order = load_order_specific(w, k, config.global_err, false, config.name);
+        std::vector<uint64_t> best_order = load_order(w, k, config.min_alpha, config.max_alpha, false);
+        std::vector<uint64_t> best_specifically_trained_order = load_order_specific(w, k, config.min_alpha, config.max_alpha, false, config.name);
         std::vector<uint64_t> best_specifically_trained_order_reversed = get_reversed_order(best_specifically_trained_order);
 
         // Calculate densities
@@ -560,7 +560,7 @@ void calculate_particular_density_w_fixed_k_varying(uint32_t w, const int max_ti
             print_to_both(config, "Particular reverse order is better (" + std::to_string(particular_dna_density_specific_reversed) + " < " + std::to_string(particular_dna_density_specific) + ")\n");
             best_specifically_trained_order = best_specifically_trained_order_reversed;
             particular_dna_density_specific = particular_dna_density_specific_reversed;
-            save_order_specific(w, k, config.global_err, best_specifically_trained_order, false, config.name);
+            save_order_specific(w, k, config.min_alpha, config.max_alpha, best_specifically_trained_order, false, config.name);
         }
         normal_order[w][k] = particular_dna_density;
         specifically_trained_order[w][k] = particular_dna_density_specific;
@@ -601,22 +601,22 @@ void calculate_particular_density_k_fixed_w_varying(uint32_t k, const int max_ti
         print_to_both(config, "\nRunning for W = " + std::to_string(w) + " and K = " + std::to_string(k) + "\n");
 
         // Check if the order already exists; if not, create it
-        if (!does_order_exist(w, k, config.global_err, false)) {
+        if (!does_order_exist(w, k, config.min_alpha, config.max_alpha, false)) {
             print_to_both(config, "Order does not exist for W = " + std::to_string(w) + " and K = " + std::to_string(k) + "\n");
             // temp: STOP if no order
             print_to_both(config, "STOPPING \n");
             break;
 
             print_to_both(config, "Creating order\n");
-            parallel_run(config, w, k, config.global_err, config.greedy_mini_runs, true);
+            parallel_run(config, w, k, true);
         }
 
         // Run specific training
-        parallel_run_specific(config, w, k, config.global_err, config.greedy_mini_runs, true, config.path, config.name);
+        parallel_run_specific(config, w, k, true);
 
         // Load the best orders
-        std::vector<uint64_t> best_order = load_order(w, k, config.global_err, false);
-        std::vector<uint64_t> best_specifically_trained_order = load_order_specific(w, k, config.global_err, false, config.name);
+        std::vector<uint64_t> best_order = load_order(w, k, config.min_alpha, config.max_alpha, false);
+        std::vector<uint64_t> best_specifically_trained_order = load_order_specific(w, k, config.min_alpha, config.max_alpha, false, config.name);
         std::vector<uint64_t> best_specifically_trained_order_reversed = get_reversed_order(best_specifically_trained_order);
 
         // Calculate densities
@@ -627,7 +627,7 @@ void calculate_particular_density_k_fixed_w_varying(uint32_t k, const int max_ti
             print_to_both(config, "Particular reverse order is better (" + std::to_string(particular_dna_density_specific_reversed) + " < " + std::to_string(particular_dna_density_specific) + ")\n");
             best_specifically_trained_order = best_specifically_trained_order_reversed;
             particular_dna_density_specific = particular_dna_density_specific_reversed;
-            save_order_specific(w, k, config.global_err, best_specifically_trained_order, false, config.name);
+            save_order_specific(w, k, config.min_alpha, config.max_alpha, best_specifically_trained_order, false, config.name);
 
         }
 

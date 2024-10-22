@@ -86,15 +86,15 @@ int main(int  argc, char* argv[])
     uint32_t greedy_mini_runs = 4096;
     uint32_t max_swapper_time_minutes = std::numeric_limits<uint32_t>::max();
     std::string output_folder = "final";    
-    double error = 0.995;
-    double noise_for_error = 2.5;
+    double min_alpha = 0.939088;
+    double max_alpha = 0.999590;
     uint32_t w;
     uint32_t k;
     uint32_t n_cores = static_cast<uint32_t>(std::thread::hardware_concurrency() / 2);
 
 
 
-    bool success = parse_arguments(argc, argv, mode, path, name, greedy_mini_runs, max_swapper_time_minutes, output_folder, error, noise_for_error, version_id, w,k, n_cores);
+    bool success = parse_arguments(argc, argv, mode, path, name, greedy_mini_runs, max_swapper_time_minutes, output_folder, min_alpha, max_alpha, version_id, w,k, n_cores);
     if (!success) return -1;
 
 
@@ -106,8 +106,8 @@ int main(int  argc, char* argv[])
         name,
         greedy_mini_runs,
         max_swapper_time_minutes,
-        error,
-        noise_for_error,
+        min_alpha,
+        max_alpha,
         version_id,
         w,
         k,
@@ -163,8 +163,8 @@ bool parse_arguments(int argc, char* argv[],
     uint32_t& greedy_mini_runs,
     uint32_t& max_swapper_time_minutes,
     std::string& output_folder,
-    double& error,
-    double& noise_for_error,
+    double& min_alpha,
+    double& max_alpha,
     std::string& version_id,
     uint32_t& w,
     uint32_t& k,
@@ -222,11 +222,11 @@ bool parse_arguments(int argc, char* argv[],
         else if (arg == "n_cores") {
 			n_cores = static_cast<uint32_t>(std::stoul(argv[++i]));
 		}
-        else if (arg == "error") {
-            error = std::stod(argv[++i]);
+        else if (arg == "min_alpha") {
+            min_alpha = std::stod(argv[++i]);
         }
-        else if (arg == "noise_for_error") {
-            noise_for_error = std::stod(argv[++i]);
+        else if (arg == "max_alpha") {
+            max_alpha = std::stod(argv[++i]);
         }
         else if (arg == "w") {
             w = static_cast<uint32_t>(std::stoul(argv[++i]));
@@ -263,17 +263,23 @@ bool parse_arguments(int argc, char* argv[],
         return false;
     }
 
-    // check error is between 0 and 1
-    if (error < 0 || error > 1) {
-		std::cerr << "Error: '--error' must be between 0 and 1.\n";
+    // check min_alpha is between 0 and 1
+    if (min_alpha <= 0 || min_alpha >= 1) {
+		std::cerr << "Error: '--min_alpha' must in the range of (0, 1).\n";
 		return false;
 	}
 
-    // check noise_for_error is positive
-    if (noise_for_error < 0) {
-        std::cerr << "Error: '--noise_for_error' must be positive.\n";
+    // check max_alpha is between 0 and 1
+    if (max_alpha <= 0 || max_alpha >= 1) {
+        std::cerr << "Error: '--max_alpha' must in the range of (0, 1).\n";
         return false;
     }
+
+    // check min_alpha is less or equal to max_alpha
+    if (min_alpha > max_alpha) {
+		std::cerr << "Error: '--min_alpha' must not be greater than '--max_alpha'.\n";
+		return false;
+	}
 
 
     // Use output_folder as version_id

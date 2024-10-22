@@ -22,18 +22,18 @@
 std::mutex mtx;
 
 // Function to run ecogreed in a single thread
-void run_ecogreed(uint32_t W, uint32_t K, double err, Result& best_result, int iterations, std::vector<uint64_t>& gc, std::vector<uint64_t>& nongc, std::vector<uint64_t>& ans, Config &config) {
+void run_ecogreed(uint32_t W, uint32_t K, Result& best_result, int iterations, std::vector<uint64_t>& gc, std::vector<uint64_t>& nongc, std::vector<uint64_t>& ans, Config &config) {
     for (int i = 0; i < iterations; ++i) {
         // TODO: PICK WHICH VERSION IS BEST
-        double actual_error = get_error_with_noise(err, config.noise_for_error);
+        double alpha = sample_alpha(config);
         //double actual_error = err;
-        auto [new_ans, gc_count] = ecogreed(W, K, actual_error,gc ,nongc ,ans );
+        auto [new_ans, gc_count] = ecogreed(W, K, alpha,gc ,nongc ,ans );
 
         std::lock_guard<std::mutex> guard(mtx);
         if (gc_count < best_result.gc_count) {
             best_result.ans = new_ans;
             best_result.gc_count = gc_count;
-            best_result.actual_error = actual_error;
+            best_result.actual_alpha = alpha;
         }
     }
 }
@@ -89,26 +89,27 @@ void run_ecogreed(uint32_t W, uint32_t K, double err, Result& best_result, int i
 
 
 
-void run_ecogreed_specific(uint32_t W, uint32_t K, double err, Result& best_result, int iterations, const std::string& path, const std::string& name, std::vector<uint64_t>& allSequences,
+void run_ecogreed_specific(uint32_t W, uint32_t K, Result& best_result, int iterations, std::vector<uint64_t>& allSequences,
     std::vector<uint64_t> gc, std::vector<uint64_t> nongc, std::vector<uint64_t> ans,
     std::vector<std::vector<uint64_t>>& kmer_to_gc_string_id, std::vector<std::vector<uint64_t>>& kmer_to_non_gc_string_id, std::vector<std::vector<uint64_t>>& string_id_to_non_gc_kmers, std::vector<uint64_t>& string_id_to_gc_prefix,
     std::vector<uint64_t>& string_id_to_gc_suffix, Config &config) {
 
 
     for (int i = 0; i < iterations; ++i) {
-        double actual_error = get_error_with_noise(err, config.noise_for_error);
-        auto [final_ans, gc_count] = ecogreed_specific(W, K, actual_error, path, name, allSequences, gc, nongc, ans, kmer_to_gc_string_id, kmer_to_non_gc_string_id, string_id_to_non_gc_kmers,string_id_to_gc_prefix, string_id_to_gc_suffix);
+        double alpha = sample_alpha(config);
+        auto [final_ans, gc_count] = ecogreed_specific(W, K, alpha, config.path, config.name, allSequences, gc, nongc, ans, kmer_to_gc_string_id, kmer_to_non_gc_string_id, string_id_to_non_gc_kmers,string_id_to_gc_prefix, string_id_to_gc_suffix);
         std::lock_guard<std::mutex> guard(mtx);
         if (gc_count <  best_result.gc_count) {
             best_result.ans = final_ans;
             best_result.gc_count = gc_count;
-            best_result.actual_error = actual_error;
+            best_result.actual_alpha = alpha;
         }
     }
 }
 
-void parallel_run(Config &config, uint32_t W, uint32_t K, double err, const int total_runs, const bool save_results) {
+void parallel_run(Config &config, uint32_t W, uint32_t K, const bool save_results) {
     ensure_init_lists(W, K);
+ 
 
     auto [gc, nongc, ans] = load_init_lists(W, K);
 
@@ -121,7 +122,7 @@ void parallel_run(Config &config, uint32_t W, uint32_t K, double err, const int 
 
 
 
-    int total_iterations = total_runs + (num_cores - (total_runs % num_cores))%num_cores;
+    int total_iterations = config.greedy_mini_runs + (num_cores - (config.greedy_mini_runs % num_cores))%num_cores;
 
     // Calculate the number of iterations per thread
     int iterations_per_thread = total_iterations / num_cores;
@@ -132,7 +133,7 @@ void parallel_run(Config &config, uint32_t W, uint32_t K, double err, const int 
 
     // Launch threads to run ecogreed in parallel
     for (unsigned int i = 0; i < num_cores; ++i) {
-        threads.emplace_back(run_ecogreed, W, K, err, std::ref(best_result), iterations_per_thread,std::ref(gc), std::ref(nongc), std::ref(ans), std::ref(config));
+        threads.emplace_back(run_ecogreed, W, K, std::ref(best_result), iterations_per_thread,std::ref(gc), std::ref(nongc), std::ref(ans), std::ref(config));
     }
 
     // Wait for all threads to finish
@@ -142,7 +143,7 @@ void parallel_run(Config &config, uint32_t W, uint32_t K, double err, const int 
 
 
     // Print the actual error of the best result
-    std::cout << "Actual error of the best result: " << best_result.actual_error << std::endl;
+    std::cout << "Alpha of the best result: " << best_result.actual_alpha << std::endl;
 
 
     // Stop timing
@@ -151,23 +152,11 @@ void parallel_run(Config &config, uint32_t W, uint32_t K, double err, const int 
 
     // Save results if the flag is set
     if (save_results) {
-        // Save log file as CSV
-        std::ofstream log_file("logs/parallel_" + std::to_string(W) + "_" + std::to_string(K) + "_" + std::to_string(err) + ".csv");
-
-        // Write the header (titles)
-        log_file << "Total running time w/o preprocessing (seconds),Iterations done,Best GC count\n";
-
-        // Write the corresponding values
-        log_file << total_duration.count() << "," << total_iterations << "," << best_result.gc_count << "\n";
-
-        // Close the log file
-        log_file.close();
-
-        save_order(W, K, err, best_result.ans, false);
+        save_order(W, K, config.min_alpha, config.max_alpha, best_result.ans, false);
     }
 
   
-    std::cout << "Ecogreed time: " << total_duration.count() << " seconds, using " << num_cores << " threads to run " << total_iterations << " iterations" << std::endl;
+    std::cout << "GreedyMini time: " << total_duration.count() << " seconds, using " << num_cores << " threads to run " << total_iterations << " iterations" << std::endl;
 
     return;
 }
@@ -238,103 +227,103 @@ void parallel_run(Config &config, uint32_t W, uint32_t K, double err, const int 
 //    return;
 //}
 
-void single_run(uint32_t W, uint32_t K, double err, const bool save_results)
-{
-    ensure_init_lists(W, K);
-    auto [gc, nongc, ans] = load_init_lists(W, K);
+//void single_run(uint32_t W, uint32_t K, double err, const bool save_results)
+//{
+//    ensure_init_lists(W, K);
+//    auto [gc, nongc, ans] = load_init_lists(W, K);
+//
+//
+//
+//    // Start timing
+//    auto start = std::chrono::high_resolution_clock::now();
+//
+//    // Call the ecogreed function
+//    auto [new_ans, gc_count] = ecogreed(W, K, err,gc ,nongc ,ans );
+//
+//    // Stop timing
+//    auto end = std::chrono::high_resolution_clock::now();
+//    std::chrono::duration<double> duration = end - start;
+//
+//     // Save results if the flag is set
+//    if (save_results) {
+//
+//        // Save log file as CSV
+//        std::ofstream log_file("logs/single_" + std::to_string(W) + "_" + std::to_string(K) + "_" + std::to_string(err) + ".csv");
+//
+//        // Write the header (titles)
+//        log_file << "Total running time w/o preprocessing (seconds),Best GC count\n";
+//
+//        // Write the corresponding values
+//        log_file << duration.count() << "," << gc_count << "\n";
+//
+//        // Close the log file
+//        log_file.close();
+//
+//        // Save result to a file
+//        save_order(W, K, err, new_ans, false);
+//        //save_vector_to_file(ans, "output/ordering/" + std::to_string(W) + "_" + std::to_string(K) + "_" + std::to_string(err) + ".bin");
+//    }
+//
+//
+//    // Print the gamechanger count
+//    std::cout << "Gamechanger count: " << gc_count << std::endl;
+//
+//    // Print the time taken
+//    std::cout << "Time taken: " << duration.count() << " seconds" << std::endl;
+//    return;
+//
+//}
 
+//
+//void single_run_specific(uint32_t W, uint32_t K, double err, const bool save_results, std::string path, std::string name) {
+//    ensure_init_lists_specific(W, K, path, name);
+//
+//    std::vector<uint64_t> allSequences = load_all_sequences_particular(W, K, path);
+//    auto [gc, nongc, initial_ans, kmer_to_gc_string_id, kmer_to_non_gc_string_id, string_id_to_non_gc_kmers, string_id_to_gc_prefix, string_id_to_gc_suffix] = load_init_lists_specific(W, K, name);
+//
+//    // Start timing
+//    auto start = std::chrono::high_resolution_clock::now();
+//
+//    // Call the ecogreed function
+//    auto [ans, gc_count] = ecogreed_specific(W, K, err, path, name, allSequences, gc, nongc, initial_ans, kmer_to_gc_string_id, kmer_to_non_gc_string_id, string_id_to_non_gc_kmers, string_id_to_gc_prefix, string_id_to_gc_suffix);
+//
+//    // Stop timing
+//    auto end = std::chrono::high_resolution_clock::now();
+//    std::chrono::duration<double> duration = end - start;
+//
+//    // Save results if the flag is set
+//    if (save_results) {
+//        // make subfolders for 'name'
+//        std::filesystem::create_directories("output/ordering/" + name);
+//        std::filesystem::create_directories("logs/" + name);
+//
+//        // Save log file as CSV
+//        std::ofstream log_file("logs/" + name + "/single_" + std::to_string(W) + "_" + std::to_string(K) + "_" + std::to_string(err) + ".csv");
+//
+//        // Write the header (titles)
+//        log_file << "Total running time w/o preprocessing (seconds),Best GC count\n";
+//
+//        // Write the corresponding values
+//        log_file << duration.count() << "," << gc_count << "\n";
+//
+//        // Close the log file
+//        log_file.close();
+//
+//        // Save result to a file
+//        save_order_specific(W, K, err, ans, false, name);
+//    }
+//
+//
+//
+//
+//    // Print the time taken
+//    std::cout << "Time taken: " << duration.count() << " seconds" << std::endl;
+//    return;
+//
+//}
 
-
-    // Start timing
-    auto start = std::chrono::high_resolution_clock::now();
-
-    // Call the ecogreed function
-    auto [new_ans, gc_count] = ecogreed(W, K, err,gc ,nongc ,ans );
-
-    // Stop timing
-    auto end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> duration = end - start;
-
-     // Save results if the flag is set
-    if (save_results) {
-
-        // Save log file as CSV
-        std::ofstream log_file("logs/single_" + std::to_string(W) + "_" + std::to_string(K) + "_" + std::to_string(err) + ".csv");
-
-        // Write the header (titles)
-        log_file << "Total running time w/o preprocessing (seconds),Best GC count\n";
-
-        // Write the corresponding values
-        log_file << duration.count() << "," << gc_count << "\n";
-
-        // Close the log file
-        log_file.close();
-
-        // Save result to a file
-        save_order(W, K, err, new_ans, false);
-        //save_vector_to_file(ans, "output/ordering/" + std::to_string(W) + "_" + std::to_string(K) + "_" + std::to_string(err) + ".bin");
-    }
-
-
-    // Print the gamechanger count
-    std::cout << "Gamechanger count: " << gc_count << std::endl;
-
-    // Print the time taken
-    std::cout << "Time taken: " << duration.count() << " seconds" << std::endl;
-    return;
-
-}
-
-
-void single_run_specific(uint32_t W, uint32_t K, double err, const bool save_results, std::string path, std::string name) {
-    ensure_init_lists_specific(W, K, path, name);
-
-    std::vector<uint64_t> allSequences = load_all_sequences_particular(W, K, path);
-    auto [gc, nongc, initial_ans, kmer_to_gc_string_id, kmer_to_non_gc_string_id, string_id_to_non_gc_kmers, string_id_to_gc_prefix, string_id_to_gc_suffix] = load_init_lists_specific(W, K, name);
-
-    // Start timing
-    auto start = std::chrono::high_resolution_clock::now();
-
-    // Call the ecogreed function
-    auto [ans, gc_count] = ecogreed_specific(W, K, err, path, name, allSequences, gc, nongc, initial_ans, kmer_to_gc_string_id, kmer_to_non_gc_string_id, string_id_to_non_gc_kmers, string_id_to_gc_prefix, string_id_to_gc_suffix);
-
-    // Stop timing
-    auto end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> duration = end - start;
-
-    // Save results if the flag is set
-    if (save_results) {
-        // make subfolders for 'name'
-        std::filesystem::create_directories("output/ordering/" + name);
-        std::filesystem::create_directories("logs/" + name);
-
-        // Save log file as CSV
-        std::ofstream log_file("logs/" + name + "/single_" + std::to_string(W) + "_" + std::to_string(K) + "_" + std::to_string(err) + ".csv");
-
-        // Write the header (titles)
-        log_file << "Total running time w/o preprocessing (seconds),Best GC count\n";
-
-        // Write the corresponding values
-        log_file << duration.count() << "," << gc_count << "\n";
-
-        // Close the log file
-        log_file.close();
-
-        // Save result to a file
-        save_order_specific(W, K, err, ans, false, name);
-    }
-
-
-
-
-    // Print the time taken
-    std::cout << "Time taken: " << duration.count() << " seconds" << std::endl;
-    return;
-
-}
-
-void parallel_run_specific(Config &config, uint32_t W, uint32_t K, double err, const int total_runs, const bool save_results, std::string path, std::string name) {
-    ensure_init_lists_specific(W, K, path, name);
+void parallel_run_specific(Config &config, uint32_t W, uint32_t K, const bool save_results) {
+    ensure_init_lists_specific(W, K, config.path, config.name);
 
     unsigned int num_cores = config.n_cores;
     std::vector<std::thread> threads;
@@ -344,7 +333,7 @@ void parallel_run_specific(Config &config, uint32_t W, uint32_t K, double err, c
     //num_cores /= 2;
 
 
-    int total_iterations = total_runs + (num_cores - (total_runs % num_cores)) % num_cores;
+    int total_iterations = config.greedy_mini_runs + (num_cores - (config.greedy_mini_runs % num_cores)) % num_cores;
 
   
 
@@ -355,12 +344,12 @@ void parallel_run_specific(Config &config, uint32_t W, uint32_t K, double err, c
     // Start timing
     auto start = std::chrono::high_resolution_clock::now();
 
-    std::vector<uint64_t> allSequences = load_all_sequences_particular(W, K, path);
-    auto [gc, nongc, initial_ans, kmer_to_gc_string_id, kmer_to_non_gc_string_id, string_id_to_non_gc_kmers, string_id_to_gc_prefix, string_id_to_gc_suffix] = load_init_lists_specific(W, K, name);
+    std::vector<uint64_t> allSequences = load_all_sequences_particular(W, K, config.path);
+    auto [gc, nongc, initial_ans, kmer_to_gc_string_id, kmer_to_non_gc_string_id, string_id_to_non_gc_kmers, string_id_to_gc_prefix, string_id_to_gc_suffix] = load_init_lists_specific(W, K, config.name);
 
     // Launch threads to run ecogreed in parallel
     for (unsigned int i = 0; i < num_cores; ++i) {
-        threads.emplace_back(run_ecogreed_specific, W, K, err, std::ref(best_result), iterations_per_thread, std::ref(path), std::ref(name), std::ref(allSequences), std::ref(gc), std::ref(nongc), std::ref(initial_ans), std::ref(kmer_to_gc_string_id), std::ref(kmer_to_non_gc_string_id), std::ref(string_id_to_non_gc_kmers), std::ref(string_id_to_gc_prefix), std::ref(string_id_to_gc_suffix), std::ref(config));
+        threads.emplace_back(run_ecogreed_specific, W, K, std::ref(best_result), iterations_per_thread, std::ref(allSequences), std::ref(gc), std::ref(nongc), std::ref(initial_ans), std::ref(kmer_to_gc_string_id), std::ref(kmer_to_non_gc_string_id), std::ref(string_id_to_non_gc_kmers), std::ref(string_id_to_gc_prefix), std::ref(string_id_to_gc_suffix), std::ref(config));
     }
 
     // Wait for all threads to finish
@@ -368,8 +357,8 @@ void parallel_run_specific(Config &config, uint32_t W, uint32_t K, double err, c
         t.join();
     }
 
-    // Print the actual error of the best result
-    std::cout << "Actual error of the best result: " << best_result.actual_error << std::endl;
+    // Print the actual alpha of the best result
+    std::cout << "Alpha of the best result: " << best_result.actual_alpha << std::endl;
 
 
 
@@ -380,36 +369,21 @@ void parallel_run_specific(Config &config, uint32_t W, uint32_t K, double err, c
     // Save results if the flag is set
     if (save_results) {
         //  make subfolders for 'name'
-        std::filesystem::create_directories("output/ordering/" + name);
-        std::filesystem::create_directories("logs/" + name);
-
-        // Save log file as CSV
-        std::ofstream log_file("logs/" + name + "/parallel_" + std::to_string(W) + "_" + std::to_string(K) + "_" + std::to_string(err) + ".csv");
-
-        // Write the header (titles)
-        log_file << "Total running time w/o preprocessing (seconds),Iterations done,Best GC count\n";
-
-        // Write the corresponding values
-        log_file << total_duration.count() << "," << total_iterations << "," << best_result.gc_count << "\n";
-
-        // Close the log file
-        log_file.close();
-
-      
+        std::filesystem::create_directories("output/minimizers/" + config.name);
 
         // Save result to a file
-        save_order_specific(W, K, err, best_result.ans, false, name);
+        save_order_specific(W, K, config.min_alpha, config.max_alpha, best_result.ans, false, config.name);
     }
 
 
-    std::cout << "Particuar Ecogreed time: " << total_duration.count() << " seconds, using " << num_cores << " threads to run " << total_iterations << " iterations" << std::endl;
+    std::cout << "GreedyMiniParticular time: " << total_duration.count() << " seconds, using " << num_cores << " threads to run " << total_iterations << " iterations" << std::endl;
 
 }
 
-void single_run_swapper(uint32_t W, uint32_t K, double err, const double max_time_seconds)
+void single_run_swapper(uint32_t W, uint32_t K, double min_alpha, double max_alpha, const double max_time_seconds)
 {
     // Load original order from file
-    std::vector<uint64_t> order = load_order(W, K, err, false);
+    std::vector<uint64_t> order = load_order(W, K, min_alpha, max_alpha, false);
 
     // Start timing
     auto start = std::chrono::high_resolution_clock::now();
@@ -434,6 +408,7 @@ void single_run_swapper(uint32_t W, uint32_t K, double err, const double max_tim
 
             bool verbose;
             if (i == 0) {
+                // during testing it was true for this only
                 verbose = true;
             }
             else {
@@ -473,25 +448,11 @@ void single_run_swapper(uint32_t W, uint32_t K, double err, const double max_tim
 
     // Stop timing
     auto end = std::chrono::high_resolution_clock::now();
-
-    // Calculate the time taken
     std::chrono::duration<double> duration = end - start;
 
-    // Print the time taken and best GC count
     std::cout << "Swapper time: " << duration.count() << " seconds. " << std::endl;
-    //std::cout << "Best Swapper GC count: " << swapped_gc_count << std::endl;
-    //std::cout << "Worst Swapper GC count: " << worst_swapped_gc_count << std::endl;
-    // Save the swapped order
-    save_order(W, K, err, swapped_ans, true);
+    save_order(W, K, min_alpha, max_alpha, swapped_ans, true);
 
-    // Save the log file
-    std::ofstream log_file("logs/swapper_" + std::to_string(W) + "_" + std::to_string(K) + "_" + std::to_string(err) + ".csv");
-
-    // Write the header (titles)
-    log_file << "Total running time w/o preprocessing (seconds),Best GC count\n";
-
-    // Write the corresponding values
-    log_file << duration.count() << "," << swapped_gc_count << "\n";
 }
 
 
