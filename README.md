@@ -94,7 +94,7 @@ This will run the suite of tests which we used in our paper to generate expected
 
 ### Generating Minimizers For Expected Density
 
-To generate a minimizer with good expected density, use the following command:
+To generate a minimizer with low expected density, use the following command:
 
 ```
 ./GreedyMini -mode expected -w {w} -k {k}
