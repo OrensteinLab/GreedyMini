@@ -87,6 +87,7 @@ jobs:
             build/GreedyMini.exe
             build/Release/GreedyMini.exe
 
+                  
       - name: Check if Release Exists
         id: check_release
         run: |
@@ -97,6 +98,7 @@ jobs:
             echo "release_exists=true" >> $GITHUB_ENV
           else
             echo "release_exists=false" >> $GITHUB_ENV
+          fi
 
       - name: Create GitHub Release
         if: env.release_exists == 'false'
