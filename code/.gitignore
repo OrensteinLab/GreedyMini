@@ -1,0 +1,2 @@
+# Allow .txt files in this directory
+!*.txt
