@@ -1,145 +1,79 @@
 name: Build and Release Project
 
-
-
-on: 
+on:
   push:
     tags:
-      - 'v*'  # Triggers when a tag starting with 'v' is pushed (e.g., v1.0)
+      - 'v*'  # Trigger on tag pushes like v1.0
 
-
-
-      
 permissions:
   contents: write
-
 
 jobs:
   build:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        #os: [ubuntu-latest, macos-latest, windows-latest]
         os: [ubuntu-latest, macos-latest]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # **Ubuntu Setup**
       - name: Install dependencies on Ubuntu
         if: matrix.os == 'ubuntu-latest'
         run: |
           sudo apt-get update
           sudo apt-get install -y cmake build-essential libboost-all-dev ninja-build
 
-      - name: Build on Ubuntu
-        if: matrix.os == 'ubuntu-latest'
-        run: |
-          cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
-          cmake --build build
-
-      # **macOS Setup**
       - name: Install dependencies on macOS
         if: matrix.os == 'macos-latest'
         run: |
           brew update
           brew install cmake boost ninja
 
-      - name: Build on macOS
-        if: matrix.os == 'macos-latest'
+      - name: Build the project
         run: |
           cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
           cmake --build build
-
-      # **Windows Setup**
-      - name: Install vcpkg and Boost on Windows
-        if: matrix.os == 'windows-latest'
-        shell: pwsh
-        run: |
-          git clone https://github.com/microsoft/vcpkg.git
-          .\vcpkg\bootstrap-vcpkg.bat
-          .\vcpkg\vcpkg.exe install boost
-
-      - name: Build on Windows
-        if: matrix.os == 'windows-latest'
-        shell: cmd
-        env:
-          VCPKG_ROOT: "%CD%\\vcpkg"
-        run: |
-          "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\Tools\VsDevCmd.bat" -arch=amd64
-          cmake -B build -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE="%VCPKG_ROOT%\scripts\buildsystems\vcpkg.cmake"
-          cmake --build build
-
 
       - name: List build directory
         run: ls -al build/
 
       - name: Verify artifact exists
-        run: test -f build/GreedyMini || (echo "Artifact not found!" && exit 1)
-
+        run: test -f build/GreedyMini* || (echo "Artifact not found!" && exit 1)
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: GreedyMini-${{ matrix.os }}
-          path: |
-            build/GreedyMini*
-            build/GreedyMini.exe
-            build/Release/GreedyMini.exe
+          path: build/GreedyMini*
 
-                  
-      - name: Set Asset Name Based on OS
-        id: set_asset_name
-        run: |
-          if [[ "${{ matrix.os }}" == "macos-latest" ]]; then
-            echo "ASSET_NAME=GreedyMini-macos-latest" >> $GITHUB_ENV
-          else
-            echo "ASSET_NAME=GreedyMini_unix_latest" >> $GITHUB_ENV
-          fi
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-
-      - name: Check if Release Exists
-        id: check_release
-        run: |
-          RELEASE_URL="https://api.github.com/repos/${{ github.repository }}/releases/tags/${GITHUB_REF#refs/tags/}"
-          STATUS=$(curl -s -o /dev/null -w "%{http_code}" -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" $RELEASE_URL)
-          echo "Release status code: $STATUS"
-          if [ "$STATUS" -eq 200 ]; then
-            echo "release_exists=true" >> $GITHUB_ENV
-          else
-            echo "release_exists=false" >> $GITHUB_ENV
-          fi
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+        with:
+          path: artifacts/
 
       - name: Create GitHub Release
-        if: env.release_exists == 'false'
         id: create_release
         uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref_name }}
           release_name: Release ${{ github.ref_name }}
           draft: false
           prerelease: false
-
-      - name: Get Upload URL
-        if: env.release_exists == 'false'
-        run: echo "UPLOAD_URL=${{ steps.create_release.outputs.upload_url }}" >> $GITHUB_ENV
-
-      - name: Use Existing Upload URL
-        if: env.release_exists == 'true'
-        run: |
-          RELEASE_URL="https://api.github.com/repos/${{ github.repository }}/releases/tags/${GITHUB_REF#refs/tags/}"
-          UPLOAD_URL=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" $RELEASE_URL | jq -r '.upload_url' | sed 's/{?name,label}//')
-          echo "UPLOAD_URL=$UPLOAD_URL" >> $GITHUB_ENV
-
-
-      - name: Upload Release Asset
-        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload Release Assets
+        uses: svenstaro/upload-release-action@v2
         with:
-          upload_url: ${{ env.UPLOAD_URL }}
-          asset_path: build/GreedyMini
-          asset_name: ${{ env.ASSET_NAME }}
-          asset_content_type: application/octet-stream
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: artifacts/**
+          asset_name: "${{ github.ref_name }}-${{ basename }}-${{ runner.os }}"
+          release_tag: ${{ github.ref_name }}
