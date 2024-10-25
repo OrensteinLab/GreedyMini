@@ -297,8 +297,6 @@ void short_compute_and_store_densities(uint32_t w, uint32_t k, Config& config) {
     double binary_density_reversed = density_expected_binary(w, k, best_order_reversed);
 
     if (binary_density_reversed < binary_density) {
-        print_to_both(config, "Reverse order is better (" +
-            std::to_string(binary_density_reversed) + " < " + std::to_string(binary_density) + ")\n");
         best_order = best_order_reversed;
         save_order(w, k, config.min_alpha, config.max_alpha, best_order_reversed, false);
     }
@@ -312,14 +310,26 @@ void short_compute_and_store_densities(uint32_t w, uint32_t k, Config& config) {
     }
 
     std::vector<uint64_t> best_order_after_swap = load_order(w, k, config.min_alpha, config.max_alpha, true);
-    double binary_density_after_swap = density_expected_binary(w, k, best_order_after_swap);
-    double dna_density = density_expected_dna(w, k, best_order);
-    double dna_density_after_swap = density_expected_dna(w, k, best_order_after_swap);
+    std::vector<uint64_t> best_order_after_swap_reversed = get_reversed_order(best_order_after_swap);
 
-    print_to_both(config, "Binary density before swap: " + std::to_string(binary_density) + "\n");
-    print_to_both(config, "Binary density after swap: " + std::to_string(binary_density_after_swap) + "\n");
-    print_to_both(config, "DNA density before swap: " + std::to_string(dna_density) + "\n");
-    print_to_both(config, "DNA density after swap: " + std::to_string(dna_density_after_swap) + "\n");
+
+
+    double binary_density_after_swap = density_expected_binary(w, k, best_order_after_swap);
+    double binary_density_after_swap_reversed = density_expected_binary(w, k, best_order_after_swap_reversed);
+
+    double dna_density_upper_bound = (binary_density_after_swap + binary_density_after_swap_reversed) / 2;
+
+
+    //double dna_density = density_expected_dna(w, k, best_order);
+    //double dna_density_after_swap = density_expected_dna(w, k, best_order_after_swap);
+
+    //print_to_both(config, "Binary density before swap: " + std::to_string(binary_density) + "\n");
+    print_to_both(config, "Binary density: " + std::to_string(binary_density_after_swap) + "\n");
+    //print_to_both(config, "DNA density before swap: " + std::to_string(dna_density) + "\n");
+    //print_to_both(config, "DNA density after swap: " + std::to_string(dna_density_after_swap) + "\n");
+
+    print_to_both(config, "DNA density upper bound: " + std::to_string(dna_density_upper_bound) + "\n");
+
 
 
     
