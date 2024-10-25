@@ -1,5 +1,5 @@
 # GreedyMini
-
+A tool to create low density minimizer orders using a greedy approach. The repository for the paper Generating low-density minimizers. We implemented two variants of GreedyMini: GreedyMini+, for geneating low expected density minimizer orders and GreedyMiniParticular+, for generating low particular density minimizer orders.
 
 ## Table of Contents
 
@@ -10,7 +10,7 @@
   - [Step 2: Install Boost Locally](#step-2-install-boost-locally)
   - [Step 3: Compile the Project](#step-3-compile-the-project)
 - [Usage](#usage)
-  - [Running Tests](#running-tests)
+  - [Running Paper Tests](#running-paper-tests)
   - [Generating Minimizers](#generating-minimizers)
   - [Generating Minimizers For Particular Density](#generating-minimizers-for-particular-density)
   - [Additional Parameters](#additional-parameters)
@@ -21,7 +21,7 @@
 
 ## Introduction
 
-This document provides step-by-step instructions to compile and run the GreedyMini project. The project relies on the Boost Multiprecision library for handling large integers and precise arithmetic operations.
+This document provides step-by-step instructions to compile and run GreedyMini variants. The project relies on the Boost Multiprecision library for handling large integers and precise arithmetic operations.
 
 ## Prerequisites
 
@@ -83,9 +83,9 @@ g++ -std=c++20 -O3 -march=native -I ~/boost_1_82_0 *.cpp -o GreedyMini
 
 After successful compilation, you can run the GreedyMini executable with various modes and parameters.
 
-### Running Tests
+### Running Paper Tests
 
-Before running all the tests, please refer to [contexts setup](#setting-up-the-contexts) in order to perform tests on particular density.
+Before running all the tests done for our paper, please refer to [contexts setup](#setting-up-the-contexts) in order to perform tests on particular density.
 
 To run all tests, execute:
 
@@ -97,7 +97,7 @@ This will run the suite of tests which we used in our paper to generate expected
 
 ### Generating Minimizers For Expected Density
 
-To generate a minimizer with low expected density, use the following command:
+To generate a minimizer with low expected density with GreedyMini+, use the following command:
 
 ```
 ./GreedyMini -mode expected -w {w} -k {k}
@@ -118,7 +118,7 @@ An example run would be:
 
 #### Setting up the contexts
 In order to run GreedyMiniParticular+, first we need to process our sequence to a specfic format where we first encode the entire DNA sequence as bits, then for each w+k long context we store the odd bits and even bits serperately. We included a python note book `preprocess.ipynb` that expects the file `GCA_009914755.4_T2T-CHM13v2.0_genomic.fna` from [Genome assembly T2T-CHM13v2.0](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_009914755.1/) to be in the same folder, and from it creates all such contexts using the first 1M nucleotides of chromosome X.
-Running the script generates a folder called `sequences_1M` which should be in the same folder as the executable. In order to use different sequences, only minor modifications are required of the python notebook.
+Running the script generates a folder called `sequences_1M` which should be in the same folder as the `GreedyMini` executable. In order to use different sequences, only minor modifications are required of the python notebook.
 
 #### Running 
 
@@ -148,7 +148,7 @@ You can customize the behavior of GreedyMini and GreedyMiniParticular using addi
 
 - `-greedy_mini_runs`: **Number of runs of GreedyMini** (default: `4096`)
 - `-n_cores`: **Number of cores** for GreedyMini and swapper (defaults to half the number of available cores)
-- `-min_alpha`: **Minimum of the range** in which we sample alpha (as described in the paper, defeault: 0.939088)
+- `-min_alpha`: **Minimum of the range** in which we sample alpha (as described in the paper, default: 0.939088)
 - `-max_alpha`: **Maximum of the range** in which we sample alpha (default: 0.999590)
 - `-max_swapper_time_minutes`: **Maximum time for the swapper in minutes** (defaults to the runtime of GreedyMini, is only relevant for expected density minimizers) 
 
