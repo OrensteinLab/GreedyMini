@@ -16,6 +16,7 @@
 #include "density_and_gc.h"
 #include "functions.h"
 #include "config.h"
+#include "preprocess_particular.h"
 
 
 // Mutex for protecting shared resources
@@ -323,7 +324,10 @@ void parallel_run(Config &config, uint32_t W, uint32_t K, const bool save_result
 //}
 
 void parallel_run_specific(Config &config, uint32_t W, uint32_t K, const bool save_results) {
-    ensure_init_lists_specific(W, K, config.path, config.name);
+
+    ensure_sequence_is_processed(config, W, K);
+    
+    ensure_init_lists_specific(W, K, config);
 
     unsigned int num_cores = config.n_cores;
     std::vector<std::thread> threads;
@@ -344,8 +348,8 @@ void parallel_run_specific(Config &config, uint32_t W, uint32_t K, const bool sa
     // Start timing
     auto start = std::chrono::high_resolution_clock::now();
 
-    std::vector<uint64_t> allSequences = load_all_sequences_particular(W, K, config.path);
-    auto [gc, nongc, initial_ans, kmer_to_gc_string_id, kmer_to_non_gc_string_id, string_id_to_non_gc_kmers, string_id_to_gc_prefix, string_id_to_gc_suffix] = load_init_lists_specific(W, K, config.name);
+    std::vector<uint64_t> allSequences = load_all_sequences_particular(W, K, config);
+    auto [gc, nongc, initial_ans, kmer_to_gc_string_id, kmer_to_non_gc_string_id, string_id_to_non_gc_kmers, string_id_to_gc_prefix, string_id_to_gc_suffix] = load_init_lists_specific(W, K, config);
 
     // Launch threads to run ecogreed in parallel
     for (unsigned int i = 0; i < num_cores; ++i) {

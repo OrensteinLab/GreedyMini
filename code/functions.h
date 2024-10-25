@@ -9,6 +9,7 @@
 #include <unordered_map>
 #include <bitset>
 #include <boost/dynamic_bitset.hpp>
+#include "config.h"
 
 // Function to save a vector to a file
 void save_vector_to_file(const std::vector<uint64_t>& vec, const std::string& filename);
@@ -75,17 +76,17 @@ uint64_t rightdfs_v2(uint64_t kmer, std::unordered_set<uint64_t>& kmers, uint32_
 
 std::tuple<std::vector<uint64_t>, std::vector<uint64_t>, std::vector<uint64_t>,
     std::vector<std::vector<uint64_t>>, std::vector<std::vector<uint64_t>>, std::vector<std::vector<uint64_t>>, std::vector<uint64_t>, std::vector<uint64_t>>
-    init_lists_specific(uint32_t w, uint32_t k, std::string path);
+    init_lists_specific(uint32_t w, uint32_t k, Config& config);
 
 std::tuple<std::vector<uint64_t>, std::vector<uint64_t>, std::vector<uint64_t>,
     std::vector<std::vector<uint64_t>>, std::vector<std::vector<uint64_t>>, std::vector<std::vector<uint64_t>>, std::vector<uint64_t>, std::vector<uint64_t>>
-    load_init_lists_specific(uint32_t w, uint32_t k, std::string name);
+    load_init_lists_specific(uint32_t w, uint32_t k, Config& config);
 
-bool check_init_lists_specific(uint32_t w, uint32_t k, std::string name);
+bool check_init_lists_specific(uint32_t w, uint32_t k, Config& config);
 
-void ensure_init_lists_specific(uint32_t w, uint32_t k, std::string path, std::string name);
+void ensure_init_lists_specific(uint32_t w, uint32_t k, Config& config);
 
-void make_init_lists_specific(uint32_t w, uint32_t k, std::string path, std::string name);
+void make_init_lists_specific(uint32_t w, uint32_t k, Config& config);
 
 void update_specific_vectors(std::vector<uint64_t>& gc,
     std::vector<uint64_t>& nongc,
@@ -117,7 +118,7 @@ void wide_gc_report(uint32_t w, uint32_t k, double err);
 
 std::vector<uint64_t> get_random_order(uint32_t k);
 
-std::vector<uint64_t> load_all_sequences_particular(uint32_t w, uint32_t k, std::string path);
+std::vector<uint64_t> load_all_sequences_particular(uint32_t w, uint32_t k, Config& config);
 
 
 

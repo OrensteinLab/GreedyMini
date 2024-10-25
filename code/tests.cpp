@@ -510,8 +510,8 @@ void short_calculate_particular_density(uint32_t w, uint32_t k, Config& config) 
     std::vector<uint64_t> best_specifically_trained_order_reversed = get_reversed_order(best_specifically_trained_order);
 
     // Calculate densities
-    double particular_dna_density_specific = density_particular_dna(w, k, config.path, best_specifically_trained_order);
-    double particular_dna_density_specific_reversed = density_particular_dna(w, k, config.path, best_specifically_trained_order_reversed);
+    double particular_dna_density_specific = density_particular_dna(w, k, config, best_specifically_trained_order);
+    double particular_dna_density_specific_reversed = density_particular_dna(w, k, config, best_specifically_trained_order_reversed);
     if (particular_dna_density_specific_reversed < particular_dna_density_specific) {
         print_to_both(config, "Particular reverse order is better (" + std::to_string(particular_dna_density_specific_reversed) + " < " + std::to_string(particular_dna_density_specific) + ")\n");
         best_specifically_trained_order = best_specifically_trained_order_reversed;
@@ -563,9 +563,9 @@ void calculate_particular_density_w_fixed_k_varying(uint32_t w, const int max_ti
         std::vector<uint64_t> best_specifically_trained_order_reversed = get_reversed_order(best_specifically_trained_order);
 
         // Calculate densities
-        double particular_dna_density = density_particular_dna(w, k, config.path, best_order);
-        double particular_dna_density_specific = density_particular_dna(w, k, config.path, best_specifically_trained_order);
-        double particular_dna_density_specific_reversed = density_particular_dna(w, k, config.path, best_specifically_trained_order_reversed);
+        double particular_dna_density = density_particular_dna(w, k, config, best_order);
+        double particular_dna_density_specific = density_particular_dna(w, k, config, best_specifically_trained_order);
+        double particular_dna_density_specific_reversed = density_particular_dna(w, k, config, best_specifically_trained_order_reversed);
         if (particular_dna_density_specific_reversed < particular_dna_density_specific) {
             print_to_both(config, "Particular reverse order is better (" + std::to_string(particular_dna_density_specific_reversed) + " < " + std::to_string(particular_dna_density_specific) + ")\n");
             best_specifically_trained_order = best_specifically_trained_order_reversed;
@@ -630,9 +630,9 @@ void calculate_particular_density_k_fixed_w_varying(uint32_t k, const int max_ti
         std::vector<uint64_t> best_specifically_trained_order_reversed = get_reversed_order(best_specifically_trained_order);
 
         // Calculate densities
-        double particular_dna_density = density_particular_dna(w, k, config.path, best_order);
-        double particular_dna_density_specific = density_particular_dna(w, k, config.path, best_specifically_trained_order);
-        double particular_dna_density_specific_reversed = density_particular_dna(w, k, config.path, best_specifically_trained_order_reversed);
+        double particular_dna_density = density_particular_dna(w, k, config, best_order);
+        double particular_dna_density_specific = density_particular_dna(w, k, config, best_specifically_trained_order);
+        double particular_dna_density_specific_reversed = density_particular_dna(w, k, config, best_specifically_trained_order_reversed);
         if (particular_dna_density_specific_reversed < particular_dna_density_specific) {
             print_to_both(config, "Particular reverse order is better (" + std::to_string(particular_dna_density_specific_reversed) + " < " + std::to_string(particular_dna_density_specific) + ")\n");
             best_specifically_trained_order = best_specifically_trained_order_reversed;

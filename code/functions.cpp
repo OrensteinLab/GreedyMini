@@ -464,9 +464,9 @@ uint64_t rightdfs(uint64_t kmer, std::unordered_set<uint64_t>& kmers, uint32_t l
 // And keep from each string what non-gc and what gc kmers it has
 std::tuple<std::vector<uint64_t>, std::vector<uint64_t>, std::vector<uint64_t>,
     std::vector<std::vector<uint64_t>>, std::vector<std::vector<uint64_t>>, std::vector<std::vector<uint64_t>>, std::vector<uint64_t>, std::vector<uint64_t>>
-    init_lists_specific(uint32_t w, uint32_t k, std::string path) {
+    init_lists_specific(uint32_t w, uint32_t k, Config& config) {
 
-    auto [odd, even] = load_odd_even_pair_from_file(path, w, k);
+    auto [odd, even] = load_odd_even_pair_from_file(config, w, k);
     uint64_t n_odd = odd.size();
 
     // for GC/nongc we add 1 more for empty kmer which we ignore later
@@ -535,28 +535,28 @@ std::tuple<std::vector<uint64_t>, std::vector<uint64_t>, std::vector<uint64_t>,
 
 std::tuple<std::vector<uint64_t>, std::vector<uint64_t>, std::vector<uint64_t>,
     std::vector<std::vector<uint64_t>>, std::vector<std::vector<uint64_t>>, std::vector<std::vector<uint64_t>>, std::vector<uint64_t>, std::vector<uint64_t>>
-    load_init_lists_specific(uint32_t w, uint32_t k, std::string name) {
+    load_init_lists_specific(uint32_t w, uint32_t k, Config& config) {
 
     std::lock_guard<std::mutex> guard(load_mutex);
 
-    std::vector<uint64_t> gc = load_vector_from_file("temp/" + name + "/specific_gc_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
-    std::vector<uint64_t> nongc = load_vector_from_file("temp/" + name + "/specific_nongc_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
-    std::vector<uint64_t> ans = load_vector_from_file("temp/" + name + "/specific_ans_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
+    std::vector<uint64_t> gc = load_vector_from_file("temp/" + config.name + "/specific_gc_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
+    std::vector<uint64_t> nongc = load_vector_from_file("temp/" + config.name + "/specific_nongc_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
+    std::vector<uint64_t> ans = load_vector_from_file("temp/" + config.name + "/specific_ans_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
 
     std::vector<uint64_t> string_id_to_gc_prefix = load_vector_from_file("temp/" +
-        name + "/specific_string_id_to_gc_prefix_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
+        config.name + "/specific_string_id_to_gc_prefix_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
     std::vector<uint64_t> string_id_to_gc_suffix = load_vector_from_file("temp/" +
-        name + "/specific_string_id_to_gc_suffix_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
+        config.name + "/specific_string_id_to_gc_suffix_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
 
     // Load the vectors of vectors
     std::vector<std::vector<uint64_t>> kmer_to_gc_string_id =
-        load_vector_of_vectors_from_file("temp/" + name + "/specific_kmer_to_gc_string_id_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
+        load_vector_of_vectors_from_file("temp/" + config.name + "/specific_kmer_to_gc_string_id_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
 
     std::vector<std::vector<uint64_t>> kmer_to_non_gc_string_id =
-        load_vector_of_vectors_from_file("temp/" + name + "/specific_kmer_to_non_gc_string_id_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
+        load_vector_of_vectors_from_file("temp/" + config.name + "/specific_kmer_to_non_gc_string_id_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
 
     std::vector<std::vector<uint64_t>> string_id_to_non_gc_kmers =
-        load_vector_of_vectors_from_file("temp/" + name + "/specific_string_id_to_non_gc_kmers_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
+        load_vector_of_vectors_from_file("temp/" + config.name + "/specific_string_id_to_non_gc_kmers_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
 
 
 
@@ -564,8 +564,8 @@ std::tuple<std::vector<uint64_t>, std::vector<uint64_t>, std::vector<uint64_t>,
     return { gc, nongc, ans, kmer_to_gc_string_id,kmer_to_non_gc_string_id, string_id_to_non_gc_kmers, string_id_to_gc_prefix, string_id_to_gc_suffix };
 }
 
-bool check_init_lists_specific(uint32_t w, uint32_t k, std::string name) {
-    std::string base_path = "temp/" + name + "/";
+bool check_init_lists_specific(uint32_t w, uint32_t k, Config& config) {
+    std::string base_path = "temp/" + config.name + "/";
     std::string suffix = "_" + std::to_string(w) + "_" + std::to_string(k) + ".bin";
 
     return file_exists(base_path + "specific_gc" + suffix) &&
@@ -582,34 +582,34 @@ bool check_init_lists_specific(uint32_t w, uint32_t k, std::string name) {
 
 }
 
-void ensure_init_lists_specific(uint32_t w, uint32_t k, std::string path, std::string name) {
-	if (!check_init_lists_specific(w, k, name)) {
-		make_init_lists_specific(w, k, path, name);
+void ensure_init_lists_specific(uint32_t w, uint32_t k, Config& config) {
+	if (!check_init_lists_specific(w, k, config)) {
+		make_init_lists_specific(w, k, config);
 	}
 }
 
-void make_init_lists_specific(uint32_t w, uint32_t k, std::string path, std::string name) {
+void make_init_lists_specific(uint32_t w, uint32_t k, Config& config) {
     // Start timing
     auto start = std::chrono::high_resolution_clock::now();
 
     // Initialize the lists
-    auto [gc, nongc, ans, kmer_to_gc_string_id, kmer_to_non_gc_string_id, string_id_to_non_gc_kmers, string_id_to_gc_prefix, string_id_to_gc_suffix] = init_lists_specific(w, k, path);
+    auto [gc, nongc, ans, kmer_to_gc_string_id, kmer_to_non_gc_string_id, string_id_to_non_gc_kmers, string_id_to_gc_prefix, string_id_to_gc_suffix] = init_lists_specific(w, k, config);
 
     // Create a directory in temp for 'name'
-    std::filesystem::create_directory("temp/" + name);
+    std::filesystem::create_directory("temp/" + config.name);
 
     // Save the lists to files
-    save_vector_to_file(gc, "temp/" + name + "/specific_gc_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
-    save_vector_to_file(nongc, "temp/" + name + "/specific_nongc_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
-    save_vector_to_file(ans, "temp/" + name + "/specific_ans_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
-    save_vector_to_file(string_id_to_gc_prefix, "temp/" + name + "/specific_string_id_to_gc_prefix_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
-    save_vector_to_file(string_id_to_gc_suffix, "temp/" + name + "/specific_string_id_to_gc_suffix_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
+    save_vector_to_file(gc, "temp/" + config.name + "/specific_gc_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
+    save_vector_to_file(nongc, "temp/" + config.name + "/specific_nongc_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
+    save_vector_to_file(ans, "temp/" + config.name + "/specific_ans_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
+    save_vector_to_file(string_id_to_gc_prefix, "temp/" + config.name + "/specific_string_id_to_gc_prefix_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
+    save_vector_to_file(string_id_to_gc_suffix, "temp/" + config.name + "/specific_string_id_to_gc_suffix_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
 
 
     // Save vectors of vectors
-    save_vector_of_vectors_to_file(kmer_to_gc_string_id, "temp/" + name + "/specific_kmer_to_gc_string_id_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
-    save_vector_of_vectors_to_file(kmer_to_non_gc_string_id, "temp/" + name + "/specific_kmer_to_non_gc_string_id_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
-    save_vector_of_vectors_to_file(string_id_to_non_gc_kmers, "temp/" + name + "/specific_string_id_to_non_gc_kmers_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
+    save_vector_of_vectors_to_file(kmer_to_gc_string_id, "temp/" + config.name + "/specific_kmer_to_gc_string_id_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
+    save_vector_of_vectors_to_file(kmer_to_non_gc_string_id, "temp/" + config.name + "/specific_kmer_to_non_gc_string_id_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
+    save_vector_of_vectors_to_file(string_id_to_non_gc_kmers, "temp/" + config.name + "/specific_string_id_to_non_gc_kmers_" + std::to_string(w) + "_" + std::to_string(k) + ".bin");
     
 
 
@@ -621,7 +621,7 @@ void make_init_lists_specific(uint32_t w, uint32_t k, std::string path, std::str
     std::cout << "Preprocessing time for W: " << w << " and K: " << k << " is " << total_duration.count() << " seconds" << std::endl;
 
     // Save the time to a log file
-    std::ofstream log_file("logs/preprocessing_time/" + name + "_" + std::to_string(w) + "_" + std::to_string(k) + ".txt");
+    std::ofstream log_file("logs/preprocessing_time/" + config.name + "_" + std::to_string(w) + "_" + std::to_string(k) + ".txt");
     log_file << total_duration.count(); // in seconds
     log_file.close();
 }
@@ -683,9 +683,9 @@ void update_specific_vectors(std::vector<uint64_t>& gc,
     return;
 }
 
-std::vector<uint64_t> load_all_sequences_particular(uint32_t w, uint32_t k, std::string path) {
+std::vector<uint64_t> load_all_sequences_particular(uint32_t w, uint32_t k, Config& config) {
     std::lock_guard<std::mutex> guard(load_mutex);
-    auto [oddNumbers, evenNumbers] = load_odd_even_pair_from_file(path, w, k);
+    auto [oddNumbers, evenNumbers] = load_odd_even_pair_from_file(config, w, k);
     return oddNumbers;
 }
 

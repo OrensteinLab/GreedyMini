@@ -768,9 +768,9 @@ uint64_t gc_iterative_particular_binary(uint32_t w, uint32_t k, std::vector<uint
     return gc_count;
 }
 
-double density_particular_dna(uint32_t W, uint32_t K, std::string path, std::vector<uint64_t> order)
+double density_particular_dna(uint32_t W, uint32_t K, Config& config, std::vector<uint64_t> order)
 {
-    auto [oddNumbers, evenNumbers] = load_odd_even_pair_from_file(path, W,K);
+    auto [oddNumbers, evenNumbers] = load_odd_even_pair_from_file(config, W,K);
     uint64_t gcCount = gc_iterative_particular_dna(W, K, order, oddNumbers, evenNumbers);
     uint64_t kmers_picked = gcCount + 1;
     uint32_t oddNumbersLength = static_cast<uint32_t>(oddNumbers.size());

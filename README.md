@@ -1,39 +1,51 @@
 # GreedyMini
-A tool to create low density minimizer orders using a greedy approach. The repository for the paper Generating low-density minimizers. We implemented two variants of GreedyMini: GreedyMini+, for geneating low expected density minimizer orders and GreedyMiniParticular+, for generating low particular density minimizer orders.
+
+A tool to create low-density minimizer orders using a greedy approach. The repository for the paper *Generating Low-Density Minimizers*. We implemented two variants of GreedyMini: **GreedyMini+**, for generating low expected density minimizer orders, and **GreedyMiniParticular+**, for generating low particular density minimizer orders.
 
 ## Table of Contents
 
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
 - [Installation and Compilation](#installation-and-compilation)
-  - [Step 1: Check for a Compiler](#step-1-check-for-a-compiler)
-  - [Step 2: Install Boost Locally](#step-2-install-boost-locally)
-  - [Step 3: Compile the Project](#step-3-compile-the-project)
+  - [Precompiled Binaries](#precompiled-binaries)
+  - [Compiling the Project](#compiling-the-project)
 - [Usage](#usage)
   - [Running Paper Tests](#running-paper-tests)
   - [Generating Minimizers For Expected Density](#generating-minimizers-for-expected-density)
   - [Generating Minimizers For Particular Density](#generating-minimizers-for-particular-density)
   - [Additional Parameters](#additional-parameters)
-- [Accesing the Minimizers](#accessing-the-minimizers)
+- [Accessing the Minimizers](#accessing-the-minimizers)
   - [Locating the Minimizers](#locating-the-minimizers)
   - [Loading the Minimizers to Memory](#loading-the-minimizers-to-memory)
 
-
 ## Introduction
 
-This document provides step-by-step instructions to compile and run GreedyMini variants. The project relies on the Boost Multiprecision library for handling large integers and precise arithmetic operations.
+This document provides step-by-step instructions to use the **GreedyMini** variants. The project relies on the Boost Multiprecision library for handling large integers and precise arithmetic operations.
 
 ## Prerequisites
 
 Before you begin, ensure you have the following:
 
-- **C++ Compiler**: A compiler that supports C++20, such as `g++` version 10 or higher.
+- **64-bit system**: Required to run the binaries or compile the project.
+- **C++ Compiler**: Only required if you are compiling the project yourself (supports C++20, e.g., `g++` version 10 or higher).
 
 ## Installation and Compilation
 
-### Step 1: Check for a Compiler
+### Precompiled Binaries
 
-First, verify that you have a suitable C++ compiler installed:
+Precompiled binaries are available for **Ubuntu** and **macOS**. You can download them from the [GitHub release page](https://github.com/OrensteinLab/GreedyMini/releases).
+
+Throughout the documentation, any mention of the `GreedyMini` binary should be substituted with the appropriate platform-specific version, such as `GreedyMini-ubuntu`.
+
+
+
+### Compiling the Project
+
+If you prefer to compile the project from source, follow the steps below.
+
+#### Step 1: Check for a Compiler
+
+Verify that you have a suitable C++ compiler installed:
 
 ```bash
 g++ --version
@@ -45,34 +57,23 @@ You should see output similar to:
 g++ (GCC) 10.2.0
 ```
 
-If you don't have `g++` or it's outdated, you may need to use an alternative compiler like `clang++` or install a newer version locally.
+If you don't have `g++` or it's outdated, you may need to use `clang++` or install a newer version locally.
 
-### Step 2: Install Boost Locally
+#### Step 2: Install Boost Locally
 
-We'll download the Boost headers to your home directory.
-
-#### 2.1 Download Boost
-
-Navigate to your home directory and download the Boost library:
+Download and extract the Boost headers:
 
 ```bash
 cd ~
 wget https://boostorg.jfrog.io/artifactory/main/release/1.82.0/source/boost_1_82_0.tar.gz
-```
-
-#### 2.2 Extract Boost
-
-Extract the downloaded archive:
-
-```bash
 tar -xzf boost_1_82_0.tar.gz
 ```
 
-This will create a directory `boost_1_82_0` in your home directory containing all the Boost headers.
+This will create a `boost_1_82_0` directory in your home directory.
 
-### Step 3: Compile the Project
+#### Step 3: Compile the Project
 
-Navigate to the `GreedyMini` directory (where all your project files are located) and compile the project:
+Navigate to the `GreedyMini` directory and compile the project:
 
 ```bash
 cd ~/GreedyMini
@@ -81,25 +82,23 @@ g++ -std=c++20 -O3 -march=native -I ~/boost_1_82_0 *.cpp -o GreedyMini
 
 ## Usage
 
-After successful compilation, you can run the GreedyMini executable with various modes and parameters.
+After compiling or downloading the binary, you can run **GreedyMini** using different modes and parameters.
 
 ### Running Paper Tests
 
-Before running all the tests done for our paper, please refer to [contexts setup](#setting-up-the-contexts) in order to perform tests on particular density.
+We ran our test on the first 1M nucleotides of chromosome X from [Genome assembly T2T-CHM13v2.0](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_009914755.1/). To do that we used the script inside `various scripts/preprocessing chr x`. We then put the resulting `.fasta` file in the same directory as the `GreedyMini` executable.
 
-To run all tests, execute:
+Execute the following command to run all the tests from the paper:
 
-```
+```bash
 ./GreedyMini -mode tests
 ```
 
-This will run the suite of tests which we used in our paper to generate expected and particular densities using GreedyMini+ and GreedyMiniParticular+.
-
 ### Generating Minimizers For Expected Density
 
-To generate a minimizer with low expected density with GreedyMini+, use the following command:
+To generate a minimizer with low expected density, run:
 
-```
+```bash
 ./GreedyMini -mode expected -w {w} -k {k}
 ```
 
@@ -115,16 +114,15 @@ An example run would be:
 
 ### Generating Minimizers For Particular Density
 
+#### Sequence format
 
-#### Setting up the contexts
-In order to run GreedyMiniParticular+, first we need to process our sequence to a specfic format where we first encode the entire DNA sequence as bits, then for each w+k long context we store the odd bits and even bits serperately. We included a python note book `preprocess.ipynb` that expects the file `GCA_009914755.4_T2T-CHM13v2.0_genomic.fna` from [Genome assembly T2T-CHM13v2.0](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_009914755.1/) to be in the same folder, and from it creates all such contexts using the first 1M nucleotides of chromosome X.
-Running the script generates a folder called `sequences_1M` which should be in the same folder as the `GreedyMini` executable. In order to use different sequences, only minor modifications are required of the python notebook.
+`GreedyMiniParticular+` expects a `.fasta` file containing exactly one sequence. For an example file see [Running Paper Tests](#running-paper-tests).
 
-#### Running 
+#### Running
 
-To generate minimizers for a particular density, use the following command:
+Use the following command to generate minimizers with particular density:
 
-```
+```bash
 ./GreedyMini -mode particular -w {w} -k {k} -path {path} -name {name}
 ```
 
@@ -132,7 +130,7 @@ Where:
 
 - `{w}`: The window size.
 - `{k}`: The k-mer size.
-- `{path}`: The name of the folder (located in the same directory as the executable) containing the "contexts" for various `w` and `k` combinations.
+- `{path}`: a path to the `fasta` file containing the sequence.
 - `{name}`: The name for the generated orders.
 
 In our paper we used `sequences_1M` as the path.
@@ -141,35 +139,28 @@ An example run would be:
 ```
 ./GreedyMini -mode particular -w 5 -k 4 -path sequences_1M -name 1M
 ```
-
 ### Additional Parameters
 
-You can customize the behavior of GreedyMini and GreedyMiniParticular using additional optional parameters:
+Customize the behavior of GreedyMini with the following options:
 
-- `-greedy_mini_runs`: **Number of runs of GreedyMini** (default: `4096`)
-- `-n_cores`: **Number of cores** for GreedyMini and swapper (defaults to half the number of available cores)
-- `-min_alpha`: **Minimum of the range** in which we sample alpha (as described in the paper, default: 0.939088)
-- `-max_alpha`: **Maximum of the range** in which we sample alpha (default: 0.999590)
-- `-max_swapper_time_minutes`: **Maximum time for the swapper in minutes** (defaults to the runtime of GreedyMini, is only relevant for expected density minimizers) 
-
-
+- `-greedy_mini_runs`: Number of runs of GreedyMini (default: `4096`)
+- `-n_cores`: Number of cores to use (default: half the available cores)
+- `-min_alpha`: Minimum alpha value (default: `0.939088`)
+- `-max_alpha`: Maximum alpha value (default: `0.999590`)
+- `-max_swapper_time_minutes`: Maximum swapper time in minutes
 
 ## Accessing the Minimizers
 
 ### Locating the Minimizers
-Generated minimizers will appear inside the `output/minimizers` folder. In case of particular density minimizers, they will appear inside a subfolder with the corresponding picked name.
 
-As a rule of thumb, the most useful minimizer will be named 
+Generated minimizers will appear inside the `output/minimizers` folder. For particular density minimizers, they will appear in a subfolder with the selected name.
+
+Example filename:
+
 ```
 {w}_{k}_{min_alpha}_{max_alpha}_swapped.bin
 ```
-See [Additional Parameters](#additional-parameters) in order to see default values of `min_alpha` and `max_alpha`.
-
-Other minimizers are saved as steps when building the best ones.
-
-Note that running the tests will produce some orders with `min_alpha` > 1, which are used for internal naming.
 
 ### Loading the Minimizers to Memory
 
-For convinience, we added a python notebook which showcases loading a minimizer to memory and printing the order of each k-mer in the `minimizer loading example` folder. Additionaly, for C++ we reccomend looking at the following functions: `load_order()` and `load_vector_from_file()` which are both located inside the file `tools.cpp`.
-
+We provide the Python notebook `load_order.ipynb` and a minimizer order `example_minimizer.bin` located in the folder `minimizer loading example`. The notebook showcases how to load a minimizer to memory and print the order of each k-mer. For C++, we reccomend looking at the functions `load_order()` and `load_vector_from_file()` located in `code/tools.cpp`.

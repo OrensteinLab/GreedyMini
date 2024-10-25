@@ -13,7 +13,7 @@ using namespace boost::multiprecision;
 
 uint64_t gc_iterative_particular_binary(uint32_t w, uint32_t k, std::vector<uint64_t> order, std::vector<uint64_t> numbers);
 
-double density_particular_dna(uint32_t W, uint32_t K, std::string path, std::vector<uint64_t> order);
+double density_particular_dna(uint32_t W, uint32_t K, Config& config, std::vector<uint64_t> order);
 
 uint64_t prob_gc(uint32_t w, uint32_t k, const std::vector<uint64_t>& order);
 

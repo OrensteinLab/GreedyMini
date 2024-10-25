@@ -71,5 +71,5 @@ void save_1d_to_csv(const std::map<uint32_t, double>& data, const std::string fi
 
 void print_to_both(Config &config, const std::string& message);
 
-std::tuple<std::vector<uint64_t>, std::vector<uint64_t>> load_odd_even_pair_from_file(const std::string& path, uint32_t w, uint32_t k);
+std::tuple<std::vector<uint64_t>, std::vector<uint64_t>> load_odd_even_pair_from_file(Config& config, uint32_t w, uint32_t k);
 #endif // TOOLS_H

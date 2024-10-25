@@ -166,9 +166,10 @@ std::vector<uint64_t> load_vector_from_file(const std::string& filename) {
 }
 
 
-std::tuple<std::vector<uint64_t>, std::vector<uint64_t>> load_odd_even_pair_from_file(const std::string& path, uint32_t w, uint32_t k) {
+std::tuple<std::vector<uint64_t>, std::vector<uint64_t>> load_odd_even_pair_from_file(Config& config, uint32_t w, uint32_t k) {
         // Copy the path to a temporary string
-        std::string path_temp = path;
+        std::string path_temp = "temp/preprocessed_contexts/";
+        path_temp += config.name;
         path_temp += "/contexts_";
         path_temp += std::to_string(w + k);
         path_temp += "_odd_even.csv";

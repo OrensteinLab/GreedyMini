@@ -31,8 +31,8 @@
 
 
 void update_config_particular(Config &config) {
-    config.path = "sequences_1M";
-    config.name = "chromosomeX_1m";
+    config.path = "chr_x_1m.fasta";
+    config.name = "chr_x_1m";
     config.version_id = "final-1m";
     config.max_mins_per_step = 60;
 
