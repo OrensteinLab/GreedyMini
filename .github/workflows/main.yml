@@ -17,7 +17,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Install dependencies on Ubuntu
+      # **Ubuntu Setup**
       - name: Install dependencies on Ubuntu
         if: matrix.os == 'ubuntu-latest'
         run: |
@@ -30,7 +30,7 @@ jobs:
           cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
           cmake --build build
 
-      # Install dependencies on macOS
+      # **macOS Setup**
       - name: Install dependencies on macOS
         if: matrix.os == 'macos-latest'
         run: |
@@ -43,28 +43,28 @@ jobs:
           cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
           cmake --build build
 
-      # Install dependencies on Windows
-      - name: Install dependencies on Windows
+      # **Windows Setup**
+      - name: Install vcpkg and Boost on Windows
         if: matrix.os == 'windows-latest'
+        shell: pwsh
         run: |
-          choco install -y cmake --installargs 'ADD_CMAKE_TO_PATH=System'
-          choco install -y ninja
-          refreshenv
+          git clone https://github.com/microsoft/vcpkg.git
+          .\vcpkg\bootstrap-vcpkg.bat
+          .\vcpkg\vcpkg.exe install boost
 
       - name: Build on Windows
         if: matrix.os == 'windows-latest'
-        shell: cmd
-        env:
-          BOOST_ROOT: C:/local/boost_1_82_0
+        shell: pwsh
         run: |
-          set PATH=%ProgramFiles(x86)%\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64;%PATH%
-          cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+          cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=$PWD\vcpkg\scripts\buildsystems\vcpkg.cmake
           cmake --build build
 
-      # Upload compiled binaries as artifacts
+      # **Upload Artifacts**
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: GreedyMini-${{ matrix.os }}
           path: |
             build/GreedyMini*
+            build/GreedyMini.exe
+            build/Release/GreedyMini.exe
