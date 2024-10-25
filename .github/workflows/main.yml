@@ -117,10 +117,14 @@ jobs:
           for file in artifacts/**/GreedyMini-*; do
             name=$(basename "$file")
             echo "Uploading $name..."
+            upload_url="${{ steps.create_release.outputs.upload_url }}?name=$name"
+            # Remove the placeholder '{?name,label}' from the URL
+            upload_url=${upload_url/\{?name,label\}/}
+
             curl \
               -X POST \
               -H "Authorization: token $GITHUB_TOKEN" \
               -H "Content-Type: application/octet-stream" \
               --data-binary @"$file" \
-              "${{ steps.create_release.outputs.upload_url }}?name=$name"
+              "$upload_url"
           done
