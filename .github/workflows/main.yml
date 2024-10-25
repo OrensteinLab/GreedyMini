@@ -17,47 +17,51 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up CMake and dependencies
+      # Install dependencies on Ubuntu
+      - name: Install dependencies on Ubuntu
         if: matrix.os == 'ubuntu-latest'
         run: |
           sudo apt-get update
-          sudo apt-get install -y cmake build-essential libboost-all-dev
+          sudo apt-get install -y cmake build-essential libboost-all-dev ninja-build
 
       - name: Build on Ubuntu
         if: matrix.os == 'ubuntu-latest'
         run: |
-          mkdir build && cd build
-          cmake ..
-          cmake --build . --config Release
+          cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+          cmake --build build
 
-      - name: Set up CMake and dependencies on macOS
+      # Install dependencies on macOS
+      - name: Install dependencies on macOS
         if: matrix.os == 'macos-latest'
         run: |
           brew update
-          brew install cmake boost
+          brew install cmake boost ninja
 
       - name: Build on macOS
         if: matrix.os == 'macos-latest'
         run: |
-          mkdir build && cd build
-          cmake ..
-          cmake --build . --config Release
+          cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+          cmake --build build
 
-      - name: Set up CMake and dependencies on Windows
+      # Install dependencies on Windows
+      - name: Install dependencies on Windows
         if: matrix.os == 'windows-latest'
-        shell: cmd
         run: |
           choco install -y cmake --installargs 'ADD_CMAKE_TO_PATH=System'
-          choco install -y boost-msvc-14.2
+          choco install -y ninja
           refreshenv
 
       - name: Build on Windows
         if: matrix.os == 'windows-latest'
+        shell: cmd
+        env:
+          BOOST_ROOT: C:/local/boost_1_82_0
         run: |
-          mkdir build && cd build
-          cmake .. -G "Visual Studio 16 2019" -A x64 -DBOOST_ROOT="C:/local/boost_1_82_0"
-          cmake --build . --config Release
+          set PATH=%ProgramFiles(x86)%\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64;%PATH%
+          cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+          cmake --build build
 
+      # Upload compiled binaries as artifacts
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
