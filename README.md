@@ -133,11 +133,11 @@ Where:
 - `{path}`: a path to the `fasta` file containing the sequence.
 - `{name}`: The name for the generated orders.
 
-In our paper we used `sequences_1M` as the path.
+In our paper we used `chr_x_1m.fasta` as the path.
 
 An example run would be:
 ```
-./GreedyMini -mode particular -w 5 -k 4 -path sequences_1M -name 1M
+./GreedyMini -mode particular -w 5 -k 4 -path chr_x_1m.fasta -name 1M
 ```
 ### Additional Parameters
 
