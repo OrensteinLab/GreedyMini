@@ -11,7 +11,7 @@ A tool to create low density minimizer orders using a greedy approach. The repos
   - [Step 3: Compile the Project](#step-3-compile-the-project)
 - [Usage](#usage)
   - [Running Paper Tests](#running-paper-tests)
-  - [Generating Minimizers](#generating-minimizers)
+  - [Generating Minimizers For Expected Density](#generating-minimizers-for-expected-density)
   - [Generating Minimizers For Particular Density](#generating-minimizers-for-particular-density)
   - [Additional Parameters](#additional-parameters)
 - [Accesing the Minimizers](#accessing-the-minimizers)
