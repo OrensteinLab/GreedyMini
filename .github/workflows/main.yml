@@ -87,13 +87,18 @@ jobs:
             build/GreedyMini.exe
             build/Release/GreedyMini.exe
 
-      - name: Extract Tag Name
-        id: extract_tag
-        shell: bash
+      - name: Check if Release Exists
+        id: check_release
         run: |
-          echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+          RELEASE_URL="https://api.github.com/repos/${{ github.repository }}/releases/tags/${{ env.TAG_NAME }}"
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" $RELEASE_URL)
+          if [ "$STATUS" -eq 200 ]; then
+            echo "Release already exists."
+            exit 0
+          fi
 
       - name: Create GitHub Release
+        if: steps.check_release.outcome != 'success'
         id: create_release
         uses: actions/create-release@v1
         env:
@@ -105,6 +110,7 @@ jobs:
           prerelease: false
 
       - name: Upload Release Asset
+        if: steps.check_release.outcome != 'success'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
