@@ -54,9 +54,12 @@ jobs:
 
       - name: Build on Windows
         if: matrix.os == 'windows-latest'
-        shell: pwsh
+        shell: cmd
+        env:
+          VCPKG_ROOT: "%CD%\\vcpkg"
         run: |
-          cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=$PWD\vcpkg\scripts\buildsystems\vcpkg.cmake
+          "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\Tools\VsDevCmd.bat" -arch=amd64
+          cmake -B build -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE="%VCPKG_ROOT%\scripts\buildsystems\vcpkg.cmake"
           cmake --build build
 
       # **Upload Artifacts**
@@ -67,4 +70,3 @@ jobs:
           path: |
             build/GreedyMini*
             build/GreedyMini.exe
-            build/Release/GreedyMini.exe
