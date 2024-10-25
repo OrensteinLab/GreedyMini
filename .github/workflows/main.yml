@@ -111,11 +111,16 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload Release Assets
-        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: 'artifacts/**/GreedyMini-*'
-          asset_name: ''
-          asset_content_type: application/octet-stream
+        run: |
+          for file in artifacts/**/GreedyMini-*; do
+            name=$(basename "$file")
+            echo "Uploading $name..."
+            curl \
+              -X POST \
+              -H "Authorization: token $GITHUB_TOKEN" \
+              -H "Content-Type: application/octet-stream" \
+              --data-binary @"$file" \
+              "${{ steps.create_release.outputs.upload_url }}?name=$name"
+          done
