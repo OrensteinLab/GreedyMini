@@ -123,6 +123,7 @@ jobs:
           UPLOAD_URL=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" $RELEASE_URL | jq -r '.upload_url' | sed 's/{?name,label}//')
           echo "UPLOAD_URL=$UPLOAD_URL" >> $GITHUB_ENV
 
+
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         env:
@@ -130,5 +131,5 @@ jobs:
         with:
           upload_url: ${{ env.UPLOAD_URL }}
           asset_path: build/GreedyMini
-          asset_name: GreedyMini-${{ matrix.os }}
+          asset_name: GreedyMini_{{ matrix.os }}  
           asset_content_type: application/octet-stream
