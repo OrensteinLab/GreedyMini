@@ -14,6 +14,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -23,14 +24,15 @@ jobs:
         if: matrix.os == 'ubuntu-latest'
         run: |
           sudo apt-get update
-          sudo apt-get install -y cmake build-essential libboost-all-dev ninja-build
+          sudo apt-get install -y cmake build-essential ninja-build
+          sudo apt-get install -y libboost-multiprecision-dev  # Only boost-multiprecision
 
       # **Install Dependencies on macOS**
       - name: Install dependencies on macOS
         if: matrix.os == 'macos-latest'
         run: |
           brew update
-          brew install cmake boost ninja
+          brew install cmake ninja boost-multiprecision  # Only boost-multiprecision
 
       # **Install Dependencies on Windows**
       - name: Install dependencies on Windows
@@ -40,41 +42,24 @@ jobs:
           choco install -y cmake --installargs 'ADD_CMAKE_TO_PATH=System' ninja
           git clone https://github.com/microsoft/vcpkg.git
           .\vcpkg\bootstrap-vcpkg.bat
-          .\vcpkg\vcpkg.exe install boost
+          .\vcpkg\vcpkg.exe install boost-multiprecision  # Only boost-multiprecision
 
-      # **Build the Project on Ubuntu and macOS**
-      - name: Build the project on Ubuntu and macOS
-        if: matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest'
+      # **Build the Project**
+      - name: Build the project
         run: |
           cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
           cmake --build build
 
-      # **Build the Project on Windows**
-      - name: Build the project on Windows
-        if: matrix.os == 'windows-latest'
-        shell: pwsh
-        env:
-          VCPKG_ROOT: ${{ github.workspace }}\vcpkg
+      # **Rename Executable**
+      - name: Rename executable
         run: |
-          cmake -B build -G "Visual Studio 16 2019" -A x64 -DCMAKE_TOOLCHAIN_FILE="$Env:VCPKG_ROOT\scripts\buildsystems\vcpkg.cmake"
-          cmake --build build --config Release
-
-      # **Rename Executable on Ubuntu**
-      - name: Rename executable on Ubuntu
-        if: matrix.os == 'ubuntu-latest'
-        run: mv build/GreedyMini build/GreedyMini-ubuntu
-
-      # **Rename Executable on macOS**
-      - name: Rename executable on macOS
-        if: matrix.os == 'macos-latest'
-        run: mv build/GreedyMini build/GreedyMini-macos
-
-      # **Rename Executable on Windows**
-      - name: Rename executable on Windows
-        if: matrix.os == 'windows-latest'
-        shell: pwsh
-        run: |
-          Rename-Item -Path build\Release\GreedyMini.exe -NewName GreedyMini-windows.exe
+          if [ "${{ matrix.os }}" == "ubuntu-latest" ]; then
+            mv build/GreedyMini build/GreedyMini-ubuntu
+          elif [ "${{ matrix.os }}" == "macos-latest" ]; then
+            mv build/GreedyMini build/GreedyMini-macos
+          else
+            Rename-Item -Path build\Release\GreedyMini.exe -NewName GreedyMini-windows.exe
+          fi
 
       # **Upload Artifact**
       - name: Upload artifact
