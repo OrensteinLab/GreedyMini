@@ -11,12 +11,21 @@ if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
 endif()
 
+# Set Boost root if provided
+if(DEFINED ENV{BOOST_ROOT})
+  set(BOOST_ROOT $ENV{BOOST_ROOT})
+endif()
+
 # Find required Boost libraries
 find_package(Boost REQUIRED COMPONENTS
   system
   filesystem
   # Add other components as needed
 )
+
+if(NOT Boost_FOUND)
+  message(FATAL_ERROR "Boost not found!")
+endif()
 
 # Include Boost headers
 include_directories(${Boost_INCLUDE_DIRS})
