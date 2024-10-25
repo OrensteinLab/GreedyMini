@@ -88,6 +88,16 @@ jobs:
             build/Release/GreedyMini.exe
 
                   
+      - name: Set Asset Name Based on OS
+        id: set_asset_name
+        run: |
+          if [[ "${{ matrix.os }}" == "macos-latest" ]]; then
+            echo "ASSET_NAME=GreedyMini-macos-latest" >> $GITHUB_ENV
+          else
+            echo "ASSET_NAME=GreedyMini_unix_latest" >> $GITHUB_ENV
+          fi
+
+
       - name: Check if Release Exists
         id: check_release
         run: |
@@ -131,5 +141,5 @@ jobs:
         with:
           upload_url: ${{ env.UPLOAD_URL }}
           asset_path: build/GreedyMini
-          asset_name: GreedyMini_{{ matrix.os }}  
+          asset_name: ${{ env.ASSET_NAME }}
           asset_content_type: application/octet-stream
