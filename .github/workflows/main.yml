@@ -43,12 +43,12 @@ jobs:
           git clone https://github.com/microsoft/vcpkg.git
           .\vcpkg\bootstrap-vcpkg.bat
           .\vcpkg\vcpkg.exe install boost
-
+          
       # **Build the Project on Ubuntu and macOS**
       - name: Build the project on Ubuntu and macOS
         if: matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest'
         run: |
-          cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+          cmake -S code -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
           cmake --build build
 
       # **Build the Project on Windows**
@@ -58,8 +58,9 @@ jobs:
         env:
           VCPKG_ROOT: ${{ github.workspace }}\vcpkg
         run: |
-          cmake -B build -G "Visual Studio 16 2019" -A x64 -DCMAKE_TOOLCHAIN_FILE="$Env:VCPKG_ROOT\scripts\buildsystems\vcpkg.cmake"
+          cmake -S code -B build -G "Visual Studio 16 2019" -A x64 -DCMAKE_TOOLCHAIN_FILE="$Env:VCPKG_ROOT\scripts\buildsystems\vcpkg.cmake"
           cmake --build build --config Release
+
 
       # **Rename Executable on Ubuntu**
       - name: Rename executable on Ubuntu
