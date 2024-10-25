@@ -17,31 +17,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Install dependencies and compile on Ubuntu
+      # Install dependencies on Ubuntu
       - name: Install dependencies on Ubuntu
         if: matrix.os == 'ubuntu-latest'
         run: |
           sudo apt update
           sudo apt install -y build-essential libboost-all-dev
 
-      - name: Compile code on Ubuntu
-        if: matrix.os == 'ubuntu-latest'
-        run: |
-          g++ -std=c++20 -O3 -march=native *.cpp -o GreedyMini
-
-      # Install dependencies and compile on macOS
+      # Install dependencies on macOS
       - name: Install dependencies on macOS
         if: matrix.os == 'macos-latest'
         run: |
           brew update
           brew install boost
 
-      - name: Compile code on macOS
-        if: matrix.os == 'macos-latest'
-        run: |
-          g++ -std=c++20 -O3 -march=native *.cpp -o GreedyMini
-
-      # Install dependencies and compile on Windows
+      # Install dependencies on Windows
       - name: Set up MSYS2
         if: matrix.os == 'windows-latest'
         uses: msys2/setup-msys2@v2
@@ -51,17 +41,32 @@ jobs:
             mingw-w64-x86_64-toolchain
             mingw-w64-x86_64-boost
 
-      - name: Compile code on Windows
+      # Build on Ubuntu
+      - name: Build on Ubuntu
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          g++ -std=c++20 -O3 -c *.cpp
+          g++ -o GreedyMini *.o -lboost_system -lboost_filesystem
+
+      # Build on macOS
+      - name: Build on macOS
+        if: matrix.os == 'macos-latest'
+        run: |
+          g++ -std=c++20 -O3 -c *.cpp
+          g++ -o GreedyMini *.o -lboost_system -lboost_filesystem
+
+      # Build on Windows
+      - name: Build on Windows
         if: matrix.os == 'windows-latest'
         shell: msys2 {0}
         run: |
-          g++ -std=c++20 -O3 -I /mingw64/include *.cpp -o GreedyMini.exe
+          g++ -std=c++20 -O3 -c *.cpp
+          g++ -o GreedyMini.exe *.o -lboost_system -lboost_filesystem
 
       # Upload compiled binaries as artifacts
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: GreedyMini
+          name: GreedyMini-${{ matrix.os }}
           path: |
-            GreedyMini
-            GreedyMini.exe
+            GreedyMini*
