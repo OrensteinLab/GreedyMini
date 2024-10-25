@@ -70,6 +70,14 @@ jobs:
           cmake -B build -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE="%VCPKG_ROOT%\scripts\buildsystems\vcpkg.cmake"
           cmake --build build
 
+
+      - name: List build directory
+        run: ls -al build/
+
+      - name: Verify artifact exists
+        run: test -f build/GreedyMini || (echo "Artifact not found!" && exit 1)
+
+
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
