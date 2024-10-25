@@ -1,6 +1,6 @@
 # GreedyMini
 
-A tool to create low-density minimizer orders using a greedy approach. The repository for the paper *Generating Low-Density Minimizers*. We implemented two variants of GreedyMini: **GreedyMini+**, for generating low expected density minimizer orders, and **GreedyMiniParticular+**, for generating low particular density minimizer orders.
+A tool to create low-density minimizer orders using a greedy approach. The repository for the paper *Generating low-density minimizers*. We implemented two variants of GreedyMini: **GreedyMini+**, for generating low expected density minimizer orders, and **GreedyMiniParticular+**, for generating low particular density minimizer orders.
 
 ## Table of Contents
 
