@@ -17,57 +17,50 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Install dependencies on Ubuntu
-      - name: Install dependencies on Ubuntu
+      - name: Set up CMake and dependencies
         if: matrix.os == 'ubuntu-latest'
         run: |
-          sudo apt update
-          sudo apt install -y build-essential libboost-all-dev
+          sudo apt-get update
+          sudo apt-get install -y cmake build-essential libboost-all-dev
 
-      # Build on Ubuntu
       - name: Build on Ubuntu
         if: matrix.os == 'ubuntu-latest'
         run: |
-          g++ -std=c++20 -O3 -c *.cpp
-          g++ -o GreedyMini *.o -lboost_system -lboost_filesystem -lboost_multiprecision
+          mkdir build && cd build
+          cmake ..
+          cmake --build . --config Release
 
-      # Install dependencies on macOS
-      - name: Install dependencies on macOS
+      - name: Set up CMake and dependencies on macOS
         if: matrix.os == 'macos-latest'
         run: |
           brew update
-          brew install boost
+          brew install cmake boost
 
-      # Build on macOS
       - name: Build on macOS
         if: matrix.os == 'macos-latest'
         run: |
-          g++ -std=c++20 -O3 -I/usr/local/include -c *.cpp
-          g++ -o GreedyMini *.o -L/usr/local/lib -lboost_system -lboost_filesystem -lboost_multiprecision
+          mkdir build && cd build
+          cmake ..
+          cmake --build . --config Release
 
-      # Install dependencies on Windows
-      - name: Set up MSYS2
+      - name: Set up CMake and dependencies on Windows
         if: matrix.os == 'windows-latest'
-        uses: msys2/setup-msys2@v2
-        with:
-          update: true
-          install: >-
-            mingw-w64-x86_64-toolchain
-            mingw-w64-x86_64-boost
+        shell: cmd
+        run: |
+          choco install -y cmake --installargs 'ADD_CMAKE_TO_PATH=System'
+          choco install -y boost-msvc-14.2
+          refreshenv
 
-      # Build on Windows
       - name: Build on Windows
         if: matrix.os == 'windows-latest'
-        shell: msys2 {0}
         run: |
-          g++ -std=c++20 -O3 -I/mingw64/include -c *.cpp
-          g++ -o GreedyMini.exe *.o -L/mingw64/lib -lboost_system -lboost_filesystem -lboost_multiprecision
+          mkdir build && cd build
+          cmake .. -G "Visual Studio 16 2019" -A x64 -DBOOST_ROOT="C:/local/boost_1_82_0"
+          cmake --build . --config Release
 
-      # Upload compiled binaries as artifacts
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: GreedyMini-${{ matrix.os }}
           path: |
-            GreedyMini*
-            GreedyMini.exe
+            build/GreedyMini*
