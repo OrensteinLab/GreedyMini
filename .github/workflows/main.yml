@@ -1,0 +1,37 @@
+name: Build Project
+
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies (Boost)
+        if: runner.os == 'Linux'
+        run: sudo apt install -y libboost-all-dev
+
+      - name: Compile code (Linux/macOS)
+        if: runner.os != 'Windows'
+        run: g++ -std=c++20 -O3 -march=native -I /usr/include/boost *.cpp -o GreedyMini
+
+      - name: Compile code (Windows)
+        if: runner.os == 'Windows'
+        run: g++ -std=c++20 -O3 -I C:\\boost_1_82_0 *.cpp -o GreedyMini.exe
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: GreedyMini
+          path: ./*.exe ./*.out
+
