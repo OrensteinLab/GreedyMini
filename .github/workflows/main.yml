@@ -13,39 +13,77 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os: [ubuntu-latest, macos-latest, windows-latest]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # **Install Dependencies on Ubuntu**
       - name: Install dependencies on Ubuntu
         if: matrix.os == 'ubuntu-latest'
         run: |
           sudo apt-get update
           sudo apt-get install -y cmake build-essential libboost-all-dev ninja-build
 
+      # **Install Dependencies on macOS**
       - name: Install dependencies on macOS
         if: matrix.os == 'macos-latest'
         run: |
           brew update
           brew install cmake boost ninja
 
-      - name: Build the project
+      # **Install Dependencies on Windows**
+      - name: Install dependencies on Windows
+        if: matrix.os == 'windows-latest'
+        shell: pwsh
+        run: |
+          choco install -y cmake --installargs 'ADD_CMAKE_TO_PATH=System' ninja
+          git clone https://github.com/microsoft/vcpkg.git
+          .\vcpkg\bootstrap-vcpkg.bat
+          .\vcpkg\vcpkg.exe install boost
+
+      # **Build the Project on Ubuntu and macOS**
+      - name: Build the project on Ubuntu and macOS
+        if: matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest'
         run: |
           cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
           cmake --build build
 
-      - name: List build directory
-        run: ls -al build/
+      # **Build the Project on Windows**
+      - name: Build the project on Windows
+        if: matrix.os == 'windows-latest'
+        shell: pwsh
+        env:
+          VCPKG_ROOT: ${{ github.workspace }}\vcpkg
+        run: |
+          cmake -B build -G "Visual Studio 16 2019" -A x64 -DCMAKE_TOOLCHAIN_FILE="$Env:VCPKG_ROOT\scripts\buildsystems\vcpkg.cmake"
+          cmake --build build --config Release
 
-      - name: Verify artifact exists
-        run: test -f build/GreedyMini* || (echo "Artifact not found!" && exit 1)
+      # **Rename Executable on Ubuntu**
+      - name: Rename executable on Ubuntu
+        if: matrix.os == 'ubuntu-latest'
+        run: mv build/GreedyMini build/GreedyMini-ubuntu
 
+      # **Rename Executable on macOS**
+      - name: Rename executable on macOS
+        if: matrix.os == 'macos-latest'
+        run: mv build/GreedyMini build/GreedyMini-macos
+
+      # **Rename Executable on Windows**
+      - name: Rename executable on Windows
+        if: matrix.os == 'windows-latest'
+        shell: pwsh
+        run: |
+          Rename-Item -Path build\Release\GreedyMini.exe -NewName GreedyMini-windows.exe
+
+      # **Upload Artifact**
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: GreedyMini-${{ matrix.os }}
-          path: build/GreedyMini*
+          path: |
+            build/GreedyMini-*
+            build/*.exe
 
   release:
     needs: build
@@ -71,9 +109,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload Release Assets
-        uses: svenstaro/upload-release-action@v2
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: artifacts/**
-          asset_name: "${{ github.ref_name }}-${{ basename }}-${{ runner.os }}"
-          release_tag: ${{ github.ref_name }}
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: 'artifacts/**/GreedyMini-*'
+          asset_name: ''
+          asset_content_type: application/octet-stream
