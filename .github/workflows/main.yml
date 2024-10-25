@@ -13,7 +13,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        #os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-latest, macos-latest]
 
     steps:
       - name: Checkout repository
@@ -24,15 +25,14 @@ jobs:
         if: matrix.os == 'ubuntu-latest'
         run: |
           sudo apt-get update
-          sudo apt-get install -y cmake build-essential ninja-build
-          sudo apt-get install -y libboost-multiprecision-dev  # Only boost-multiprecision
+          sudo apt-get install -y cmake build-essential libboost-all-dev ninja-build
 
       # **Install Dependencies on macOS**
       - name: Install dependencies on macOS
         if: matrix.os == 'macos-latest'
         run: |
           brew update
-          brew install cmake ninja boost-multiprecision  # Only boost-multiprecision
+          brew install cmake boost ninja
 
       # **Install Dependencies on Windows**
       - name: Install dependencies on Windows
@@ -42,24 +42,41 @@ jobs:
           choco install -y cmake --installargs 'ADD_CMAKE_TO_PATH=System' ninja
           git clone https://github.com/microsoft/vcpkg.git
           .\vcpkg\bootstrap-vcpkg.bat
-          .\vcpkg\vcpkg.exe install boost-multiprecision  # Only boost-multiprecision
+          .\vcpkg\vcpkg.exe install boost
 
-      # **Build the Project**
-      - name: Build the project
+      # **Build the Project on Ubuntu and macOS**
+      - name: Build the project on Ubuntu and macOS
+        if: matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest'
         run: |
           cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
           cmake --build build
 
-      # **Rename Executable**
-      - name: Rename executable
+      # **Build the Project on Windows**
+      - name: Build the project on Windows
+        if: matrix.os == 'windows-latest'
+        shell: pwsh
+        env:
+          VCPKG_ROOT: ${{ github.workspace }}\vcpkg
         run: |
-          if [ "${{ matrix.os }}" == "ubuntu-latest" ]; then
-            mv build/GreedyMini build/GreedyMini-ubuntu
-          elif [ "${{ matrix.os }}" == "macos-latest" ]; then
-            mv build/GreedyMini build/GreedyMini-macos
-          else
-            Rename-Item -Path build\Release\GreedyMini.exe -NewName GreedyMini-windows.exe
-          fi
+          cmake -B build -G "Visual Studio 16 2019" -A x64 -DCMAKE_TOOLCHAIN_FILE="$Env:VCPKG_ROOT\scripts\buildsystems\vcpkg.cmake"
+          cmake --build build --config Release
+
+      # **Rename Executable on Ubuntu**
+      - name: Rename executable on Ubuntu
+        if: matrix.os == 'ubuntu-latest'
+        run: mv build/GreedyMini build/GreedyMini-ubuntu
+
+      # **Rename Executable on macOS**
+      - name: Rename executable on macOS
+        if: matrix.os == 'macos-latest'
+        run: mv build/GreedyMini build/GreedyMini-macos
+
+      # **Rename Executable on Windows**
+      - name: Rename executable on Windows
+        if: matrix.os == 'windows-latest'
+        shell: pwsh
+        run: |
+          Rename-Item -Path build\Release\GreedyMini.exe -NewName GreedyMini-windows.exe
 
       # **Upload Artifact**
       - name: Upload artifact
