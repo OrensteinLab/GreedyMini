@@ -96,23 +96,39 @@ jobs:
         if: matrix.os == 'macos-latest' || matrix.os == 'ubuntu-latest'
         run: chmod +x build/GreedyMini
 
-      # **Package Executables into Archives**
-      - name: Package Executables
-        if: ${{ always() }}
+      # **Package Executables into Archives for Windows**
+      - name: Package Executable for Windows
+        if: matrix.os == 'windows-latest'
+        shell: pwsh
         run: |
+          # Create package directory if it doesn't exist
+          New-Item -ItemType Directory -Path package -Force
+
+          # Rename the executable to ensure consistency
+          Rename-Item -Path build\GreedyMini.exe -NewName GreedyMini.exe
+
+          # Compress the executable into a zip archive
+          Compress-Archive -Path build\GreedyMini.exe -DestinationPath package/windows.zip
+
+      # **Package Executables into Archives for macOS**
+      - name: Package Executable for macOS
+        if: matrix.os == 'macos-latest'
+        run: |
+          # Create package directory if it doesn't exist
           mkdir -p package
-          if [ "${{ matrix.os }}" == "windows-latest" ]; then
-            # Rename the executable to ensure consistency
-            Rename-Item -Path build\GreedyMini.exe -NewName GreedyMini.exe
-            # Compress the executable into a zip archive
-            Compress-Archive -Path build\GreedyMini.exe -DestinationPath package/windows.zip
-          elif [ "${{ matrix.os }}" == "macos-latest" ]; then
-            # No renaming needed; just compress the executable
-            zip -j package/macos.zip build/GreedyMini
-          elif [ "${{ matrix.os }}" == "ubuntu-latest" ]; then
-            # No renaming needed; just compress the executable
-            zip -j package/ubuntu.zip build/GreedyMini
-          fi
+
+          # Compress the executable into a zip archive
+          zip -j package/macos.zip build/GreedyMini
+
+      # **Package Executables into Archives for Ubuntu**
+      - name: Package Executable for Ubuntu
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          # Create package directory if it doesn't exist
+          mkdir -p package
+
+          # Compress the executable into a zip archive
+          zip -j package/ubuntu.zip build/GreedyMini
 
       # **Upload Artifact**
       - name: Upload artifact
