@@ -34,16 +34,6 @@ jobs:
           brew update
           brew install cmake boost ninja
 
-      # # **Install Dependencies on Windows**
-      # - name: Install dependencies on Windows
-      #   if: matrix.os == 'windows-latest'
-      #   shell: pwsh
-      #   run: |
-      #     choco install -y cmake --installargs 'ADD_CMAKE_TO_PATH=System' ninja
-      #     git clone https://github.com/microsoft/vcpkg.git
-      #     .\vcpkg\bootstrap-vcpkg.bat
-      #     .\vcpkg\vcpkg.exe install boost
-
       # **Cache vcpkg and Boost for Windows**
       - name: Cache vcpkg and Boost
         if: matrix.os == 'windows-latest'
@@ -51,9 +41,8 @@ jobs:
         with:
           path: |
             vcpkg
-            # Optionally cache the vcpkg build artifacts
             ~/.vcpkg
-          key: ${{ runner.os }}-vcpkg-${{ hashFiles('**/vcpkg.json') }}-${{ hashFiles('**/ports/**') }}
+          key: ${{ runner.os }}-vcpkg-${{ hashFiles('**/CMakeLists.txt') }}
           restore-keys: |
             ${{ runner.os }}-vcpkg-
 
