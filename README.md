@@ -148,7 +148,7 @@ An example run would be:
 Customize the behavior of GreedyMini with the following options:
 
 - `-greedy_mini_runs`: Number of runs of GreedyMini (default: `4096`)
-- `-n_cores`: Number of cores to use (default: half the available cores)
+- `-n_cores`: Number of CPU cores to use (default: half the total available threads due to hyper-threading)
 - `-min_alpha`: Minimum alpha value (default: `0.939088`)
 - `-max_alpha`: Maximum alpha value (default: `0.999590`)
 - `-max_swapper_time_minutes`: Maximum swapper time in minutes
