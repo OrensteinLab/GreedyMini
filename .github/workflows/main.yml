@@ -34,14 +34,44 @@ jobs:
           brew update
           brew install cmake boost ninja
 
+      # # **Install Dependencies on Windows**
+      # - name: Install dependencies on Windows
+      #   if: matrix.os == 'windows-latest'
+      #   shell: pwsh
+      #   run: |
+      #     choco install -y cmake --installargs 'ADD_CMAKE_TO_PATH=System' ninja
+      #     git clone https://github.com/microsoft/vcpkg.git
+      #     .\vcpkg\bootstrap-vcpkg.bat
+      #     .\vcpkg\vcpkg.exe install boost
+
+      # **Cache vcpkg and Boost for Windows**
+      - name: Cache vcpkg and Boost
+        if: matrix.os == 'windows-latest'
+        uses: actions/cache@v3
+        with:
+          path: |
+            vcpkg
+            # Optionally cache the vcpkg build artifacts
+            ~/.vcpkg
+          key: ${{ runner.os }}-vcpkg-${{ hashFiles('**/vcpkg.json') }}-${{ hashFiles('**/ports/**') }}
+          restore-keys: |
+            ${{ runner.os }}-vcpkg-
+
       # **Install Dependencies on Windows**
       - name: Install dependencies on Windows
         if: matrix.os == 'windows-latest'
         shell: pwsh
         run: |
+          # Install CMake and Ninja via Chocolatey
           choco install -y cmake --installargs 'ADD_CMAKE_TO_PATH=System' ninja
-          git clone https://github.com/microsoft/vcpkg.git
-          .\vcpkg\bootstrap-vcpkg.bat
+
+          # Check if vcpkg is already cached
+          if (-Not (Test-Path "vcpkg")) {
+            git clone https://github.com/microsoft/vcpkg.git
+            .\vcpkg\bootstrap-vcpkg.bat
+          }
+
+          # Install Boost using vcpkg
           .\vcpkg\vcpkg.exe install boost
           
       # **Build the Project on Ubuntu and macOS**
@@ -61,22 +91,27 @@ jobs:
           cmake -S code -B build -G "Ninja" -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE="$Env:VCPKG_ROOT\scripts\buildsystems\vcpkg.cmake"
           cmake --build build
 
-      # **Rename Executable on Ubuntu**
-      - name: Rename executable on Ubuntu
-        if: matrix.os == 'ubuntu-latest'
-        run: mv build/GreedyMini build/GreedyMini-ubuntu
-
-      # **Rename Executable on macOS**
-      - name: Rename executable on macOS
-        if: matrix.os == 'macos-latest'
-        run: mv build/GreedyMini build/GreedyMini-macos
-
       # **Rename Executable on Windows**
       - name: Rename executable on Windows
         if: matrix.os == 'windows-latest'
         shell: pwsh
         run: |
-          Rename-Item -Path build\Release\GreedyMini.exe -NewName GreedyMini-windows.exe
+          Rename-Item -Path build\GreedyMini.exe -NewName GreedyMini.exe
+          Compress-Archive -Path build\GreedyMini.exe -DestinationPath build\windows.zip
+
+      # **Rename Executable on macOS**
+      - name: Rename executable on macOS
+        if: matrix.os == 'macos-latest'
+        run: |
+          mv build/GreedyMini build/GreedyMini
+          zip -j build/macos.zip build/GreedyMini
+
+      # **Rename Executable on Ubuntu**
+      - name: Rename executable on Ubuntu
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          mv build/GreedyMini build/GreedyMini
+          zip -j build/ubuntu.zip build/GreedyMini
 
       # **Upload Artifact**
       - name: Upload artifact
@@ -84,8 +119,9 @@ jobs:
         with:
           name: GreedyMini-${{ matrix.os }}
           path: |
-            build/GreedyMini-*
-            build/*.exe
+            build/windows.zip
+            build/macos.zip
+            build/ubuntu.zip
 
   release:
     needs: build
@@ -110,11 +146,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # **Upload Release Assets**
       - name: Upload Release Assets
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          for file in artifacts/**/GreedyMini-*; do
+          for file in artifacts/**/*.zip; do
             name=$(basename "$file")
             echo "Uploading $name..."
             upload_url="${{ steps.create_release.outputs.upload_url }}?name=$name"
@@ -124,7 +161,7 @@ jobs:
             curl \
               -X POST \
               -H "Authorization: token $GITHUB_TOKEN" \
-              -H "Content-Type: application/octet-stream" \
+              -H "Content-Type: application/zip" \
               --data-binary @"$file" \
               "$upload_url"
           done
