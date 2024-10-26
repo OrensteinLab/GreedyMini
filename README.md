@@ -20,7 +20,7 @@ A tool to create low-density minimizer orders using a greedy approach. The repos
 
 ## Introduction
 
-This document provides step-by-step instructions to use the **GreedyMini** variants. The project relies on the Boost Multiprecision library for handling large integers and precise arithmetic operations.
+This document provides step-by-step instructions to use the **GreedyMini** variants.
 
 ## Prerequisites
 
@@ -107,6 +107,8 @@ Replace `{w}` and `{k}` with your desired values:
 - `{w}`: The window size.
 - `{k}`: The k-mer size.
 
+> **Note:** Ensure that **`w + k < 64`** (due to 64 bit reliance).
+
 An example run would be:
 ```
 ./GreedyMini -mode expected -w 5 -k 4
@@ -132,6 +134,8 @@ Where:
 - `{k}`: The k-mer size.
 - `{path}`: a path to the `fasta` file containing the sequence.
 - `{name}`: The name for the generated orders.
+
+> **Note:** Ensure that **`w + k < 64`** (due to 64 bit reliance).
 
 In our paper we used `chr_x_1m.fasta` as the path.
 

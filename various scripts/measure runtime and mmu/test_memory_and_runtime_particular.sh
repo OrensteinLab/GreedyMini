@@ -9,10 +9,10 @@ LOG_FILE="my_program_output_particular.log"
 # First: w = 12 and 3 <= k <= 16
 w=12
 for k in $(seq 3 16); do
-  echo "Running: ./my_program -mode particular -w $w -k $k -path sequences_1M -name 1M" >> "$LOG_FILE"
+  echo "Running: ./GreedyMini-ubuntu -mode particular -w $w -k $k -path chr_x_1m.fasta -name chrx_1M" >> "$LOG_FILE"
 
   # Run the program with 'time' to capture resource usage
-  /usr/bin/time -v ./my_program -mode particular -w "$w" -k "$k" -path sequences_1M -name 1M \
+  /usr/bin/time -v ./GreedyMini-ubuntu -mode particular -w "$w" -k "$k" -path chr_x_1m.fasta -name 1M \
     >> "$LOG_FILE" 2>&1
 
   # Log that the combination has completed
@@ -22,10 +22,10 @@ done
 # Second: k = 8 and 3 <= w <= 19
 k=8
 for w in $(seq 3 19); do
-  echo "Running: ./my_program -mode particular -w $w -k $k -path sequences_1M -name 1M" >> "$LOG_FILE"
+  echo "Running: ./GreedyMini-ubuntu -mode particular -w $w -k $k -path chr_x_1m.fasta -name 1M" >> "$LOG_FILE"
 
   # Run the program with 'time' to capture resource usage
-  /usr/bin/time -v ./my_program -mode particular -w "$w" -k "$k" -path sequences_1M -name 1M \
+  /usr/bin/time -v ./GreedyMini-ubuntu -mode particular -w "$w" -k "$k" -path chr_x_1m.fasta -name 1M \
     >> "$LOG_FILE" 2>&1
 
   # Log that the combination has completed

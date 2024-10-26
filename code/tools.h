@@ -51,6 +51,7 @@ double calc_density(GCType GC_count, uint32_t k, uint32_t w) {
 std::vector<uint64_t> get_reversed_order(const std::vector<uint64_t>& order);
 std::vector<std::string> split(const std::string& str, char delimiter);
 std::vector<uint64_t> get_explicitly_extended_order(const std::vector<uint64_t>& order);
+void clean_up_particular_temp_files(Config& config, bool remove_processed_contexts);
 void save_vector_of_vectors_to_file(const std::vector<std::vector<uint64_t>>& vec_of_vecs, const std::string& filename);
 std::vector<std::vector<uint64_t>> load_vector_of_vectors_from_file(const std::string& filename);
 

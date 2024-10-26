@@ -76,6 +76,7 @@ void update_config_expected(Config &config) {
 
 
 
+
 int main(int  argc, char* argv[])
 { 
     // Initialize variables with default values
@@ -129,25 +130,29 @@ int main(int  argc, char* argv[])
         update_config_particular(config);
         print_to_both(config, "Starting tests\n");
         particular_dna_tests(config);
+        clean_up_particular_temp_files(config, true);
         print_to_both(config, "Finished tests\n");
         config.log_file.close();
+
     } else if (config.mode == "tests") {
         update_config_expected(config);
         print_to_both(config, "Starting tests\n");
         expected_density_tests(config, 15, 15);
-        print_to_both(config, "Finished tests\n");
+        print_to_both(config, "Finished expected density tests\n");
         config.log_file.close();
 
         update_config_particular(config);
         print_to_both(config, "Starting tests\n");
         particular_dna_tests(config);
-        print_to_both(config, "Finished tests\n");
+        clean_up_particular_temp_files(config, true);
+        print_to_both(config, "Finished particular density tests\n");
         config.log_file.close();
 	} else if (config.mode == "expected") {
         short_compute_and_store_densities(w, k, config);
 
 	} else if (config.mode == "particular") {
         short_calculate_particular_density(w, k, config);
+        clean_up_particular_temp_files(config, true);
 	} else {
 		std::cerr << "Error: Unknown mode '" << config.mode << "'.\n";
 		return 1;
@@ -281,6 +286,11 @@ bool parse_arguments(int argc, char* argv[],
 		return false;
 	}
 
+    // check that w + k < 64
+    if (w + k >= 64) {
+		std::cerr << "Error: '--w' + '--k' must be strictly less than 64.\n";
+		return false;
+	}
 
     // Use output_folder as version_id
     version_id = output_folder;
