@@ -91,37 +91,35 @@ jobs:
           cmake -S code -B build -G "Ninja" -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE="$Env:VCPKG_ROOT\scripts\buildsystems\vcpkg.cmake"
           cmake --build build
 
-      # **Rename Executable on Windows**
-      - name: Rename executable on Windows
-        if: matrix.os == 'windows-latest'
-        shell: pwsh
-        run: |
-          Rename-Item -Path build\GreedyMini.exe -NewName GreedyMini.exe
-          Compress-Archive -Path build\GreedyMini.exe -DestinationPath build\windows.zip
+      # **Set Execute Permissions for Unix-Based Systems**
+      - name: Set Execute Permissions
+        if: matrix.os == 'macos-latest' || matrix.os == 'ubuntu-latest'
+        run: chmod +x build/GreedyMini
 
-      # **Rename Executable on macOS**
-      - name: Rename executable on macOS
-        if: matrix.os == 'macos-latest'
+      # **Package Executables into Archives**
+      - name: Package Executables
+        if: ${{ always() }}
         run: |
-          mv build/GreedyMini build/GreedyMini
-          zip -j build/macos.zip build/GreedyMini
-
-      # **Rename Executable on Ubuntu**
-      - name: Rename executable on Ubuntu
-        if: matrix.os == 'ubuntu-latest'
-        run: |
-          mv build/GreedyMini build/GreedyMini
-          zip -j build/ubuntu.zip build/GreedyMini
+          mkdir -p package
+          if [ "${{ matrix.os }}" == "windows-latest" ]; then
+            # Rename the executable to ensure consistency
+            Rename-Item -Path build\GreedyMini.exe -NewName GreedyMini.exe
+            # Compress the executable into a zip archive
+            Compress-Archive -Path build\GreedyMini.exe -DestinationPath package/windows.zip
+          elif [ "${{ matrix.os }}" == "macos-latest" ]; then
+            # No renaming needed; just compress the executable
+            zip -j package/macos.zip build/GreedyMini
+          elif [ "${{ matrix.os }}" == "ubuntu-latest" ]; then
+            # No renaming needed; just compress the executable
+            zip -j package/ubuntu.zip build/GreedyMini
+          fi
 
       # **Upload Artifact**
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: GreedyMini-${{ matrix.os }}
-          path: |
-            build/windows.zip
-            build/macos.zip
-            build/ubuntu.zip
+          path: package/*.zip
 
   release:
     needs: build
