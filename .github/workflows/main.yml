@@ -58,9 +58,8 @@ jobs:
         env:
           VCPKG_ROOT: ${{ github.workspace }}\vcpkg
         run: |
-          cmake -S code -B build -G "Visual Studio 16 2019" -A x64 -DCMAKE_TOOLCHAIN_FILE="$Env:VCPKG_ROOT\scripts\buildsystems\vcpkg.cmake"
-          cmake --build build --config Release
-
+          cmake -S code -B build -G "Ninja" -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE="$Env:VCPKG_ROOT\scripts\buildsystems\vcpkg.cmake"
+          cmake --build build
 
       # **Rename Executable on Ubuntu**
       - name: Rename executable on Ubuntu
