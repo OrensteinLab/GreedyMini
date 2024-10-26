@@ -8,7 +8,7 @@ A tool to create low-density minimizer orders using a greedy approach. The repos
 - [Prerequisites](#prerequisites)
 - [Installation and Compilation](#installation-and-compilation)
   - [Precompiled Binaries](#precompiled-binaries)
-  - [Compiling the Project](#compiling-the-project)
+  - [Compiling the Project Manually](#compiling-the-project-manually)
 - [Usage](#usage)
   - [Running Paper Tests](#running-paper-tests)
   - [Generating Minimizers For Expected Density](#generating-minimizers-for-expected-density)
@@ -26,8 +26,8 @@ This document provides step-by-step instructions to use the **GreedyMini** varia
 
 Before you begin, ensure you have the following:
 
-- **64-bit system**: Required to run the binaries or compile the project.
-- **C++ Compiler**: Only required if you are compiling the project yourself (supports C++20, e.g., `g++` version 10 or higher).
+- **64-bit system**: Required to run the binaries or compile GreedyMini.
+- **C++ Compiler**: Only required if you are compiling GreedyMini yourself (supports C++20, e.g., `g++` version 10 or higher).
 
 ## Installation and Compilation
 
@@ -35,11 +35,8 @@ Before you begin, ensure you have the following:
 
 Precompiled binaries are available for **Ubuntu** and **macOS**. You can download them from the [GitHub release page](https://github.com/OrensteinLab/GreedyMini/releases).
 
-Throughout the documentation, any mention of the `GreedyMini` binary should be substituted with the appropriate platform-specific version, such as `GreedyMini-ubuntu`.
 
-
-
-### Compiling the Project
+### Compiling the Project Manually
 
 If you prefer to compile the project from source, follow the steps below.
 
