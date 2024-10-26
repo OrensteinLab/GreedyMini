@@ -493,12 +493,12 @@ std::vector<uint64_t> get_explicitly_extended_order(const std::vector<uint64_t>&
 
 // This removes stuff like the dictionaries needed for paricular
 void clean_up_particular_temp_files(Config& config, bool remove_processed_contexts) {
-    std::string temp_dir_path = "/temp/" + config.name;
+    std::string temp_dir_path = "temp/" + config.name;
     if (std::filesystem::exists(temp_dir_path)) {
         std::filesystem::remove_all(temp_dir_path);
     }
     if (remove_processed_contexts) {
-        std::string contexts_path = "/temp/preprocessed_contexts/" + config.name;
+        std::string contexts_path = "temp/preprocessed_contexts/" + config.name;
         if (std::filesystem::exists(contexts_path)) {
             std::filesystem::remove_all(contexts_path);
         }
