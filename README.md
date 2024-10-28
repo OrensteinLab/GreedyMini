@@ -116,7 +116,7 @@ An example run would be:
 
 #### Sequence format
 
-`GreedyMiniParticular+` expects a `.fasta` file containing exactly one sequence. For an example file see [Running Paper Tests](#running-paper-tests).
+`GreedyMiniParticular+` expects a `.fasta` file containing exactly one sequence.
 
 #### Running
 
