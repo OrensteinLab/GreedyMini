@@ -167,7 +167,7 @@ See [Additional Parameters](#additional-parameters) for the default values of `m
 
 ### Loading the Minimizers to Memory
 
-We provide the Python notebook `load_order.ipynb` and a minimizer order `example_minimizer.bin` located in the folder `minimizer loading example`. The notebook showcases how to load a minimizer to memory and print the order of each k-mer. For C++, we reccomend looking at the functions `load_order()` and `load_vector_from_file()` located in `code/tools.cpp`.
+We provide the Python notebook `load_order.ipynb` alongside the best minimizer orders from the paper, both located in the folder `minimizer loading example`. The notebook showcases how to load a minimizer to memory and print the order of each k-mer. For C++, we recommend looking at the functions `load_order()` and `load_vector_from_file()` located in `code/tools.cpp`.
 
 
 ## Contact
