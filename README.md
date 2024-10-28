@@ -17,6 +17,7 @@ A tool to create low-density minimizer orders using a greedy approach. The repos
 - [Accessing the Minimizers](#accessing-the-minimizers)
   - [Locating the Minimizers](#locating-the-minimizers)
   - [Loading the Minimizers to Memory](#loading-the-minimizers-to-memory)
+- [Contact](#contact)
 
 ## Introduction
 
@@ -167,3 +168,7 @@ See [Additional Parameters](#additional-parameters) for the default values of `m
 ### Loading the Minimizers to Memory
 
 We provide the Python notebook `load_order.ipynb` and a minimizer order `example_minimizer.bin` located in the folder `minimizer loading example`. The notebook showcases how to load a minimizer to memory and print the order of each k-mer. For C++, we reccomend looking at the functions `load_order()` and `load_vector_from_file()` located in `code/tools.cpp`.
+
+
+## Contact
+In case of issues with the tool, you may contact us at tziony.i@gmail.com.
