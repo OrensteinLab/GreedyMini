@@ -1,0 +1,1040 @@
+Running: ./GreedyMini-ubuntu -mode particular -w 12 -k 3 -path chr_x_1m.fasta -name chrx_1M
+
+Running for W = 12 and K = 3
+Processing sequence for w+k = 15
+Sequence processing completed
+Preprocessing time for W: 12 and K: 3 is 1.90805 seconds
+Alpha of the best result: 0.985179
+GreedyMiniParticular time: 8.42515 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.145529
+Total time taken: 12 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 12 -k 3 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 314.41
+	System time (seconds): 41.06
+	Percent of CPU this job got: 2837%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:12.52
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4473516
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 7
+	Minor (reclaiming a frame) page faults: 2444975
+	Voluntary context switches: 84445
+	Involuntary context switches: 821
+	Swaps: 0
+	File system inputs: 1208
+	File system outputs: 249904
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=3
+Running: ./GreedyMini-ubuntu -mode particular -w 12 -k 4 -path chr_x_1m.fasta -name chrx_1M
+
+Running for W = 12 and K = 4
+Processing sequence for w+k = 16
+Sequence processing completed
+Preprocessing time for W: 12 and K: 4 is 2.22493 seconds
+Alpha of the best result: 0.998939
+GreedyMiniParticular time: 17.165 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.139113
+Total time taken: 21 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 12 -k 4 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 414.18
+	System time (seconds): 135.25
+	Percent of CPU this job got: 2545%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:21.58
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 5188652
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 9186757
+	Voluntary context switches: 990303
+	Involuntary context switches: 1423
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 322264
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=4
+Running: ./GreedyMini-ubuntu -mode particular -w 12 -k 5 -path chr_x_1m.fasta -name chrx_1M
+
+Running for W = 12 and K = 5
+Processing sequence for w+k = 17
+Sequence processing completed
+Preprocessing time for W: 12 and K: 5 is 2.49348 seconds
+Alpha of the best result: 0.969275
+GreedyMiniParticular time: 10.5294 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.133927
+Total time taken: 15 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 12 -k 5 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 459.23
+	System time (seconds): 32.97
+	Percent of CPU this job got: 3235%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.21
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6662984
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1666990
+	Voluntary context switches: 170398
+	Involuntary context switches: 572
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 372448
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=5
+Running: ./GreedyMini-ubuntu -mode particular -w 12 -k 6 -path chr_x_1m.fasta -name chrx_1M
+
+Running for W = 12 and K = 6
+Processing sequence for w+k = 18
+Sequence processing completed
+Preprocessing time for W: 12 and K: 6 is 2.14858 seconds
+Alpha of the best result: 0.973342
+GreedyMiniParticular time: 10.9361 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.131184
+Total time taken: 15 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 12 -k 6 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 507.60
+	System time (seconds): 24.83
+	Percent of CPU this job got: 3485%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.27
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7063292
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2145824
+	Voluntary context switches: 229545
+	Involuntary context switches: 673
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 402640
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=6
+Running: ./GreedyMini-ubuntu -mode particular -w 12 -k 7 -path chr_x_1m.fasta -name chrx_1M
+
+Running for W = 12 and K = 7
+Processing sequence for w+k = 19
+Sequence processing completed
+Preprocessing time for W: 12 and K: 7 is 2.2917 seconds
+Alpha of the best result: 0.978945
+GreedyMiniParticular time: 11.6741 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.128621
+Total time taken: 16 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 12 -k 7 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 561.71
+	System time (seconds): 25.03
+	Percent of CPU this job got: 3625%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:16.18
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7365836
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2673308
+	Voluntary context switches: 344476
+	Involuntary context switches: 672
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 419872
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=7
+Running: ./GreedyMini-ubuntu -mode particular -w 12 -k 8 -path chr_x_1m.fasta -name chrx_1M
+
+Running for W = 12 and K = 8
+Processing sequence for w+k = 20
+Sequence processing completed
+Preprocessing time for W: 12 and K: 8 is 2.32521 seconds
+Alpha of the best result: 0.991159
+GreedyMiniParticular time: 14.5788 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.125899
+Total time taken: 19 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 12 -k 8 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 681.93
+	System time (seconds): 42.16
+	Percent of CPU this job got: 3791%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:19.09
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7133272
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3843759
+	Voluntary context switches: 765190
+	Involuntary context switches: 931
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 430088
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=8
+Running: ./GreedyMini-ubuntu -mode particular -w 12 -k 9 -path chr_x_1m.fasta -name chrx_1M
+
+Running for W = 12 and K = 9
+Processing sequence for w+k = 21
+Sequence processing completed
+Preprocessing time for W: 12 and K: 9 is 2.33885 seconds
+Alpha of the best result: 0.989224
+GreedyMiniParticular time: 14.095 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.124188
+Total time taken: 18 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 12 -k 9 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 637.87
+	System time (seconds): 38.34
+	Percent of CPU this job got: 3599%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:18.78
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7214336
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2488115
+	Voluntary context switches: 770098
+	Involuntary context switches: 738
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 437776
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=9
+Running: ./GreedyMini-ubuntu -mode particular -w 12 -k 10 -path chr_x_1m.fasta -name chrx_1M
+
+Running for W = 12 and K = 10
+Processing sequence for w+k = 22
+Sequence processing completed
+Preprocessing time for W: 12 and K: 10 is 2.60807 seconds
+Alpha of the best result: 0.988444
+GreedyMiniParticular time: 23.0061 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.123759
+Total time taken: 27 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 12 -k 10 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 707.83
+	System time (seconds): 61.14
+	Percent of CPU this job got: 2753%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:27.93
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7275520
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2943206
+	Voluntary context switches: 985569
+	Involuntary context switches: 1001
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 442376
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=10
+Running: ./GreedyMini-ubuntu -mode particular -w 12 -k 11 -path chr_x_1m.fasta -name chrx_1M
+
+Running for W = 12 and K = 11
+Processing sequence for w+k = 23
+Sequence processing completed
+Preprocessing time for W: 12 and K: 11 is 3.12321 seconds
+Alpha of the best result: 0.991891
+GreedyMiniParticular time: 24.5976 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.122502
+Total time taken: 30 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 12 -k 11 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 701.75
+	System time (seconds): 48.54
+	Percent of CPU this job got: 2490%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:30.12
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7344552
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2690328
+	Voluntary context switches: 871274
+	Involuntary context switches: 1036
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 445120
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=11
+Running: ./GreedyMini-ubuntu -mode particular -w 12 -k 12 -path chr_x_1m.fasta -name chrx_1M
+
+Running for W = 12 and K = 12
+Processing sequence for w+k = 24
+Sequence processing completed
+Preprocessing time for W: 12 and K: 12 is 3.33022 seconds
+Alpha of the best result: 0.951059
+GreedyMiniParticular time: 28.8889 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.122238
+Total time taken: 34 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 12 -k 12 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 815.65
+	System time (seconds): 38.28
+	Percent of CPU this job got: 2457%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:34.75
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7354136
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3404280
+	Voluntary context switches: 654830
+	Involuntary context switches: 1206
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 448640
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=12
+Running: ./GreedyMini-ubuntu -mode particular -w 12 -k 13 -path chr_x_1m.fasta -name chrx_1M
+
+Running for W = 12 and K = 13
+Processing sequence for w+k = 25
+Sequence processing completed
+Preprocessing time for W: 12 and K: 13 is 3.99096 seconds
+Alpha of the best result: 0.990391
+GreedyMiniParticular time: 36.5776 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.120902
+Total time taken: 43 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 12 -k 13 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 1252.93
+	System time (seconds): 32.68
+	Percent of CPU this job got: 2982%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:43.10
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7451988
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 22
+	Minor (reclaiming a frame) page faults: 4267562
+	Voluntary context switches: 524290
+	Involuntary context switches: 1753
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 451208
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=13
+Running: ./GreedyMini-ubuntu -mode particular -w 12 -k 14 -path chr_x_1m.fasta -name chrx_1M
+
+Running for W = 12 and K = 14
+Processing sequence for w+k = 26
+Sequence processing completed
+Preprocessing time for W: 12 and K: 14 is 2.52802 seconds
+Alpha of the best result: 0.990375
+GreedyMiniParticular time: 68.1344 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.118345
+Total time taken: 73 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 12 -k 14 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 3253.68
+	System time (seconds): 40.91
+	Percent of CPU this job got: 4502%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:13.17
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7521320
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 15
+	Minor (reclaiming a frame) page faults: 9322454
+	Voluntary context switches: 520185
+	Involuntary context switches: 3131
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 453336
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=14
+Running: ./GreedyMini-ubuntu -mode particular -w 12 -k 15 -path chr_x_1m.fasta -name chrx_1M
+
+Running for W = 12 and K = 15
+Processing sequence for w+k = 27
+Sequence processing completed
+Preprocessing time for W: 12 and K: 15 is 3.38176 seconds
+Alpha of the best result: 0.972983
+GreedyMiniParticular time: 209.896 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.116207
+Total time taken: 215 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 12 -k 15 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 12171.34
+	System time (seconds): 46.46
+	Percent of CPU this job got: 5659%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:35.87
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7713804
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 8
+	Minor (reclaiming a frame) page faults: 19054388
+	Voluntary context switches: 452318
+	Involuntary context switches: 8542
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 456848
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=15
+Running: ./GreedyMini-ubuntu -mode particular -w 12 -k 16 -path chr_x_1m.fasta -name chrx_1M
+
+Running for W = 12 and K = 16
+Processing sequence for w+k = 28
+Sequence processing completed
+Preprocessing time for W: 12 and K: 16 is 3.37021 seconds
+Alpha of the best result: 0.978044
+GreedyMiniParticular time: 775.757 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.112851
+Total time taken: 781 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 12 -k 16 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 47751.43
+	System time (seconds): 86.32
+	Percent of CPU this job got: 6118%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 13:01.89
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7983372
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 16
+	Minor (reclaiming a frame) page faults: 51654232
+	Voluntary context switches: 480840
+	Involuntary context switches: 27906
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 461880
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=16
+Running: ./GreedyMini-ubuntu -mode particular -w 3 -k 8 -path chr_x_1m.fasta -name 1M
+
+Running for W = 3 and K = 8
+Processing sequence for w+k = 11
+Sequence processing completed
+Preprocessing time for W: 3 and K: 8 is 1.61591 seconds
+Alpha of the best result: 0.954827
+GreedyMiniParticular time: 8.75325 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.394571
+Total time taken: 11 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 3 -k 8 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 252.14
+	System time (seconds): 20.90
+	Percent of CPU this job got: 2248%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:12.14
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2630000
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2
+	Minor (reclaiming a frame) page faults: 883911
+	Voluntary context switches: 312101
+	Involuntary context switches: 373
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 156088
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=3, k=8
+Running: ./GreedyMini-ubuntu -mode particular -w 4 -k 8 -path chr_x_1m.fasta -name 1M
+
+Running for W = 4 and K = 8
+Processing sequence for w+k = 12
+Sequence processing completed
+Preprocessing time for W: 4 and K: 8 is 1.40949 seconds
+Alpha of the best result: 0.977577
+GreedyMiniParticular time: 9.62925 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.312095
+Total time taken: 12 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 4 -k 8 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 321.34
+	System time (seconds): 28.07
+	Percent of CPU this job got: 2674%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:13.06
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3164820
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1115848
+	Voluntary context switches: 411562
+	Involuntary context switches: 450
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 187152
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=4, k=8
+Running: ./GreedyMini-ubuntu -mode particular -w 5 -k 8 -path chr_x_1m.fasta -name 1M
+
+Running for W = 5 and K = 8
+Processing sequence for w+k = 13
+Sequence processing completed
+Preprocessing time for W: 5 and K: 8 is 1.38849 seconds
+Alpha of the best result: 0.972302
+GreedyMiniParticular time: 9.71328 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.258796
+Total time taken: 12 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 5 -k 8 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 363.85
+	System time (seconds): 35.11
+	Percent of CPU this job got: 3091%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:12.90
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3680040
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1222572
+	Voluntary context switches: 493506
+	Involuntary context switches: 544
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 217568
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=5, k=8
+Running: ./GreedyMini-ubuntu -mode particular -w 6 -k 8 -path chr_x_1m.fasta -name 1M
+
+Running for W = 6 and K = 8
+Processing sequence for w+k = 14
+Sequence processing completed
+Preprocessing time for W: 6 and K: 8 is 1.36384 seconds
+Alpha of the best result: 0.975703
+GreedyMiniParticular time: 8.85588 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.223721
+Total time taken: 12 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 6 -k 8 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 388.54
+	System time (seconds): 28.20
+	Percent of CPU this job got: 3445%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:12.09
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4151732
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1621930
+	Voluntary context switches: 488185
+	Involuntary context switches: 634
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 249120
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=6, k=8
+Running: ./GreedyMini-ubuntu -mode particular -w 7 -k 8 -path chr_x_1m.fasta -name 1M
+
+Running for W = 7 and K = 8
+Sequence has already been processed for w+k = 15
+Preprocessing time for W: 7 and K: 8 is 1.4576 seconds
+Alpha of the best result: 0.952135
+GreedyMiniParticular time: 10.1911 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.203842
+Total time taken: 12 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 7 -k 8 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 433.73
+	System time (seconds): 44.20
+	Percent of CPU this job got: 3789%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:12.61
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4654220
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3604359
+	Voluntary context switches: 562442
+	Involuntary context switches: 947
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 258024
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=7, k=8
+Running: ./GreedyMini-ubuntu -mode particular -w 8 -k 8 -path chr_x_1m.fasta -name 1M
+
+Running for W = 8 and K = 8
+Sequence has already been processed for w+k = 16
+Preprocessing time for W: 8 and K: 8 is 1.51306 seconds
+Alpha of the best result: 0.968856
+GreedyMiniParticular time: 9.40639 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.179288
+Total time taken: 11 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 8 -k 8 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 444.20
+	System time (seconds): 22.64
+	Percent of CPU this job got: 3934%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:11.86
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 5201188
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1699957
+	Voluntary context switches: 446599
+	Involuntary context switches: 523
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 287376
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=8, k=8
+Running: ./GreedyMini-ubuntu -mode particular -w 9 -k 8 -path chr_x_1m.fasta -name 1M
+
+Running for W = 9 and K = 8
+Sequence has already been processed for w+k = 17
+Preprocessing time for W: 9 and K: 8 is 1.84111 seconds
+Alpha of the best result: 0.969843
+GreedyMiniParticular time: 12.4924 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.161537
+Total time taken: 15 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 9 -k 8 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 589.40
+	System time (seconds): 27.63
+	Percent of CPU this job got: 4030%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.31
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 5691000
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2177839
+	Voluntary context switches: 518237
+	Involuntary context switches: 947
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 316552
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=9, k=8
+Running: ./GreedyMini-ubuntu -mode particular -w 10 -k 8 -path chr_x_1m.fasta -name 1M
+
+Running for W = 10 and K = 8
+Sequence has already been processed for w+k = 18
+Preprocessing time for W: 10 and K: 8 is 1.96012 seconds
+Alpha of the best result: 0.953588
+GreedyMiniParticular time: 12.5249 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.148229
+Total time taken: 15 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 10 -k 8 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 563.20
+	System time (seconds): 33.55
+	Percent of CPU this job got: 3852%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.49
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6157928
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2397209
+	Voluntary context switches: 686642
+	Involuntary context switches: 778
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 345584
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=10, k=8
+Running: ./GreedyMini-ubuntu -mode particular -w 11 -k 8 -path chr_x_1m.fasta -name 1M
+
+Running for W = 11 and K = 8
+Sequence has already been processed for w+k = 19
+Preprocessing time for W: 11 and K: 8 is 2.40056 seconds
+Alpha of the best result: 0.984188
+GreedyMiniParticular time: 14.6991 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.136285
+Total time taken: 18 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 11 -k 8 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 639.97
+	System time (seconds): 44.53
+	Percent of CPU this job got: 3774%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:18.13
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6651696
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3678742
+	Voluntary context switches: 972507
+	Involuntary context switches: 817
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 374440
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=11, k=8
+Running: ./GreedyMini-ubuntu -mode particular -w 12 -k 8 -path chr_x_1m.fasta -name 1M
+
+Running for W = 12 and K = 8
+Sequence has already been processed for w+k = 20
+Alpha of the best result: 0.990761
+GreedyMiniParticular time: 14.7185 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.125899
+Total time taken: 15 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 12 -k 8 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 655.47
+	System time (seconds): 40.63
+	Percent of CPU this job got: 4437%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.68
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7106540
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3279032
+	Voluntary context switches: 788357
+	Involuntary context switches: 780
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 48
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=8
+Running: ./GreedyMini-ubuntu -mode particular -w 13 -k 8 -path chr_x_1m.fasta -name 1M
+
+Running for W = 13 and K = 8
+Sequence has already been processed for w+k = 21
+Preprocessing time for W: 13 and K: 8 is 2.80212 seconds
+Alpha of the best result: 0.989562
+GreedyMiniParticular time: 14.0254 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.116941
+Total time taken: 17 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 13 -k 8 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 663.27
+	System time (seconds): 31.66
+	Percent of CPU this job got: 3885%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:17.88
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7635300
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2954225
+	Voluntary context switches: 587806
+	Involuntary context switches: 788
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 431640
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=13, k=8
+Running: ./GreedyMini-ubuntu -mode particular -w 14 -k 8 -path chr_x_1m.fasta -name 1M
+
+Running for W = 14 and K = 8
+Sequence has already been processed for w+k = 22
+Preprocessing time for W: 14 and K: 8 is 2.85792 seconds
+Alpha of the best result: 0.992553
+GreedyMiniParticular time: 14.3194 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.109804
+Total time taken: 18 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 14 -k 8 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 698.65
+	System time (seconds): 39.38
+	Percent of CPU this job got: 4048%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:18.23
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8106092
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 4106720
+	Voluntary context switches: 642928
+	Involuntary context switches: 827
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 460032
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=14, k=8
+Running: ./GreedyMini-ubuntu -mode particular -w 15 -k 8 -path chr_x_1m.fasta -name 1M
+
+Running for W = 15 and K = 8
+Sequence has already been processed for w+k = 23
+Preprocessing time for W: 15 and K: 8 is 3.08858 seconds
+Alpha of the best result: 0.963688
+GreedyMiniParticular time: 15.572 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.103116
+Total time taken: 19 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 15 -k 8 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 745.95
+	System time (seconds): 49.68
+	Percent of CPU this job got: 4036%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:19.71
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8551420
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 5745245
+	Voluntary context switches: 657631
+	Involuntary context switches: 900
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 488232
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=15, k=8
+Running: ./GreedyMini-ubuntu -mode particular -w 16 -k 8 -path chr_x_1m.fasta -name 1M
+
+Running for W = 16 and K = 8
+Sequence has already been processed for w+k = 24
+Preprocessing time for W: 16 and K: 8 is 2.6356 seconds
+Alpha of the best result: 0.969465
+GreedyMiniParticular time: 16.7873 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.097324
+Total time taken: 20 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 16 -k 8 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 843.88
+	System time (seconds): 57.28
+	Percent of CPU this job got: 4387%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:20.54
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 9020516
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 5436413
+	Voluntary context switches: 662990
+	Involuntary context switches: 1548
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 516304
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=16, k=8
+Running: ./GreedyMini-ubuntu -mode particular -w 17 -k 8 -path chr_x_1m.fasta -name 1M
+
+Running for W = 17 and K = 8
+Sequence has already been processed for w+k = 25
+Preprocessing time for W: 17 and K: 8 is 2.82545 seconds
+Alpha of the best result: 0.952784
+GreedyMiniParticular time: 15.6717 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.092442
+Total time taken: 19 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 17 -k 8 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 770.31
+	System time (seconds): 37.01
+	Percent of CPU this job got: 4114%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:19.62
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 9556968
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3476017
+	Voluntary context switches: 558157
+	Involuntary context switches: 953
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 544168
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=17, k=8
+Running: ./GreedyMini-ubuntu -mode particular -w 18 -k 8 -path chr_x_1m.fasta -name 1M
+
+Running for W = 18 and K = 8
+Sequence has already been processed for w+k = 26
+Preprocessing time for W: 18 and K: 8 is 3.59058 seconds
+Alpha of the best result: 0.976436
+GreedyMiniParticular time: 15.265 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.088391
+Total time taken: 19 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 18 -k 8 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 763.90
+	System time (seconds): 39.42
+	Percent of CPU this job got: 3999%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:20.08
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 9981484
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3525085
+	Voluntary context switches: 603005
+	Involuntary context switches: 859
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 571912
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=18, k=8
+Running: ./GreedyMini-ubuntu -mode particular -w 19 -k 8 -path chr_x_1m.fasta -name 1M
+
+Running for W = 19 and K = 8
+Sequence has already been processed for w+k = 27
+Preprocessing time for W: 19 and K: 8 is 3.92916 seconds
+Alpha of the best result: 0.981287
+GreedyMiniParticular time: 19.0649 seconds, using 64 threads to run 4096 iterations
+Density for best specifically trained order: 0.084196
+Total time taken: 24 seconds
+	Command being timed: "./GreedyMini-ubuntu -mode particular -w 19 -k 8 -path chr_x_1m.fasta -name 1M"
+	User time (seconds): 923.61
+	System time (seconds): 55.91
+	Percent of CPU this job got: 4063%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:24.10
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 10440452
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 5168224
+	Voluntary context switches: 938578
+	Involuntary context switches: 1148
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 599504
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=19, k=8

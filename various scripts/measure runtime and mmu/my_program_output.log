@@ -1,0 +1,5585 @@
+Running: ./my_program -mode expected -w 3 -k 3
+
+Running for W = 3 and K = 3
+Alpha of the best result: 0.998038
+GreedyMini time: 0.0191767 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 34468 times out of 137929 times
+Swapper time: 0.0404225 seconds. 
+Binary density: 0.453125
+DNA density upper bound: 0.476562
+	Command being timed: "./my_program -mode expected -w 3 -k 3"
+	User time (seconds): 1.99
+	System time (seconds): 0.04
+	Percent of CPU this job got: 2123%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.09
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22496
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 680
+	Voluntary context switches: 400
+	Involuntary context switches: 42
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=3, k=3
+Running: ./my_program -mode expected -w 3 -k 4
+
+Running for W = 3 and K = 4
+Alpha of the best result: 0.977876
+GreedyMini time: 0.0242136 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 54004 times out of 126026 times
+Swapper time: 0.0448309 seconds. 
+Binary density: 0.437500
+DNA density upper bound: 0.445312
+	Command being timed: "./my_program -mode expected -w 3 -k 4"
+	User time (seconds): 2.68
+	System time (seconds): 0.03
+	Percent of CPU this job got: 2778%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.09
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22460
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1
+	Minor (reclaiming a frame) page faults: 685
+	Voluntary context switches: 351
+	Involuntary context switches: 2
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=3, k=4
+Running: ./my_program -mode expected -w 3 -k 5
+
+Running for W = 3 and K = 5
+Alpha of the best result: 0.994932
+GreedyMini time: 0.0348601 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 84176 times out of 186455 times
+Swapper time: 0.0527472 seconds. 
+Binary density: 0.410156
+DNA density upper bound: 0.410156
+	Command being timed: "./my_program -mode expected -w 3 -k 5"
+	User time (seconds): 3.95
+	System time (seconds): 0.04
+	Percent of CPU this job got: 3533%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.11
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 21944
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 740
+	Voluntary context switches: 341
+	Involuntary context switches: 48
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=3, k=5
+Running: ./my_program -mode expected -w 3 -k 6
+
+Running for W = 3 and K = 6
+Alpha of the best result: 0.998042
+GreedyMini time: 0.0559814 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 125465 times out of 258535 times
+Swapper time: 0.0730501 seconds. 
+Binary density: 0.404297
+DNA density upper bound: 0.405273
+	Command being timed: "./my_program -mode expected -w 3 -k 6"
+	User time (seconds): 6.63
+	System time (seconds): 0.04
+	Percent of CPU this job got: 4303%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.15
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 19884
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 749
+	Voluntary context switches: 304
+	Involuntary context switches: 23
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=3, k=6
+Running: ./my_program -mode expected -w 3 -k 7
+
+Running for W = 3 and K = 7
+Alpha of the best result: 0.994995
+GreedyMini time: 0.0994023 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 227221 times out of 466571 times
+Swapper time: 0.116787 seconds. 
+Binary density: 0.401367
+DNA density upper bound: 0.401855
+	Command being timed: "./my_program -mode expected -w 3 -k 7"
+	User time (seconds): 11.91
+	System time (seconds): 0.03
+	Percent of CPU this job got: 3735%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.32
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24000
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 743
+	Voluntary context switches: 332
+	Involuntary context switches: 24
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=3, k=7
+Running: ./my_program -mode expected -w 3 -k 8
+
+Running for W = 3 and K = 8
+Alpha of the best result: 0.999167
+GreedyMini time: 0.181209 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 408100 times out of 825793 times
+Swapper time: 0.219894 seconds. 
+Binary density: 0.389648
+DNA density upper bound: 0.390137
+	Command being timed: "./my_program -mode expected -w 3 -k 8"
+	User time (seconds): 23.46
+	System time (seconds): 0.05
+	Percent of CPU this job got: 5057%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.46
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 21948
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 842
+	Voluntary context switches: 387
+	Involuntary context switches: 69
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=3, k=8
+Running: ./my_program -mode expected -w 3 -k 9
+
+Running for W = 3 and K = 9
+Alpha of the best result: 0.956013
+GreedyMini time: 0.353983 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 713520 times out of 1432622 times
+Swapper time: 0.378646 seconds. 
+Binary density: 0.385742
+DNA density upper bound: 0.385864
+	Command being timed: "./my_program -mode expected -w 3 -k 9"
+	User time (seconds): 43.37
+	System time (seconds): 0.03
+	Percent of CPU this job got: 5391%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.80
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24020
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 995
+	Voluntary context switches: 430
+	Involuntary context switches: 52
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 48
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=3, k=9
+Running: ./my_program -mode expected -w 3 -k 10
+
+Running for W = 3 and K = 10
+Alpha of the best result: 0.999313
+GreedyMini time: 0.716206 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 1509019 times out of 3027783 times
+Swapper time: 0.780434 seconds. 
+Binary density: 0.385010
+DNA density upper bound: 0.385132
+	Command being timed: "./my_program -mode expected -w 3 -k 10"
+	User time (seconds): 90.66
+	System time (seconds): 0.05
+	Percent of CPU this job got: 5054%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.79
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 21972
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1270
+	Voluntary context switches: 537
+	Involuntary context switches: 166
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=3, k=10
+Running: ./my_program -mode expected -w 3 -k 11
+
+Running for W = 3 and K = 11
+Alpha of the best result: 0.996987
+GreedyMini time: 1.56626 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 3055947 times out of 6118477 times
+Swapper time: 1.5889 seconds. 
+Binary density: 0.378357
+DNA density upper bound: 0.378357
+	Command being timed: "./my_program -mode expected -w 3 -k 11"
+	User time (seconds): 185.69
+	System time (seconds): 0.05
+	Percent of CPU this job got: 5811%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.19
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22080
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 29
+	Minor (reclaiming a frame) page faults: 3072
+	Voluntary context switches: 686
+	Involuntary context switches: 303
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 112
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=3, k=11
+Running: ./my_program -mode expected -w 3 -k 12
+
+Running for W = 3 and K = 12
+Alpha of the best result: 0.999528
+GreedyMini time: 3.61794 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 6843644 times out of 13702388 times
+Swapper time: 3.63651 seconds. 
+Binary density: 0.376770
+DNA density upper bound: 0.376831
+	Command being timed: "./my_program -mode expected -w 3 -k 12"
+	User time (seconds): 419.89
+	System time (seconds): 0.07
+	Percent of CPU this job got: 5768%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:07.28
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22128
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 20
+	Minor (reclaiming a frame) page faults: 8262
+	Voluntary context switches: 1021
+	Involuntary context switches: 542
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 176
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=3, k=12
+Running: ./my_program -mode expected -w 3 -k 13
+
+Running for W = 3 and K = 13
+Alpha of the best result: 0.954459
+GreedyMini time: 10.4572 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 18590088 times out of 37211995 times
+Swapper time: 10.4931 seconds. 
+Binary density: 0.375549
+DNA density upper bound: 0.375549
+	Command being timed: "./my_program -mode expected -w 3 -k 13"
+	User time (seconds): 1202.77
+	System time (seconds): 0.13
+	Percent of CPU this job got: 5731%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:20.98
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24376
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 128
+	Minor (reclaiming a frame) page faults: 20031
+	Voluntary context switches: 1804
+	Involuntary context switches: 1270
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 312
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=3, k=13
+Running: ./my_program -mode expected -w 3 -k 14
+
+Running for W = 3 and K = 14
+Alpha of the best result: 0.974256
+GreedyMini time: 34.027 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 61072217 times out of 122191557 times
+Swapper time: 34.0792 seconds. 
+Binary density: 0.371590
+DNA density upper bound: 0.371590
+	Command being timed: "./my_program -mode expected -w 3 -k 14"
+	User time (seconds): 4232.31
+	System time (seconds): 0.36
+	Percent of CPU this job got: 6208%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:08.17
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 23376
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 55
+	Minor (reclaiming a frame) page faults: 73647
+	Voluntary context switches: 3383
+	Involuntary context switches: 2909
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 568
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=3, k=14
+Running: ./my_program -mode expected -w 3 -k 15
+
+Running for W = 3 and K = 15
+Alpha of the best result: 0.973525
+GreedyMini time: 125.877 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 213863818 times out of 427802273 times
+Swapper time: 126.015 seconds. 
+Binary density: 0.369751
+DNA density upper bound: 0.369753
+	Command being timed: "./my_program -mode expected -w 3 -k 15"
+	User time (seconds): 15902.70
+	System time (seconds): 1.05
+	Percent of CPU this job got: 6312%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:11.95
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 67784
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 66
+	Minor (reclaiming a frame) page faults: 190696
+	Voluntary context switches: 5757
+	Involuntary context switches: 8950
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 1080
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=3, k=15
+Running: ./my_program -mode expected -w 4 -k 3
+
+Running for W = 4 and K = 3
+Alpha of the best result: 0.985713
+GreedyMini time: 0.0153911 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 0 times out of 102986 times
+Swapper time: 0.0275977 seconds. 
+Binary density: 0.359375
+DNA density upper bound: 0.371094
+	Command being timed: "./my_program -mode expected -w 4 -k 3"
+	User time (seconds): 1.73
+	System time (seconds): 0.02
+	Percent of CPU this job got: 2663%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.06
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22460
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 682
+	Voluntary context switches: 288
+	Involuntary context switches: 44
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=4, k=3
+Running: ./my_program -mode expected -w 4 -k 4
+
+Running for W = 4 and K = 4
+Alpha of the best result: 0.969337
+GreedyMini time: 0.0174496 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 27812 times out of 91449 times
+Swapper time: 0.0267308 seconds. 
+Binary density: 0.339844
+DNA density upper bound: 0.345703
+	Command being timed: "./my_program -mode expected -w 4 -k 4"
+	User time (seconds): 2.05
+	System time (seconds): 0.01
+	Percent of CPU this job got: 3522%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.05
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22440
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 681
+	Voluntary context switches: 164
+	Involuntary context switches: 47
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=4, k=4
+Running: ./my_program -mode expected -w 4 -k 5
+
+Running for W = 4 and K = 5
+Alpha of the best result: 0.996621
+GreedyMini time: 0.0250741 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 38808 times out of 100443 times
+Swapper time: 0.0342314 seconds. 
+Binary density: 0.335938
+DNA density upper bound: 0.341797
+	Command being timed: "./my_program -mode expected -w 4 -k 5"
+	User time (seconds): 3.08
+	System time (seconds): 0.02
+	Percent of CPU this job got: 4193%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24000
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 743
+	Voluntary context switches: 237
+	Involuntary context switches: 47
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=4, k=5
+Running: ./my_program -mode expected -w 4 -k 6
+
+Running for W = 4 and K = 6
+Alpha of the best result: 0.957672
+GreedyMini time: 0.0456405 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 77561 times out of 173866 times
+Swapper time: 0.0544132 seconds. 
+Binary density: 0.314453
+DNA density upper bound: 0.315430
+	Command being timed: "./my_program -mode expected -w 4 -k 6"
+	User time (seconds): 5.38
+	System time (seconds): 0.01
+	Percent of CPU this job got: 4738%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.11
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22464
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 745
+	Voluntary context switches: 113
+	Involuntary context switches: 56
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=4, k=6
+Running: ./my_program -mode expected -w 4 -k 7
+
+Running for W = 4 and K = 7
+Alpha of the best result: 0.984503
+GreedyMini time: 0.0756552 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 141570 times out of 297187 times
+Swapper time: 0.0880416 seconds. 
+Binary density: 0.311523
+DNA density upper bound: 0.312256
+	Command being timed: "./my_program -mode expected -w 4 -k 7"
+	User time (seconds): 9.69
+	System time (seconds): 0.01
+	Percent of CPU this job got: 4854%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.20
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 21728
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 810
+	Voluntary context switches: 200
+	Involuntary context switches: 22
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=4, k=7
+Running: ./my_program -mode expected -w 4 -k 8
+
+Running for W = 4 and K = 8
+Alpha of the best result: 0.98171
+GreedyMini time: 0.155938 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 262686 times out of 535644 times
+Swapper time: 0.171666 seconds. 
+Binary density: 0.309082
+DNA density upper bound: 0.309570
+	Command being timed: "./my_program -mode expected -w 4 -k 8"
+	User time (seconds): 18.71
+	System time (seconds): 0.03
+	Percent of CPU this job got: 5310%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.35
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24004
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 871
+	Voluntary context switches: 332
+	Involuntary context switches: 53
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 40
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=4, k=8
+Running: ./my_program -mode expected -w 4 -k 9
+
+Running for W = 4 and K = 9
+Alpha of the best result: 0.998912
+GreedyMini time: 0.302522 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 518543 times out of 1047501 times
+Swapper time: 0.313142 seconds. 
+Binary density: 0.308472
+DNA density upper bound: 0.308655
+	Command being timed: "./my_program -mode expected -w 4 -k 9"
+	User time (seconds): 35.93
+	System time (seconds): 0.02
+	Percent of CPU this job got: 5591%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.64
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 20544
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1010
+	Voluntary context switches: 335
+	Involuntary context switches: 61
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 48
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=4, k=9
+Running: ./my_program -mode expected -w 4 -k 10
+
+Running for W = 4 and K = 10
+Alpha of the best result: 0.981464
+GreedyMini time: 0.615286 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 1010735 times out of 2034978 times
+Swapper time: 0.634239 seconds. 
+Binary density: 0.300354
+DNA density upper bound: 0.300446
+	Command being timed: "./my_program -mode expected -w 4 -k 10"
+	User time (seconds): 72.65
+	System time (seconds): 0.03
+	Percent of CPU this job got: 5661%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.28
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24036
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1330
+	Voluntary context switches: 462
+	Involuntary context switches: 161
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 80
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=4, k=10
+Running: ./my_program -mode expected -w 4 -k 11
+
+Running for W = 4 and K = 11
+Alpha of the best result: 0.971207
+GreedyMini time: 1.38068 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 2202207 times out of 4425049 times
+Swapper time: 1.39379 seconds. 
+Binary density: 0.296600
+DNA density upper bound: 0.296646
+	Command being timed: "./my_program -mode expected -w 4 -k 11"
+	User time (seconds): 159.52
+	System time (seconds): 0.03
+	Percent of CPU this job got: 5712%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:02.79
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 25384
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3255
+	Voluntary context switches: 466
+	Involuntary context switches: 294
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 96
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=4, k=11
+Running: ./my_program -mode expected -w 4 -k 12
+
+Running for W = 4 and K = 12
+Alpha of the best result: 0.980437
+GreedyMini time: 2.73747 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 4231594 times out of 8484852 times
+Swapper time: 2.75645 seconds. 
+Binary density: 0.295776
+DNA density upper bound: 0.295784
+	Command being timed: "./my_program -mode expected -w 4 -k 12"
+	User time (seconds): 340.10
+	System time (seconds): 0.04
+	Percent of CPU this job got: 6151%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:05.53
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24512
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 58
+	Minor (reclaiming a frame) page faults: 6860
+	Voluntary context switches: 950
+	Involuntary context switches: 465
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 248
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=4, k=12
+Running: ./my_program -mode expected -w 4 -k 13
+
+Running for W = 4 and K = 13
+Alpha of the best result: 0.997995
+GreedyMini time: 8.31576 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 12143063 times out of 24337890 times
+Swapper time: 8.34082 seconds. 
+Binary density: 0.295647
+DNA density upper bound: 0.295654
+	Command being timed: "./my_program -mode expected -w 4 -k 13"
+	User time (seconds): 1021.80
+	System time (seconds): 0.13
+	Percent of CPU this job got: 6123%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:16.69
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 23952
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 56
+	Minor (reclaiming a frame) page faults: 20443
+	Voluntary context switches: 2223
+	Involuntary context switches: 1192
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 312
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=4, k=13
+Running: ./my_program -mode expected -w 4 -k 14
+
+Running for W = 4 and K = 14
+Alpha of the best result: 0.975659
+GreedyMini time: 29.3623 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 40951988 times out of 81974612 times
+Swapper time: 29.5055 seconds. 
+Binary density: 0.290615
+DNA density upper bound: 0.290619
+	Command being timed: "./my_program -mode expected -w 4 -k 14"
+	User time (seconds): 3675.80
+	System time (seconds): 0.46
+	Percent of CPU this job got: 6228%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:59.02
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24404
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 64
+	Minor (reclaiming a frame) page faults: 65881
+	Voluntary context switches: 4174
+	Involuntary context switches: 2795
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 568
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=4, k=14
+Running: ./my_program -mode expected -w 4 -k 15
+
+Running for W = 4 and K = 15
+Alpha of the best result: 0.992053
+GreedyMini time: 108.806 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 138420208 times out of 277075193 times
+Swapper time: 108.927 seconds. 
+Binary density: 0.289322
+DNA density upper bound: 0.289326
+	Command being timed: "./my_program -mode expected -w 4 -k 15"
+	User time (seconds): 13720.41
+	System time (seconds): 1.03
+	Percent of CPU this job got: 6300%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:37.78
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 80072
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 108
+	Minor (reclaiming a frame) page faults: 209711
+	Voluntary context switches: 5972
+	Involuntary context switches: 8074
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 1080
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=4, k=15
+Running: ./my_program -mode expected -w 5 -k 3
+
+Running for W = 5 and K = 3
+Alpha of the best result: 0.959762
+GreedyMini time: 0.0177058 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 0 times out of 81390 times
+Swapper time: 0.0488064 seconds. 
+Binary density: 0.296875
+DNA density upper bound: 0.308594
+	Command being timed: "./my_program -mode expected -w 5 -k 3"
+	User time (seconds): 3.24
+	System time (seconds): 0.03
+	Percent of CPU this job got: 2846%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.11
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22424
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 675
+	Voluntary context switches: 290
+	Involuntary context switches: 44
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=5, k=3
+Running: ./my_program -mode expected -w 5 -k 4
+
+Running for W = 5 and K = 4
+Alpha of the best result: 0.993609
+GreedyMini time: 0.0195539 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 17012 times out of 56043 times
+Swapper time: 0.0279399 seconds. 
+Binary density: 0.283203
+DNA density upper bound: 0.293945
+	Command being timed: "./my_program -mode expected -w 5 -k 4"
+	User time (seconds): 2.32
+	System time (seconds): 0.01
+	Percent of CPU this job got: 3720%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.06
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22428
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 679
+	Voluntary context switches: 167
+	Involuntary context switches: 52
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=5, k=4
+Running: ./my_program -mode expected -w 5 -k 5
+
+Running for W = 5 and K = 5
+Alpha of the best result: 0.979126
+GreedyMini time: 0.0288017 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 22917 times out of 60524 times
+Swapper time: 0.03609 seconds. 
+Binary density: 0.275391
+DNA density upper bound: 0.279785
+	Command being timed: "./my_program -mode expected -w 5 -k 5"
+	User time (seconds): 3.46
+	System time (seconds): 0.01
+	Percent of CPU this job got: 4464%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24000
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 743
+	Voluntary context switches: 214
+	Involuntary context switches: 47
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=5, k=5
+Running: ./my_program -mode expected -w 5 -k 6
+
+Running for W = 5 and K = 6
+Alpha of the best result: 0.948466
+GreedyMini time: 0.049166 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 43241 times out of 101230 times
+Swapper time: 0.0576369 seconds. 
+Binary density: 0.274414
+DNA density upper bound: 0.274658
+	Command being timed: "./my_program -mode expected -w 5 -k 6"
+	User time (seconds): 6.03
+	System time (seconds): 0.02
+	Percent of CPU this job got: 5010%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.12
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 23996
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 742
+	Voluntary context switches: 190
+	Involuntary context switches: 53
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 40
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=5, k=6
+Running: ./my_program -mode expected -w 5 -k 7
+
+Running for W = 5 and K = 7
+Alpha of the best result: 0.943405
+GreedyMini time: 0.0766016 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 63671 times out of 138918 times
+Swapper time: 0.083457 seconds. 
+Binary density: 0.257568
+DNA density upper bound: 0.258545
+	Command being timed: "./my_program -mode expected -w 5 -k 7"
+	User time (seconds): 9.58
+	System time (seconds): 0.02
+	Percent of CPU this job got: 5584%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.17
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22516
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 811
+	Voluntary context switches: 178
+	Involuntary context switches: 67
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=5, k=7
+Running: ./my_program -mode expected -w 5 -k 8
+
+Running for W = 5 and K = 8
+Alpha of the best result: 0.944858
+GreedyMini time: 0.1572 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 114872 times out of 244054 times
+Swapper time: 0.165332 seconds. 
+Binary density: 0.252930
+DNA density upper bound: 0.253296
+	Command being timed: "./my_program -mode expected -w 5 -k 8"
+	User time (seconds): 19.27
+	System time (seconds): 0.02
+	Percent of CPU this job got: 5742%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.33
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24616
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 868
+	Voluntary context switches: 238
+	Involuntary context switches: 59
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=5, k=8
+Running: ./my_program -mode expected -w 5 -k 9
+
+Running for W = 5 and K = 9
+Alpha of the best result: 0.980075
+GreedyMini time: 0.31586 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 237065 times out of 488258 times
+Swapper time: 0.327133 seconds. 
+Binary density: 0.252441
+DNA density upper bound: 0.252686
+	Command being timed: "./my_program -mode expected -w 5 -k 9"
+	User time (seconds): 38.74
+	System time (seconds): 0.02
+	Percent of CPU this job got: 5882%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.65
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24004
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1001
+	Voluntary context switches: 297
+	Involuntary context switches: 24
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 48
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=5, k=9
+Running: ./my_program -mode expected -w 5 -k 10
+
+Running for W = 5 and K = 10
+Alpha of the best result: 0.988894
+GreedyMini time: 0.788251 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 600814 times out of 1217912 times
+Swapper time: 0.801361 seconds. 
+Binary density: 0.252747
+DNA density upper bound: 0.252823
+	Command being timed: "./my_program -mode expected -w 5 -k 10"
+	User time (seconds): 88.83
+	System time (seconds): 0.03
+	Percent of CPU this job got: 5533%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.60
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22832
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1330
+	Voluntary context switches: 410
+	Involuntary context switches: 177
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=5, k=10
+Running: ./my_program -mode expected -w 5 -k 11
+
+Running for W = 5 and K = 11
+Alpha of the best result: 0.975517
+GreedyMini time: 1.29219 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 915940 times out of 1851373 times
+Swapper time: 1.30811 seconds. 
+Binary density: 0.252228
+DNA density upper bound: 0.252235
+	Command being timed: "./my_program -mode expected -w 5 -k 11"
+	User time (seconds): 159.69
+	System time (seconds): 0.03
+	Percent of CPU this job got: 6089%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:02.62
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24088
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 61
+	Minor (reclaiming a frame) page faults: 3279
+	Voluntary context switches: 644
+	Involuntary context switches: 291
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 112
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=5, k=11
+Running: ./my_program -mode expected -w 5 -k 12
+
+Running for W = 5 and K = 12
+Alpha of the best result: 0.99954
+GreedyMini time: 3.08609 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 966857 times out of 1944702 times
+Swapper time: 3.12042 seconds. 
+Binary density: 0.245476
+DNA density upper bound: 0.245491
+	Command being timed: "./my_program -mode expected -w 5 -k 12"
+	User time (seconds): 385.18
+	System time (seconds): 0.06
+	Percent of CPU this job got: 6151%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.26
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24172
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 19
+	Minor (reclaiming a frame) page faults: 7871
+	Voluntary context switches: 869
+	Involuntary context switches: 1417
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 176
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=5, k=12
+Running: ./my_program -mode expected -w 5 -k 13
+
+Running for W = 5 and K = 13
+Alpha of the best result: 0.98929
+GreedyMini time: 9.77922 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 6511217 times out of 13095396 times
+Swapper time: 9.80163 seconds. 
+Binary density: 0.243675
+DNA density upper bound: 0.243675
+	Command being timed: "./my_program -mode expected -w 5 -k 13"
+	User time (seconds): 1180.57
+	System time (seconds): 0.22
+	Percent of CPU this job got: 6021%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:19.61
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 26424
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 98
+	Minor (reclaiming a frame) page faults: 24317
+	Voluntary context switches: 2664
+	Involuntary context switches: 1212
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 312
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=5, k=13
+Running: ./my_program -mode expected -w 5 -k 14
+
+Running for W = 5 and K = 14
+Alpha of the best result: 0.999473
+GreedyMini time: 30.9182 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 18688290 times out of 37489784 times
+Swapper time: 30.9865 seconds. 
+Binary density: 0.246262
+DNA density upper bound: 0.246267
+	Command being timed: "./my_program -mode expected -w 5 -k 14"
+	User time (seconds): 3852.17
+	System time (seconds): 0.37
+	Percent of CPU this job got: 6207%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:02.06
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 26384
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 76
+	Minor (reclaiming a frame) page faults: 67250
+	Voluntary context switches: 4775
+	Involuntary context switches: 2865
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 568
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=5, k=14
+Running: ./my_program -mode expected -w 5 -k 15
+
+Running for W = 5 and K = 15
+Alpha of the best result: 0.998414
+GreedyMini time: 110.294 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 57539860 times out of 115360814 times
+Swapper time: 110.406 seconds. 
+Binary density: 0.245043
+DNA density upper bound: 0.245046
+	Command being timed: "./my_program -mode expected -w 5 -k 15"
+	User time (seconds): 13884.41
+	System time (seconds): 1.12
+	Percent of CPU this job got: 6289%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:40.76
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 80048
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 102
+	Minor (reclaiming a frame) page faults: 247739
+	Voluntary context switches: 7616
+	Involuntary context switches: 8744
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 1080
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=5, k=15
+Running: ./my_program -mode expected -w 6 -k 3
+
+Running for W = 6 and K = 3
+Alpha of the best result: 0.953757
+GreedyMini time: 0.0203413 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 0 times out of 43465 times
+Swapper time: 0.0308337 seconds. 
+Binary density: 0.253906
+DNA density upper bound: 0.264648
+	Command being timed: "./my_program -mode expected -w 6 -k 3"
+	User time (seconds): 2.27
+	System time (seconds): 0.02
+	Percent of CPU this job got: 3245%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24008
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 679
+	Voluntary context switches: 305
+	Involuntary context switches: 53
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=6, k=3
+Running: ./my_program -mode expected -w 6 -k 4
+
+Running for W = 6 and K = 4
+Alpha of the best result: 0.990334
+GreedyMini time: 0.0215448 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 9036 times out of 46584 times
+Swapper time: 0.0293869 seconds. 
+Binary density: 0.244141
+DNA density upper bound: 0.245117
+	Command being timed: "./my_program -mode expected -w 6 -k 4"
+	User time (seconds): 2.61
+	System time (seconds): 0.01
+	Percent of CPU this job got: 4107%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.06
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 21948
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 683
+	Voluntary context switches: 178
+	Involuntary context switches: 61
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 40
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=6, k=4
+Running: ./my_program -mode expected -w 6 -k 5
+
+Running for W = 6 and K = 5
+Alpha of the best result: 0.992398
+GreedyMini time: 0.0419668 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 26659 times out of 82352 times
+Swapper time: 0.053124 seconds. 
+Binary density: 0.235840
+DNA density upper bound: 0.240723
+	Command being timed: "./my_program -mode expected -w 6 -k 5"
+	User time (seconds): 5.00
+	System time (seconds): 0.01
+	Percent of CPU this job got: 4483%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.11
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 23792
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 742
+	Voluntary context switches: 142
+	Involuntary context switches: 79
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=6, k=5
+Running: ./my_program -mode expected -w 6 -k 6
+
+Running for W = 6 and K = 6
+Alpha of the best result: 0.999344
+GreedyMini time: 0.0718027 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 45289 times out of 110860 times
+Swapper time: 0.0813555 seconds. 
+Binary density: 0.232422
+DNA density upper bound: 0.235229
+	Command being timed: "./my_program -mode expected -w 6 -k 6"
+	User time (seconds): 8.48
+	System time (seconds): 0.01
+	Percent of CPU this job got: 5002%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.17
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24012
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 740
+	Voluntary context switches: 191
+	Involuntary context switches: 37
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=6, k=6
+Running: ./my_program -mode expected -w 6 -k 7
+
+Running for W = 6 and K = 7
+Alpha of the best result: 0.963699
+GreedyMini time: 0.138233 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 77966 times out of 181636 times
+Swapper time: 0.15095 seconds. 
+Binary density: 0.231689
+DNA density upper bound: 0.232483
+	Command being timed: "./my_program -mode expected -w 6 -k 7"
+	User time (seconds): 16.07
+	System time (seconds): 0.02
+	Percent of CPU this job got: 5191%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.31
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 21744
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 809
+	Voluntary context switches: 188
+	Involuntary context switches: 19
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=6, k=7
+Running: ./my_program -mode expected -w 6 -k 8
+
+Running for W = 6 and K = 8
+Alpha of the best result: 0.957733
+GreedyMini time: 0.328713 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 212750 times out of 447238 times
+Swapper time: 0.342039 seconds. 
+Binary density: 0.219666
+DNA density upper bound: 0.219757
+	Command being timed: "./my_program -mode expected -w 6 -k 8"
+	User time (seconds): 34.93
+	System time (seconds): 0.02
+	Percent of CPU this job got: 5088%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.68
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24620
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 868
+	Voluntary context switches: 215
+	Involuntary context switches: 69
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=6, k=8
+Running: ./my_program -mode expected -w 6 -k 9
+
+Running for W = 6 and K = 9
+Alpha of the best result: 0.959547
+GreedyMini time: 0.555301 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 302510 times out of 636142 times
+Swapper time: 0.567018 seconds. 
+Binary density: 0.214661
+DNA density upper bound: 0.214828
+	Command being timed: "./my_program -mode expected -w 6 -k 9"
+	User time (seconds): 62.70
+	System time (seconds): 0.03
+	Percent of CPU this job got: 5499%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.14
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22608
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1004
+	Voluntary context switches: 368
+	Involuntary context switches: 76
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 48
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=6, k=9
+Running: ./my_program -mode expected -w 6 -k 10
+
+Running for W = 6 and K = 10
+Alpha of the best result: 0.981616
+GreedyMini time: 0.975718 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 584423 times out of 1190557 times
+Swapper time: 0.988917 seconds. 
+Binary density: 0.213303
+DNA density upper bound: 0.213364
+	Command being timed: "./my_program -mode expected -w 6 -k 10"
+	User time (seconds): 118.28
+	System time (seconds): 0.03
+	Percent of CPU this job got: 5963%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.98
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 26072
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1326
+	Voluntary context switches: 341
+	Involuntary context switches: 196
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 80
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=6, k=10
+Running: ./my_program -mode expected -w 6 -k 11
+
+Running for W = 6 and K = 11
+Alpha of the best result: 0.995969
+GreedyMini time: 2.50415 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 1448634 times out of 2927810 times
+Swapper time: 2.51901 seconds. 
+Binary density: 0.214050
+DNA density upper bound: 0.214088
+	Command being timed: "./my_program -mode expected -w 6 -k 11"
+	User time (seconds): 283.48
+	System time (seconds): 0.04
+	Percent of CPU this job got: 5604%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:05.05
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24080
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 40
+	Minor (reclaiming a frame) page faults: 4759
+	Voluntary context switches: 654
+	Involuntary context switches: 526
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 112
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=6, k=11
+Running: ./my_program -mode expected -w 6 -k 12
+
+Running for W = 6 and K = 12
+Alpha of the best result: 0.999469
+GreedyMini time: 4.97433 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 2561501 times out of 5187999 times
+Swapper time: 4.99514 seconds. 
+Binary density: 0.215549
+DNA density upper bound: 0.215563
+	Command being timed: "./my_program -mode expected -w 6 -k 12"
+	User time (seconds): 603.10
+	System time (seconds): 0.06
+	Percent of CPU this job got: 6026%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:10.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22132
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 14
+	Minor (reclaiming a frame) page faults: 9399
+	Voluntary context switches: 951
+	Involuntary context switches: 732
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 184
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=6, k=12
+Running: ./my_program -mode expected -w 6 -k 13
+
+Running for W = 6 and K = 13
+Alpha of the best result: 0.988662
+GreedyMini time: 12.5148 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 6111457 times out of 12306738 times
+Swapper time: 12.5375 seconds. 
+Binary density: 0.214252
+DNA density upper bound: 0.214255
+	Command being timed: "./my_program -mode expected -w 6 -k 13"
+	User time (seconds): 1542.57
+	System time (seconds): 0.16
+	Percent of CPU this job got: 6149%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:25.08
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24356
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 103
+	Minor (reclaiming a frame) page faults: 26425
+	Voluntary context switches: 2819
+	Involuntary context switches: 1446
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 312
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=6, k=13
+Running: ./my_program -mode expected -w 6 -k 14
+
+Running for W = 6 and K = 14
+Alpha of the best result: 0.99761
+GreedyMini time: 38.1721 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 13609722 times out of 27374337 times
+Swapper time: 38.2237 seconds. 
+Binary density: 0.209924
+DNA density upper bound: 0.209926
+	Command being timed: "./my_program -mode expected -w 6 -k 14"
+	User time (seconds): 4607.73
+	System time (seconds): 0.40
+	Percent of CPU this job got: 6027%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:16.45
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 27472
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 118
+	Minor (reclaiming a frame) page faults: 97205
+	Voluntary context switches: 4789
+	Involuntary context switches: 5130
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 568
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=6, k=14
+Running: ./my_program -mode expected -w 6 -k 15
+
+Running for W = 6 and K = 15
+Alpha of the best result: 0.99452
+GreedyMini time: 111.704 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 49168857 times out of 98809762 times
+Swapper time: 111.779 seconds. 
+Binary density: 0.208527
+DNA density upper bound: 0.208529
+	Command being timed: "./my_program -mode expected -w 6 -k 15"
+	User time (seconds): 14099.41
+	System time (seconds): 0.98
+	Percent of CPU this job got: 6307%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:43.56
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 78040
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 112
+	Minor (reclaiming a frame) page faults: 206584
+	Voluntary context switches: 7562
+	Involuntary context switches: 8271
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 1088
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=6, k=15
+Running: ./my_program -mode expected -w 7 -k 3
+
+Running for W = 7 and K = 3
+Alpha of the best result: 0.996285
+GreedyMini time: 0.0229239 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 0 times out of 22408 times
+Swapper time: 0.0327646 seconds. 
+Binary density: 0.223633
+DNA density upper bound: 0.232910
+	Command being timed: "./my_program -mode expected -w 7 -k 3"
+	User time (seconds): 2.70
+	System time (seconds): 0.01
+	Percent of CPU this job got: 3776%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24504
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 673
+	Voluntary context switches: 348
+	Involuntary context switches: 51
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=7, k=3
+Running: ./my_program -mode expected -w 7 -k 4
+
+Running for W = 7 and K = 4
+Alpha of the best result: 0.998487
+GreedyMini time: 0.0290581 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 5421 times out of 27724 times
+Swapper time: 0.040896 seconds. 
+Binary density: 0.213379
+DNA density upper bound: 0.215088
+	Command being timed: "./my_program -mode expected -w 7 -k 4"
+	User time (seconds): 3.73
+	System time (seconds): 0.01
+	Percent of CPU this job got: 4214%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.08
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24508
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 673
+	Voluntary context switches: 178
+	Involuntary context switches: 19
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=7, k=4
+Running: ./my_program -mode expected -w 7 -k 5
+
+Running for W = 7 and K = 5
+Alpha of the best result: 0.991294
+GreedyMini time: 0.0608995 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 13559 times out of 47820 times
+Swapper time: 0.0686264 seconds. 
+Binary density: 0.206543
+DNA density upper bound: 0.209351
+	Command being timed: "./my_program -mode expected -w 7 -k 5"
+	User time (seconds): 7.41
+	System time (seconds): 0.01
+	Percent of CPU this job got: 5120%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.14
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 23996
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 743
+	Voluntary context switches: 171
+	Involuntary context switches: 43
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=7, k=5
+Running: ./my_program -mode expected -w 7 -k 6
+
+Running for W = 7 and K = 6
+Alpha of the best result: 0.961592
+GreedyMini time: 0.110415 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 31505 times out of 80894 times
+Swapper time: 0.117769 seconds. 
+Binary density: 0.202759
+DNA density upper bound: 0.203979
+	Command being timed: "./my_program -mode expected -w 7 -k 6"
+	User time (seconds): 13.78
+	System time (seconds): 0.01
+	Percent of CPU this job got: 5725%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.24
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 23996
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 742
+	Voluntary context switches: 177
+	Involuntary context switches: 102
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=7, k=6
+Running: ./my_program -mode expected -w 7 -k 7
+
+Running for W = 7 and K = 7
+Alpha of the best result: 0.991509
+GreedyMini time: 0.327898 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 97874 times out of 221267 times
+Swapper time: 0.340325 seconds. 
+Binary density: 0.201050
+DNA density upper bound: 0.201324
+	Command being timed: "./my_program -mode expected -w 7 -k 7"
+	User time (seconds): 34.53
+	System time (seconds): 0.02
+	Percent of CPU this job got: 5037%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.68
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24564
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 802
+	Voluntary context switches: 235
+	Involuntary context switches: 72
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 48
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=7, k=7
+Running: ./my_program -mode expected -w 7 -k 8
+
+Running for W = 7 and K = 8
+Alpha of the best result: 0.985287
+GreedyMini time: 0.569343 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 148759 times out of 332650 times
+Swapper time: 0.582326 seconds. 
+Binary density: 0.200623
+DNA density upper bound: 0.200775
+	Command being timed: "./my_program -mode expected -w 7 -k 8"
+	User time (seconds): 63.57
+	System time (seconds): 0.02
+	Percent of CPU this job got: 5435%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.17
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24608
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 868
+	Voluntary context switches: 249
+	Involuntary context switches: 116
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=7, k=8
+Running: ./my_program -mode expected -w 7 -k 9
+
+Running for W = 7 and K = 9
+Alpha of the best result: 0.976635
+GreedyMini time: 1.24664 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 322553 times out of 679981 times
+Swapper time: 1.26135 seconds. 
+Binary density: 0.191971
+DNA density upper bound: 0.192047
+	Command being timed: "./my_program -mode expected -w 7 -k 9"
+	User time (seconds): 135.54
+	System time (seconds): 0.03
+	Percent of CPU this job got: 5358%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:02.53
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24004
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2
+	Minor (reclaiming a frame) page faults: 1879
+	Voluntary context switches: 261
+	Involuntary context switches: 179
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 48
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=7, k=9
+Running: ./my_program -mode expected -w 7 -k 10
+
+Running for W = 7 and K = 10
+Alpha of the best result: 0.980149
+GreedyMini time: 2.33226 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 212509 times out of 445442 times
+Swapper time: 2.35692 seconds. 
+Binary density: 0.186485
+DNA density upper bound: 0.186512
+	Command being timed: "./my_program -mode expected -w 7 -k 10"
+	User time (seconds): 259.37
+	System time (seconds): 0.04
+	Percent of CPU this job got: 5493%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.72
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24020
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2660
+	Voluntary context switches: 470
+	Involuntary context switches: 946
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 80
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=7, k=10
+Running: ./my_program -mode expected -w 7 -k 11
+
+Running for W = 7 and K = 11
+Alpha of the best result: 0.993567
+GreedyMini time: 4.13969 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 1005446 times out of 2060157 times
+Swapper time: 4.15398 seconds. 
+Binary density: 0.186275
+DNA density upper bound: 0.186300
+	Command being timed: "./my_program -mode expected -w 7 -k 11"
+	User time (seconds): 496.16
+	System time (seconds): 0.05
+	Percent of CPU this job got: 5952%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:08.33
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22032
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 32
+	Minor (reclaiming a frame) page faults: 5357
+	Voluntary context switches: 690
+	Involuntary context switches: 737
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 160
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=7, k=11
+Running: ./my_program -mode expected -w 7 -k 12
+
+Running for W = 7 and K = 12
+Alpha of the best result: 0.996421
+GreedyMini time: 8.30191 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 2074081 times out of 4239233 times
+Swapper time: 8.36083 seconds. 
+Binary density: 0.186823
+DNA density upper bound: 0.186846
+	Command being timed: "./my_program -mode expected -w 7 -k 12"
+	User time (seconds): 1025.94
+	System time (seconds): 0.07
+	Percent of CPU this job got: 6121%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:16.76
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22588
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 48
+	Minor (reclaiming a frame) page faults: 11841
+	Voluntary context switches: 1036
+	Involuntary context switches: 1135
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 184
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=7, k=12
+Running: ./my_program -mode expected -w 7 -k 13
+
+Running for W = 7 and K = 13
+Alpha of the best result: 0.998597
+GreedyMini time: 19.9396 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 4399522 times out of 8895330 times
+Swapper time: 19.9718 seconds. 
+Binary density: 0.189553
+DNA density upper bound: 0.189562
+	Command being timed: "./my_program -mode expected -w 7 -k 13"
+	User time (seconds): 2440.65
+	System time (seconds): 0.22
+	Percent of CPU this job got: 6106%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:39.97
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24368
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 62
+	Minor (reclaiming a frame) page faults: 26777
+	Voluntary context switches: 3382
+	Involuntary context switches: 1990
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 320
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=7, k=13
+Running: ./my_program -mode expected -w 7 -k 14
+
+Running for W = 7 and K = 14
+Alpha of the best result: 0.995272
+GreedyMini time: 48.7327 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 9496739 times out of 19179559 times
+Swapper time: 48.814 seconds. 
+Binary density: 0.188788
+DNA density upper bound: 0.188795
+	Command being timed: "./my_program -mode expected -w 7 -k 14"
+	User time (seconds): 6131.75
+	System time (seconds): 0.42
+	Percent of CPU this job got: 6281%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:37.62
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 23380
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 122
+	Minor (reclaiming a frame) page faults: 95219
+	Voluntary context switches: 6047
+	Involuntary context switches: 3978
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 568
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=7, k=14
+Running: ./my_program -mode expected -w 7 -k 15
+
+Running for W = 7 and K = 15
+Alpha of the best result: 0.998138
+GreedyMini time: 140.311 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 27278550 times out of 54899280 times
+Swapper time: 140.438 seconds. 
+Binary density: 0.185629
+DNA density upper bound: 0.185631
+	Command being timed: "./my_program -mode expected -w 7 -k 15"
+	User time (seconds): 17665.77
+	System time (seconds): 1.18
+	Percent of CPU this job got: 6290%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:40.85
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 75944
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 173
+	Minor (reclaiming a frame) page faults: 239773
+	Voluntary context switches: 8864
+	Involuntary context switches: 9551
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 1080
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=7, k=15
+Running: ./my_program -mode expected -w 8 -k 3
+
+Running for W = 8 and K = 3
+Alpha of the best result: 0.998045
+GreedyMini time: 0.0290267 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 5719 times out of 28461 times
+Swapper time: 0.0397635 seconds. 
+Binary density: 0.201660
+DNA density upper bound: 0.211670
+	Command being timed: "./my_program -mode expected -w 8 -k 3"
+	User time (seconds): 3.53
+	System time (seconds): 0.02
+	Percent of CPU this job got: 3824%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.09
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24004
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 676
+	Voluntary context switches: 265
+	Involuntary context switches: 47
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=8, k=3
+Running: ./my_program -mode expected -w 8 -k 4
+
+Running for W = 8 and K = 4
+Alpha of the best result: 0.974694
+GreedyMini time: 0.0465556 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 6477 times out of 33291 times
+Swapper time: 0.0538039 seconds. 
+Binary density: 0.190186
+DNA density upper bound: 0.192261
+	Command being timed: "./my_program -mode expected -w 8 -k 4"
+	User time (seconds): 5.64
+	System time (seconds): 0.02
+	Percent of CPU this job got: 4720%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.12
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24012
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 680
+	Voluntary context switches: 142
+	Involuntary context switches: 51
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=8, k=4
+Running: ./my_program -mode expected -w 8 -k 5
+
+Running for W = 8 and K = 5
+Alpha of the best result: 0.99195
+GreedyMini time: 0.102683 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 13858 times out of 55389 times
+Swapper time: 0.111522 seconds. 
+Binary density: 0.184814
+DNA density upper bound: 0.186401
+	Command being timed: "./my_program -mode expected -w 8 -k 5"
+	User time (seconds): 13.00
+	System time (seconds): 0.01
+	Percent of CPU this job got: 5662%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.23
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24004
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 741
+	Voluntary context switches: 193
+	Involuntary context switches: 46
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=8, k=5
+Running: ./my_program -mode expected -w 8 -k 6
+
+Running for W = 8 and K = 6
+Alpha of the best result: 0.980521
+GreedyMini time: 0.301497 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 51033 times out of 160040 times
+Swapper time: 0.312981 seconds. 
+Binary density: 0.180664
+DNA density upper bound: 0.181396
+	Command being timed: "./my_program -mode expected -w 8 -k 6"
+	User time (seconds): 32.46
+	System time (seconds): 0.02
+	Percent of CPU this job got: 5141%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.63
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22460
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 747
+	Voluntary context switches: 229
+	Involuntary context switches: 57
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=8, k=6
+Running: ./my_program -mode expected -w 8 -k 7
+
+Running for W = 8 and K = 7
+Alpha of the best result: 0.989498
+GreedyMini time: 0.669281 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 56851 times out of 145358 times
+Swapper time: 0.683201 seconds. 
+Binary density: 0.178986
+DNA density upper bound: 0.179413
+	Command being timed: "./my_program -mode expected -w 8 -k 7"
+	User time (seconds): 79.10
+	System time (seconds): 0.03
+	Percent of CPU this job got: 5751%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.37
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24016
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 808
+	Voluntary context switches: 212
+	Involuntary context switches: 202
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=8, k=7
+Running: ./my_program -mode expected -w 8 -k 8
+
+Running for W = 8 and K = 8
+Alpha of the best result: 0.989074
+GreedyMini time: 1.07066 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 237951 times out of 539107 times
+Swapper time: 1.08746 seconds. 
+Binary density: 0.177521
+DNA density upper bound: 0.178001
+	Command being timed: "./my_program -mode expected -w 8 -k 8"
+	User time (seconds): 124.51
+	System time (seconds): 0.03
+	Percent of CPU this job got: 5694%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:02.18
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 21956
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1283
+	Voluntary context switches: 367
+	Involuntary context switches: 146
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 48
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=8, k=8
+Running: ./my_program -mode expected -w 8 -k 9
+
+Running for W = 8 and K = 9
+Alpha of the best result: 0.991679
+GreedyMini time: 2.0012 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 398345 times out of 905648 times
+Swapper time: 2.01349 seconds. 
+Binary density: 0.177376
+DNA density upper bound: 0.177567
+	Command being timed: "./my_program -mode expected -w 8 -k 9"
+	User time (seconds): 238.93
+	System time (seconds): 0.04
+	Percent of CPU this job got: 5912%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.04
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22624
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1693
+	Voluntary context switches: 308
+	Involuntary context switches: 473
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=8, k=9
+Running: ./my_program -mode expected -w 8 -k 10
+
+Running for W = 8 and K = 10
+Alpha of the best result: 0.990824
+GreedyMini time: 4.11035 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 944780 times out of 1971721 times
+Swapper time: 4.12929 seconds. 
+Binary density: 0.170868
+DNA density upper bound: 0.170893
+	Command being timed: "./my_program -mode expected -w 8 -k 10"
+	User time (seconds): 491.52
+	System time (seconds): 0.04
+	Percent of CPU this job got: 5934%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:08.28
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24576
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 29
+	Minor (reclaiming a frame) page faults: 3120
+	Voluntary context switches: 637
+	Involuntary context switches: 671
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 80
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=8, k=10
+Running: ./my_program -mode expected -w 8 -k 11
+
+Running for W = 8 and K = 11
+Alpha of the best result: 0.994057
+GreedyMini time: 8.07375 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 1432458 times out of 2977067 times
+Swapper time: 8.09309 seconds. 
+Binary density: 0.165424
+DNA density upper bound: 0.165458
+	Command being timed: "./my_program -mode expected -w 8 -k 11"
+	User time (seconds): 975.76
+	System time (seconds): 0.09
+	Percent of CPU this job got: 6023%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:16.20
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24084
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 84
+	Minor (reclaiming a frame) page faults: 7792
+	Voluntary context switches: 712
+	Involuntary context switches: 1062
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 120
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=8, k=11
+Running: ./my_program -mode expected -w 8 -k 12
+
+Running for W = 8 and K = 12
+Alpha of the best result: 0.995039
+GreedyMini time: 16.2922 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 2654627 times out of 5454787 times
+Swapper time: 16.3191 seconds. 
+Binary density: 0.165051
+DNA density upper bound: 0.165057
+	Command being timed: "./my_program -mode expected -w 8 -k 12"
+	User time (seconds): 2006.98
+	System time (seconds): 0.14
+	Percent of CPU this job got: 6144%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:32.66
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24180
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 104
+	Minor (reclaiming a frame) page faults: 16479
+	Voluntary context switches: 1078
+	Involuntary context switches: 1704
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 184
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=8, k=12
+Running: ./my_program -mode expected -w 8 -k 13
+
+Running for W = 8 and K = 13
+Alpha of the best result: 0.994475
+GreedyMini time: 34.5881 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 5789068 times out of 11823327 times
+Swapper time: 34.6267 seconds. 
+Binary density: 0.164719
+DNA density upper bound: 0.164724
+	Command being timed: "./my_program -mode expected -w 8 -k 13"
+	User time (seconds): 4334.73
+	System time (seconds): 0.28
+	Percent of CPU this job got: 6256%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:09.29
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 21336
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 64
+	Minor (reclaiming a frame) page faults: 43967
+	Voluntary context switches: 2926
+	Involuntary context switches: 2951
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 312
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=8, k=13
+Running: ./my_program -mode expected -w 8 -k 14
+
+Running for W = 8 and K = 14
+Alpha of the best result: 0.999275
+GreedyMini time: 79.7186 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 12149551 times out of 24647607 times
+Swapper time: 79.8003 seconds. 
+Binary density: 0.166912
+DNA density upper bound: 0.166912
+	Command being timed: "./my_program -mode expected -w 8 -k 14"
+	User time (seconds): 9997.48
+	System time (seconds): 0.54
+	Percent of CPU this job got: 6263%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:39.63
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 26004
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 207
+	Minor (reclaiming a frame) page faults: 93155
+	Voluntary context switches: 6167
+	Involuntary context switches: 6005
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 568
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=8, k=14
+Running: ./my_program -mode expected -w 8 -k 15
+
+Running for W = 8 and K = 15
+Alpha of the best result: 0.996058
+GreedyMini time: 198.469 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 26975380 times out of 54458340 times
+Swapper time: 198.652 seconds. 
+Binary density: 0.169410
+DNA density upper bound: 0.169413
+	Command being timed: "./my_program -mode expected -w 8 -k 15"
+	User time (seconds): 25152.51
+	System time (seconds): 1.61
+	Percent of CPU this job got: 6330%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 6:37.32
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 77020
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 76
+	Minor (reclaiming a frame) page faults: 258935
+	Voluntary context switches: 10798
+	Involuntary context switches: 13121
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 1080
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=8, k=15
+Running: ./my_program -mode expected -w 9 -k 3
+
+Running for W = 9 and K = 3
+Alpha of the best result: 0.997561
+GreedyMini time: 0.0377216 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 2322 times out of 14162 times
+Swapper time: 0.0490773 seconds. 
+Binary density: 0.183105
+DNA density upper bound: 0.192017
+	Command being timed: "./my_program -mode expected -w 9 -k 3"
+	User time (seconds): 4.58
+	System time (seconds): 0.03
+	Percent of CPU this job got: 4090%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.11
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24012
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 678
+	Voluntary context switches: 300
+	Involuntary context switches: 27
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=9, k=3
+Running: ./my_program -mode expected -w 9 -k 4
+
+Running for W = 9 and K = 4
+Alpha of the best result: 0.952022
+GreedyMini time: 0.112889 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 5756 times out of 30027 times
+Swapper time: 0.126719 seconds. 
+Binary density: 0.172363
+DNA density upper bound: 0.174683
+	Command being timed: "./my_program -mode expected -w 9 -k 4"
+	User time (seconds): 11.94
+	System time (seconds): 0.02
+	Percent of CPU this job got: 4639%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.25
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22440
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 682
+	Voluntary context switches: 193
+	Involuntary context switches: 3
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=9, k=4
+Running: ./my_program -mode expected -w 9 -k 5
+
+Running for W = 9 and K = 5
+Alpha of the best result: 0.956944
+GreedyMini time: 0.276101 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 17289 times out of 56846 times
+Swapper time: 0.290091 seconds. 
+Binary density: 0.167297
+DNA density upper bound: 0.168884
+	Command being timed: "./my_program -mode expected -w 9 -k 5"
+	User time (seconds): 29.58
+	System time (seconds): 0.02
+	Percent of CPU this job got: 5026%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.58
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24008
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 742
+	Voluntary context switches: 232
+	Involuntary context switches: 79
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=9, k=5
+Running: ./my_program -mode expected -w 9 -k 6
+
+Running for W = 9 and K = 6
+Alpha of the best result: 0.984471
+GreedyMini time: 0.402589 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 19926 times out of 81986 times
+Swapper time: 0.414515 seconds. 
+Binary density: 0.163300
+DNA density upper bound: 0.164078
+	Command being timed: "./my_program -mode expected -w 9 -k 6"
+	User time (seconds): 50.48
+	System time (seconds): 0.02
+	Percent of CPU this job got: 6013%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.84
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24012
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 740
+	Voluntary context switches: 155
+	Involuntary context switches: 149
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=9, k=6
+Running: ./my_program -mode expected -w 9 -k 7
+
+Running for W = 9 and K = 7
+Alpha of the best result: 0.990793
+GreedyMini time: 0.857704 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 66097 times out of 190041 times
+Swapper time: 0.874579 seconds. 
+Binary density: 0.160980
+DNA density upper bound: 0.161575
+	Command being timed: "./my_program -mode expected -w 9 -k 7"
+	User time (seconds): 107.86
+	System time (seconds): 0.03
+	Percent of CPU this job got: 6137%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.75
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 21920
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 809
+	Voluntary context switches: 268
+	Involuntary context switches: 215
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 48
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=9, k=7
+Running: ./my_program -mode expected -w 9 -k 8
+
+Running for W = 9 and K = 8
+Alpha of the best result: 0.994019
+GreedyMini time: 2.33236 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 88310 times out of 211330 times
+Swapper time: 2.34663 seconds. 
+Binary density: 0.159622
+DNA density upper bound: 0.159809
+	Command being timed: "./my_program -mode expected -w 9 -k 8"
+	User time (seconds): 263.53
+	System time (seconds): 0.03
+	Percent of CPU this job got: 5601%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.70
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22560
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 53
+	Minor (reclaiming a frame) page faults: 1677
+	Voluntary context switches: 362
+	Involuntary context switches: 812
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 48
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=9, k=8
+Running: ./my_program -mode expected -w 9 -k 9
+
+Running for W = 9 and K = 9
+Alpha of the best result: 0.994279
+GreedyMini time: 4.50655 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 386991 times out of 896258 times
+Swapper time: 4.52268 seconds. 
+Binary density: 0.159153
+DNA density upper bound: 0.159218
+	Command being timed: "./my_program -mode expected -w 9 -k 9"
+	User time (seconds): 519.17
+	System time (seconds): 0.04
+	Percent of CPU this job got: 5728%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:09.06
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24024
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 6
+	Minor (reclaiming a frame) page faults: 2478
+	Voluntary context switches: 549
+	Involuntary context switches: 759
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=9, k=9
+Running: ./my_program -mode expected -w 9 -k 10
+
+Running for W = 9 and K = 10
+Alpha of the best result: 0.999223
+GreedyMini time: 7.8868 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 554740 times out of 1259261 times
+Swapper time: 7.90884 seconds. 
+Binary density: 0.158913
+DNA density upper bound: 0.159034
+	Command being timed: "./my_program -mode expected -w 9 -k 10"
+	User time (seconds): 968.26
+	System time (seconds): 0.09
+	Percent of CPU this job got: 6107%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.85
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 21944
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 78
+	Minor (reclaiming a frame) page faults: 4186
+	Voluntary context switches: 555
+	Involuntary context switches: 1020
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 88
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=9, k=10
+Running: ./my_program -mode expected -w 9 -k 11
+
+Running for W = 9 and K = 11
+Alpha of the best result: 0.989352
+GreedyMini time: 17.0115 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 1451217 times out of 3068101 times
+Swapper time: 17.0401 seconds. 
+Binary density: 0.154378
+DNA density upper bound: 0.154395
+	Command being timed: "./my_program -mode expected -w 9 -k 11"
+	User time (seconds): 2021.95
+	System time (seconds): 0.07
+	Percent of CPU this job got: 5924%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:34.13
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 26116
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 41
+	Minor (reclaiming a frame) page faults: 10196
+	Voluntary context switches: 793
+	Involuntary context switches: 1695
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 120
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=9, k=11
+Running: ./my_program -mode expected -w 9 -k 12
+
+Running for W = 9 and K = 12
+Alpha of the best result: 0.996294
+GreedyMini time: 30.5278 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 1905740 times out of 3951706 times
+Swapper time: 30.5688 seconds. 
+Binary density: 0.148871
+DNA density upper bound: 0.148879
+	Command being timed: "./my_program -mode expected -w 9 -k 12"
+	User time (seconds): 3850.42
+	System time (seconds): 0.18
+	Percent of CPU this job got: 6292%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:01.19
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 23232
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 83
+	Minor (reclaiming a frame) page faults: 24450
+	Voluntary context switches: 1184
+	Involuntary context switches: 2507
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 256
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=9, k=12
+Running: ./my_program -mode expected -w 9 -k 13
+
+Running for W = 9 and K = 13
+Alpha of the best result: 0.977134
+GreedyMini time: 76.5073 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 4660466 times out of 9511619 times
+Swapper time: 76.5777 seconds. 
+Binary density: 0.149287
+DNA density upper bound: 0.149291
+	Command being timed: "./my_program -mode expected -w 9 -k 13"
+	User time (seconds): 8992.59
+	System time (seconds): 0.45
+	Percent of CPU this job got: 5870%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:33.19
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22296
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 188
+	Minor (reclaiming a frame) page faults: 49563
+	Voluntary context switches: 3140
+	Involuntary context switches: 6557
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 312
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=9, k=13
+Running: ./my_program -mode expected -w 9 -k 14
+
+Running for W = 9 and K = 14
+Alpha of the best result: 0.99659
+GreedyMini time: 156.904 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 10442179 times out of 21326149 times
+Swapper time: 156.996 seconds. 
+Binary density: 0.151221
+DNA density upper bound: 0.151223
+	Command being timed: "./my_program -mode expected -w 9 -k 14"
+	User time (seconds): 18918.03
+	System time (seconds): 0.72
+	Percent of CPU this job got: 6023%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:14.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 30732
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 136
+	Minor (reclaiming a frame) page faults: 114652
+	Voluntary context switches: 6998
+	Involuntary context switches: 9866
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 568
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=9, k=14
+Running: ./my_program -mode expected -w 9 -k 15
+
+Running for W = 9 and K = 15
+Alpha of the best result: 0.997816
+GreedyMini time: 322.867 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 19849613 times out of 40459757 times
+Swapper time: 323.009 seconds. 
+Binary density: 0.152080
+DNA density upper bound: 0.152081
+	Command being timed: "./my_program -mode expected -w 9 -k 15"
+	User time (seconds): 40819.94
+	System time (seconds): 2.04
+	Percent of CPU this job got: 6317%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 10:46.18
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 68836
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 171
+	Minor (reclaiming a frame) page faults: 261279
+	Voluntary context switches: 9888
+	Involuntary context switches: 20310
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 1080
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=9, k=15
+Running: ./my_program -mode expected -w 10 -k 3
+
+Running for W = 10 and K = 3
+Alpha of the best result: 0.992278
+GreedyMini time: 0.0759209 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 2711 times out of 21514 times
+Swapper time: 0.0917111 seconds. 
+Binary density: 0.169922
+DNA density upper bound: 0.176941
+	Command being timed: "./my_program -mode expected -w 10 -k 3"
+	User time (seconds): 8.08
+	System time (seconds): 0.02
+	Percent of CPU this job got: 4138%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.19
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24012
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 679
+	Voluntary context switches: 295
+	Involuntary context switches: 12
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 40
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=10, k=3
+Running: ./my_program -mode expected -w 10 -k 4
+
+Running for W = 10 and K = 4
+Alpha of the best result: 0.952996
+GreedyMini time: 0.135652 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 6106 times out of 31682 times
+Swapper time: 0.146343 seconds. 
+Binary density: 0.158142
+DNA density upper bound: 0.160522
+	Command being timed: "./my_program -mode expected -w 10 -k 4"
+	User time (seconds): 17.07
+	System time (seconds): 0.02
+	Percent of CPU this job got: 5587%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.30
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22436
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 682
+	Voluntary context switches: 204
+	Involuntary context switches: 17
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=10, k=4
+Running: ./my_program -mode expected -w 10 -k 5
+
+Running for W = 10 and K = 5
+Alpha of the best result: 0.977894
+GreedyMini time: 0.526557 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 11446 times out of 100392 times
+Swapper time: 0.540275 seconds. 
+Binary density: 0.153076
+DNA density upper bound: 0.154205
+	Command being timed: "./my_program -mode expected -w 10 -k 5"
+	User time (seconds): 55.89
+	System time (seconds): 0.02
+	Percent of CPU this job got: 5143%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.08
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24008
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 742
+	Voluntary context switches: 285
+	Involuntary context switches: 92
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=10, k=5
+Running: ./my_program -mode expected -w 10 -k 6
+
+Running for W = 10 and K = 6
+Alpha of the best result: 0.962167
+GreedyMini time: 1.02295 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 42947 times out of 179211 times
+Swapper time: 1.03675 seconds. 
+Binary density: 0.149139
+DNA density upper bound: 0.149872
+	Command being timed: "./my_program -mode expected -w 10 -k 6"
+	User time (seconds): 113.78
+	System time (seconds): 0.03
+	Percent of CPU this job got: 5464%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:02.08
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22456
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1092
+	Voluntary context switches: 313
+	Involuntary context switches: 230
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=10, k=6
+Running: ./my_program -mode expected -w 10 -k 7
+
+Running for W = 10 and K = 7
+Alpha of the best result: 0.981058
+GreedyMini time: 1.89812 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 94936 times out of 300825 times
+Swapper time: 1.91814 seconds. 
+Binary density: 0.147186
+DNA density upper bound: 0.147221
+	Command being timed: "./my_program -mode expected -w 10 -k 7"
+	User time (seconds): 226.87
+	System time (seconds): 0.03
+	Percent of CPU this job got: 5883%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.85
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 23988
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1131
+	Voluntary context switches: 356
+	Involuntary context switches: 308
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 48
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=10, k=7
+Running: ./my_program -mode expected -w 10 -k 8
+
+Running for W = 10 and K = 8
+Alpha of the best result: 0.998917
+GreedyMini time: 3.92366 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 204064 times out of 581060 times
+Swapper time: 3.96407 seconds. 
+Binary density: 0.145390
+DNA density upper bound: 0.145557
+	Command being timed: "./my_program -mode expected -w 10 -k 8"
+	User time (seconds): 477.74
+	System time (seconds): 0.03
+	Percent of CPU this job got: 6018%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:07.93
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24016
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 4
+	Minor (reclaiming a frame) page faults: 2019
+	Voluntary context switches: 363
+	Involuntary context switches: 722
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 56
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=10, k=8
+Running: ./my_program -mode expected -w 10 -k 9
+
+Running for W = 10 and K = 9
+Alpha of the best result: 0.996816
+GreedyMini time: 8.47663 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 560250 times out of 1372721 times
+Swapper time: 8.50008 seconds. 
+Binary density: 0.144655
+DNA density upper bound: 0.144687
+	Command being timed: "./my_program -mode expected -w 10 -k 9"
+	User time (seconds): 1006.23
+	System time (seconds): 0.04
+	Percent of CPU this job got: 5911%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:17.02
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22644
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 105
+	Minor (reclaiming a frame) page faults: 3421
+	Voluntary context switches: 486
+	Involuntary context switches: 1034
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 72
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=10, k=9
+Running: ./my_program -mode expected -w 10 -k 10
+
+Running for W = 10 and K = 10
+Alpha of the best result: 0.99949
+GreedyMini time: 15.9204 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 1131239 times out of 2547340 times
+Swapper time: 15.9443 seconds. 
+Binary density: 0.143914
+DNA density upper bound: 0.143946
+	Command being timed: "./my_program -mode expected -w 10 -k 10"
+	User time (seconds): 1946.45
+	System time (seconds): 0.12
+	Percent of CPU this job got: 6099%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:31.91
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24000
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 169
+	Minor (reclaiming a frame) page faults: 6233
+	Voluntary context switches: 763
+	Involuntary context switches: 1703
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 88
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=10, k=10
+Running: ./my_program -mode expected -w 10 -k 11
+
+Running for W = 10 and K = 11
+Alpha of the best result: 0.997059
+GreedyMini time: 34.5805 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 1997144 times out of 4424118 times
+Swapper time: 34.6294 seconds. 
+Binary density: 0.144115
+DNA density upper bound: 0.144139
+	Command being timed: "./my_program -mode expected -w 10 -k 11"
+	User time (seconds): 4108.95
+	System time (seconds): 0.16
+	Percent of CPU this job got: 5929%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:09.29
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 23020
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 102
+	Minor (reclaiming a frame) page faults: 14337
+	Voluntary context switches: 961
+	Involuntary context switches: 2740
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 120
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=10, k=11
+Running: ./my_program -mode expected -w 10 -k 12
+
+Running for W = 10 and K = 12
+Alpha of the best result: 0.99768
+GreedyMini time: 64.5867 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 3107648 times out of 6765426 times
+Swapper time: 64.6314 seconds. 
+Binary density: 0.141615
+DNA density upper bound: 0.141626
+	Command being timed: "./my_program -mode expected -w 10 -k 12"
+	User time (seconds): 7929.16
+	System time (seconds): 0.24
+	Percent of CPU this job got: 6131%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:09.32
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24156
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 62
+	Minor (reclaiming a frame) page faults: 25733
+	Voluntary context switches: 1302
+	Involuntary context switches: 4671
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 184
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=10, k=12
+Running: ./my_program -mode expected -w 10 -k 13
+
+Running for W = 10 and K = 13
+Alpha of the best result: 0.997514
+GreedyMini time: 142.44 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 6379323 times out of 13261279 times
+Swapper time: 142.505 seconds. 
+Binary density: 0.135801
+DNA density upper bound: 0.135803
+	Command being timed: "./my_program -mode expected -w 10 -k 13"
+	User time (seconds): 16999.04
+	System time (seconds): 0.64
+	Percent of CPU this job got: 5962%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:45.12
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 20284
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 143
+	Minor (reclaiming a frame) page faults: 63566
+	Voluntary context switches: 3396
+	Involuntary context switches: 9190
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 312
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=10, k=13
+Running: ./my_program -mode expected -w 10 -k 14
+
+Running for W = 10 and K = 14
+Alpha of the best result: 0.998359
+GreedyMini time: 266.548 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 14074709 times out of 28832586 times
+Swapper time: 266.664 seconds. 
+Binary density: 0.137105
+DNA density upper bound: 0.137105
+	Command being timed: "./my_program -mode expected -w 10 -k 14"
+	User time (seconds): 33784.20
+	System time (seconds): 1.08
+	Percent of CPU this job got: 6332%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 8:53.51
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 25508
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 230
+	Minor (reclaiming a frame) page faults: 146081
+	Voluntary context switches: 5101
+	Involuntary context switches: 16659
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 576
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=10, k=14
+Running: ./my_program -mode expected -w 10 -k 15
+
+Running for W = 10 and K = 15
+Alpha of the best result: 0.993202
+GreedyMini time: 646.948 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 29163442 times out of 59740166 times
+Swapper time: 647.382 seconds. 
+Binary density: 0.137626
+DNA density upper bound: 0.137627
+	Command being timed: "./my_program -mode expected -w 10 -k 15"
+	User time (seconds): 77769.45
+	System time (seconds): 2.48
+	Percent of CPU this job got: 6006%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 21:34.88
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 78032
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 194
+	Minor (reclaiming a frame) page faults: 326720
+	Voluntary context switches: 11046
+	Involuntary context switches: 37580
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 1080
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=10, k=15
+Running: ./my_program -mode expected -w 11 -k 3
+
+Running for W = 11 and K = 3
+Alpha of the best result: 0.996545
+GreedyMini time: 0.0739475 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 1499 times out of 8654 times
+Swapper time: 0.0852846 seconds. 
+Binary density: 0.159973
+DNA density upper bound: 0.167175
+	Command being timed: "./my_program -mode expected -w 11 -k 3"
+	User time (seconds): 9.21
+	System time (seconds): 0.02
+	Percent of CPU this job got: 4994%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.18
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22440
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 683
+	Voluntary context switches: 248
+	Involuntary context switches: 28
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=11, k=3
+Running: ./my_program -mode expected -w 11 -k 4
+
+Running for W = 11 and K = 4
+Alpha of the best result: 0.946733
+GreedyMini time: 0.238855 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 4027 times out of 20786 times
+Swapper time: 0.248864 seconds. 
+Binary density: 0.146576
+DNA density upper bound: 0.148941
+	Command being timed: "./my_program -mode expected -w 11 -k 4"
+	User time (seconds): 30.03
+	System time (seconds): 0.02
+	Percent of CPU this job got: 5939%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.50
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 23996
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 679
+	Voluntary context switches: 146
+	Involuntary context switches: 41
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=11, k=4
+Running: ./my_program -mode expected -w 11 -k 5
+
+Running for W = 11 and K = 5
+Alpha of the best result: 0.997132
+GreedyMini time: 0.676479 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 10099 times out of 42177 times
+Swapper time: 0.689031 seconds. 
+Binary density: 0.141006
+DNA density upper bound: 0.142761
+	Command being timed: "./my_program -mode expected -w 11 -k 5"
+	User time (seconds): 84.66
+	System time (seconds): 0.01
+	Percent of CPU this job got: 6114%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.38
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22464
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 743
+	Voluntary context switches: 250
+	Involuntary context switches: 150
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=11, k=5
+Running: ./my_program -mode expected -w 11 -k 6
+
+Running for W = 11 and K = 6
+Alpha of the best result: 0.959361
+GreedyMini time: 1.73824 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 32602 times out of 124781 times
+Swapper time: 1.75169 seconds. 
+Binary density: 0.137596
+DNA density upper bound: 0.138206
+	Command being timed: "./my_program -mode expected -w 11 -k 6"
+	User time (seconds): 204.92
+	System time (seconds): 0.04
+	Percent of CPU this job got: 5836%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.51
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24012
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1063
+	Voluntary context switches: 226
+	Involuntary context switches: 256
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 48
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=11, k=6
+Running: ./my_program -mode expected -w 11 -k 7
+
+Running for W = 11 and K = 7
+Alpha of the best result: 0.999163
+GreedyMini time: 3.50657 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 58312 times out of 202379 times
+Swapper time: 3.52014 seconds. 
+Binary density: 0.135754
+DNA density upper bound: 0.135941
+	Command being timed: "./my_program -mode expected -w 11 -k 7"
+	User time (seconds): 430.92
+	System time (seconds): 0.03
+	Percent of CPU this job got: 6110%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:07.05
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24004
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 25
+	Minor (reclaiming a frame) page faults: 1742
+	Voluntary context switches: 362
+	Involuntary context switches: 624
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 48
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=11, k=7
+Running: ./my_program -mode expected -w 11 -k 8
+
+Running for W = 11 and K = 8
+Alpha of the best result: 0.998528
+GreedyMini time: 7.74066 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 208650 times out of 565308 times
+Swapper time: 7.75738 seconds. 
+Binary density: 0.133522
+DNA density upper bound: 0.133615
+	Command being timed: "./my_program -mode expected -w 11 -k 8"
+	User time (seconds): 941.93
+	System time (seconds): 0.04
+	Percent of CPU this job got: 6065%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.52
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24000
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 91
+	Minor (reclaiming a frame) page faults: 2970
+	Voluntary context switches: 361
+	Involuntary context switches: 1059
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 56
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=11, k=8
+Running: ./my_program -mode expected -w 11 -k 9
+
+Running for W = 11 and K = 9
+Alpha of the best result: 0.999202
+GreedyMini time: 14.8652 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 361617 times out of 895117 times
+Swapper time: 14.8892 seconds. 
+Binary density: 0.132582
+DNA density upper bound: 0.132605
+	Command being timed: "./my_program -mode expected -w 11 -k 9"
+	User time (seconds): 1872.14
+	System time (seconds): 0.09
+	Percent of CPU this job got: 6282%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:29.80
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24024
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 29
+	Minor (reclaiming a frame) page faults: 5580
+	Voluntary context switches: 542
+	Involuntary context switches: 1330
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 72
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=11, k=9
+Running: ./my_program -mode expected -w 11 -k 10
+
+Running for W = 11 and K = 10
+Alpha of the best result: 0.998908
+GreedyMini time: 31.2856 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 705562 times out of 1713966 times
+Swapper time: 31.3202 seconds. 
+Binary density: 0.132075
+DNA density upper bound: 0.132106
+	Command being timed: "./my_program -mode expected -w 11 -k 10"
+	User time (seconds): 3894.42
+	System time (seconds): 0.18
+	Percent of CPU this job got: 6213%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:02.67
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24000
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 89
+	Minor (reclaiming a frame) page faults: 9517
+	Voluntary context switches: 642
+	Involuntary context switches: 2699
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 88
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=11, k=10
+Running: ./my_program -mode expected -w 11 -k 11
+
+Running for W = 11 and K = 11
+Alpha of the best result: 0.997829
+GreedyMini time: 61.4239 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 1492509 times out of 3372201 times
+Swapper time: 61.4766 seconds. 
+Binary density: 0.131627
+DNA density upper bound: 0.131633
+	Command being timed: "./my_program -mode expected -w 11 -k 11"
+	User time (seconds): 7717.24
+	System time (seconds): 0.27
+	Percent of CPU this job got: 6270%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:03.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24088
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 138
+	Minor (reclaiming a frame) page faults: 17101
+	Voluntary context switches: 954
+	Involuntary context switches: 4664
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 160
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=11, k=11
+Running: ./my_program -mode expected -w 11 -k 12
+
+Running for W = 11 and K = 12
+Alpha of the best result: 0.99858
+GreedyMini time: 125.317 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 1964756 times out of 4596973 times
+Swapper time: 125.428 seconds. 
+Binary density: 0.131839
+DNA density upper bound: 0.131853
+	Command being timed: "./my_program -mode expected -w 11 -k 12"
+	User time (seconds): 15741.87
+	System time (seconds): 0.42
+	Percent of CPU this job got: 6273%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:10.91
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24180
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 268
+	Minor (reclaiming a frame) page faults: 40529
+	Voluntary context switches: 1515
+	Involuntary context switches: 9655
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 192
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=11, k=12
+Running: ./my_program -mode expected -w 11 -k 13
+
+Running for W = 11 and K = 13
+Alpha of the best result: 0.998283
+GreedyMini time: 255.504 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 4390535 times out of 9650464 times
+Swapper time: 255.706 seconds. 
+Binary density: 0.129413
+DNA density upper bound: 0.129419
+	Command being timed: "./my_program -mode expected -w 11 -k 13"
+	User time (seconds): 32166.20
+	System time (seconds): 0.76
+	Percent of CPU this job got: 6288%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 8:31.50
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 20280
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 249
+	Minor (reclaiming a frame) page faults: 80352
+	Voluntary context switches: 3703
+	Involuntary context switches: 16134
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 312
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=11, k=13
+Running: ./my_program -mode expected -w 11 -k 14
+
+Running for W = 11 and K = 14
+Alpha of the best result: 0.997426
+GreedyMini time: 574.234 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 9982436 times out of 20896041 times
+Swapper time: 574.63 seconds. 
+Binary density: 0.126202
+DNA density upper bound: 0.126203
+	Command being timed: "./my_program -mode expected -w 11 -k 14"
+	User time (seconds): 69709.05
+	System time (seconds): 1.94
+	Percent of CPU this job got: 6064%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 19:09.40
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 25428
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 272
+	Minor (reclaiming a frame) page faults: 161208
+	Voluntary context switches: 6382
+	Involuntary context switches: 33985
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 568
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=11, k=14
+Running: ./my_program -mode expected -w 11 -k 15
+
+Running for W = 11 and K = 15
+Alpha of the best result: 0.994697
+GreedyMini time: 1236.87 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 21699143 times out of 45357207 times
+Swapper time: 1237.66 seconds. 
+Binary density: 0.126272
+DNA density upper bound: 0.126272
+	Command being timed: "./my_program -mode expected -w 11 -k 15"
+	User time (seconds): 148759.20
+	System time (seconds): 4.51
+	Percent of CPU this job got: 6009%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 41:15.58
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 82108
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 313
+	Minor (reclaiming a frame) page faults: 427754
+	Voluntary context switches: 10700
+	Involuntary context switches: 66742
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 1080
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=11, k=15
+Running: ./my_program -mode expected -w 12 -k 3
+
+Running for W = 12 and K = 3
+Alpha of the best result: 0.986195
+GreedyMini time: 0.186119 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 3248 times out of 15841 times
+Swapper time: 0.203529 seconds. 
+Binary density: 0.152557
+DNA density upper bound: 0.157669
+	Command being timed: "./my_program -mode expected -w 12 -k 3"
+	User time (seconds): 19.03
+	System time (seconds): 0.02
+	Percent of CPU this job got: 4582%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.41
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24000
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 677
+	Voluntary context switches: 268
+	Involuntary context switches: 23
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=3
+Running: ./my_program -mode expected -w 12 -k 4
+
+Running for W = 12 and K = 4
+Alpha of the best result: 0.994128
+GreedyMini time: 0.554844 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 3091 times out of 37635 times
+Swapper time: 0.568179 seconds. 
+Binary density: 0.137161
+DNA density upper bound: 0.139771
+	Command being timed: "./my_program -mode expected -w 12 -k 4"
+	User time (seconds): 63.07
+	System time (seconds): 0.02
+	Percent of CPU this job got: 5505%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.14
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 21748
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 749
+	Voluntary context switches: 237
+	Involuntary context switches: 124
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 48
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=4
+Running: ./my_program -mode expected -w 12 -k 5
+
+Running for W = 12 and K = 5
+Alpha of the best result: 0.995097
+GreedyMini time: 1.72579 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 28346 times out of 140384 times
+Swapper time: 1.74372 seconds. 
+Binary density: 0.130257
+DNA density upper bound: 0.131779
+	Command being timed: "./my_program -mode expected -w 12 -k 5"
+	User time (seconds): 190.62
+	System time (seconds): 0.03
+	Percent of CPU this job got: 5456%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.49
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24000
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 18
+	Minor (reclaiming a frame) page faults: 1148
+	Voluntary context switches: 288
+	Involuntary context switches: 340
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=5
+Running: ./my_program -mode expected -w 12 -k 6
+
+Running for W = 12 and K = 6
+Alpha of the best result: 0.985994
+GreedyMini time: 3.43851 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 40553 times out of 204573 times
+Swapper time: 3.45764 seconds. 
+Binary density: 0.127895
+DNA density upper bound: 0.128403
+	Command being timed: "./my_program -mode expected -w 12 -k 6"
+	User time (seconds): 405.80
+	System time (seconds): 0.05
+	Percent of CPU this job got: 5842%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.94
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 23792
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 51
+	Minor (reclaiming a frame) page faults: 1843
+	Voluntary context switches: 340
+	Involuntary context switches: 674
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 56
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=6
+Running: ./my_program -mode expected -w 12 -k 7
+
+Running for W = 12 and K = 7
+Alpha of the best result: 0.991292
+GreedyMini time: 7.21029 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 88377 times out of 346703 times
+Swapper time: 7.2416 seconds. 
+Binary density: 0.126049
+DNA density upper bound: 0.126266
+	Command being timed: "./my_program -mode expected -w 12 -k 7"
+	User time (seconds): 871.17
+	System time (seconds): 0.05
+	Percent of CPU this job got: 5990%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:14.54
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22508
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2831
+	Voluntary context switches: 403
+	Involuntary context switches: 987
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 56
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=7
+Running: ./my_program -mode expected -w 12 -k 8
+
+Running for W = 12 and K = 8
+Alpha of the best result: 0.996922
+GreedyMini time: 16.1989 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 220051 times out of 705926 times
+Swapper time: 16.2215 seconds. 
+Binary density: 0.124050
+DNA density upper bound: 0.124156
+	Command being timed: "./my_program -mode expected -w 12 -k 8"
+	User time (seconds): 1956.34
+	System time (seconds): 0.05
+	Percent of CPU this job got: 6025%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:32.46
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 20424
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 25
+	Minor (reclaiming a frame) page faults: 3110
+	Voluntary context switches: 434
+	Involuntary context switches: 1709
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 56
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=8
+Running: ./my_program -mode expected -w 12 -k 9
+
+Running for W = 12 and K = 9
+Alpha of the best result: 0.999384
+GreedyMini time: 30.4023 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 533191 times out of 1457508 times
+Swapper time: 30.4395 seconds. 
+Binary density: 0.122527
+DNA density upper bound: 0.122567
+	Command being timed: "./my_program -mode expected -w 12 -k 9"
+	User time (seconds): 3778.37
+	System time (seconds): 0.16
+	Percent of CPU this job got: 6203%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:00.90
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22548
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 86
+	Minor (reclaiming a frame) page faults: 6060
+	Voluntary context switches: 497
+	Involuntary context switches: 2623
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 88
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=9
+Running: ./my_program -mode expected -w 12 -k 10
+
+Running for W = 12 and K = 10
+Alpha of the best result: 0.99934
+GreedyMini time: 61.3729 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 986883 times out of 2546754 times
+Swapper time: 61.4154 seconds. 
+Binary density: 0.122067
+DNA density upper bound: 0.122103
+	Command being timed: "./my_program -mode expected -w 12 -k 10"
+	User time (seconds): 7727.87
+	System time (seconds): 0.26
+	Percent of CPU this job got: 6286%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:02.93
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24024
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 116
+	Minor (reclaiming a frame) page faults: 10211
+	Voluntary context switches: 653
+	Involuntary context switches: 4725
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 88
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=10
+Running: ./my_program -mode expected -w 12 -k 11
+
+Running for W = 12 and K = 11
+Alpha of the best result: 0.999095
+GreedyMini time: 125.155 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 2194129 times out of 5225721 times
+Swapper time: 125.264 seconds. 
+Binary density: 0.121467
+DNA density upper bound: 0.121472
+	Command being timed: "./my_program -mode expected -w 12 -k 11"
+	User time (seconds): 15725.68
+	System time (seconds): 0.49
+	Percent of CPU this job got: 6275%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:10.59
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22936
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 121
+	Minor (reclaiming a frame) page faults: 22513
+	Voluntary context switches: 977
+	Involuntary context switches: 9265
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 160
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=11
+Running: ./my_program -mode expected -w 12 -k 12
+
+Running for W = 12 and K = 12
+Alpha of the best result: 0.998844
+GreedyMini time: 248.107 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 3736537 times out of 8774035 times
+Swapper time: 248.303 seconds. 
+Binary density: 0.121610
+DNA density upper bound: 0.121617
+	Command being timed: "./my_program -mode expected -w 12 -k 12"
+	User time (seconds): 31282.26
+	System time (seconds): 0.85
+	Percent of CPU this job got: 6297%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 8:16.71
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 20084
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 136
+	Minor (reclaiming a frame) page faults: 46219
+	Voluntary context switches: 1292
+	Involuntary context switches: 15827
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 184
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=12
+Running: ./my_program -mode expected -w 12 -k 13
+
+Running for W = 12 and K = 13
+Alpha of the best result: 0.998159
+GreedyMini time: 520.278 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 6583912 times out of 15253072 times
+Swapper time: 520.653 seconds. 
+Binary density: 0.121374
+DNA density upper bound: 0.121377
+	Command being timed: "./my_program -mode expected -w 12 -k 13"
+	User time (seconds): 65534.67
+	System time (seconds): 1.71
+	Percent of CPU this job got: 6292%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 17:21.51
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22332
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 286
+	Minor (reclaiming a frame) page faults: 104932
+	Voluntary context switches: 4070
+	Involuntary context switches: 31146
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 312
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=13
+Running: ./my_program -mode expected -w 12 -k 14
+
+Running for W = 12 and K = 14
+Alpha of the best result: 0.999312
+GreedyMini time: 1045.68 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 13773345 times out of 30235334 times
+Swapper time: 1046.15 seconds. 
+Binary density: 0.119318
+DNA density upper bound: 0.119318
+	Command being timed: "./my_program -mode expected -w 12 -k 14"
+	User time (seconds): 132499.72
+	System time (seconds): 4.79
+	Percent of CPU this job got: 6331%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 34:52.89
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 26448
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 431
+	Minor (reclaiming a frame) page faults: 313537
+	Voluntary context switches: 6883
+	Involuntary context switches: 63435
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 568
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=14
+Running: ./my_program -mode expected -w 12 -k 15
+
+Running for W = 12 and K = 15
+Alpha of the best result: 0.990475
+GreedyMini time: 2169.48 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 24745957 times out of 52531895 times
+Swapper time: 2170.95 seconds. 
+Binary density: 0.117751
+DNA density upper bound: 0.117752
+	Command being timed: "./my_program -mode expected -w 12 -k 15"
+	User time (seconds): 273936.64
+	System time (seconds): 7.46
+	Percent of CPU this job got: 6308%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:12:22
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 74948
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 398
+	Minor (reclaiming a frame) page faults: 692839
+	Voluntary context switches: 10632
+	Involuntary context switches: 122724
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 1080
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=12, k=15
+Running: ./my_program -mode expected -w 13 -k 3
+
+Running for W = 13 and K = 3
+Alpha of the best result: 0.999
+GreedyMini time: 0.317256 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 1698 times out of 10447 times
+Swapper time: 0.365075 seconds. 
+Binary density: 0.146835
+DNA density upper bound: 0.151215
+	Command being timed: "./my_program -mode expected -w 13 -k 3"
+	User time (seconds): 33.76
+	System time (seconds): 0.03
+	Percent of CPU this job got: 3580%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.94
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22444
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 682
+	Voluntary context switches: 318
+	Involuntary context switches: 62
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=13, k=3
+Running: ./my_program -mode expected -w 13 -k 4
+
+Running for W = 13 and K = 4
+Alpha of the best result: 0.998935
+GreedyMini time: 0.807278 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 1636 times out of 19710 times
+Swapper time: 0.822753 seconds. 
+Binary density: 0.128410
+DNA density upper bound: 0.131001
+	Command being timed: "./my_program -mode expected -w 13 -k 4"
+	User time (seconds): 101.92
+	System time (seconds): 0.03
+	Percent of CPU this job got: 6164%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.65
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24004
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 742
+	Voluntary context switches: 212
+	Involuntary context switches: 130
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 56
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=13, k=4
+Running: ./my_program -mode expected -w 13 -k 5
+
+Running for W = 13 and K = 5
+Alpha of the best result: 0.998078
+GreedyMini time: 2.45878 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 14562 times out of 69389 times
+Swapper time: 2.47433 seconds. 
+Binary density: 0.121124
+DNA density upper bound: 0.122547
+	Command being timed: "./my_program -mode expected -w 13 -k 5"
+	User time (seconds): 310.94
+	System time (seconds): 0.04
+	Percent of CPU this job got: 6266%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.96
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24000
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 35
+	Minor (reclaiming a frame) page faults: 1519
+	Voluntary context switches: 285
+	Involuntary context switches: 500
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 48
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=13, k=5
+Running: ./my_program -mode expected -w 13 -k 6
+
+Running for W = 13 and K = 6
+Alpha of the best result: 0.94466
+GreedyMini time: 6.51708 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 37213 times out of 140559 times
+Swapper time: 6.53964 seconds. 
+Binary density: 0.119078
+DNA density upper bound: 0.119758
+	Command being timed: "./my_program -mode expected -w 13 -k 6"
+	User time (seconds): 783.55
+	System time (seconds): 0.03
+	Percent of CPU this job got: 5985%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:13.09
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22468
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 18
+	Minor (reclaiming a frame) page faults: 1946
+	Voluntary context switches: 305
+	Involuntary context switches: 925
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 56
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=13, k=6
+Running: ./my_program -mode expected -w 13 -k 7
+
+Running for W = 13 and K = 7
+Alpha of the best result: 0.99903
+GreedyMini time: 14.4874 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 67385 times out of 284111 times
+Swapper time: 14.5133 seconds. 
+Binary density: 0.117652
+DNA density upper bound: 0.117777
+	Command being timed: "./my_program -mode expected -w 13 -k 7"
+	User time (seconds): 1742.87
+	System time (seconds): 0.08
+	Percent of CPU this job got: 5999%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:29.05
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 21956
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 40
+	Minor (reclaiming a frame) page faults: 3612
+	Voluntary context switches: 417
+	Involuntary context switches: 1517
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 56
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=13, k=7
+Running: ./my_program -mode expected -w 13 -k 8
+
+Running for W = 13 and K = 8
+Alpha of the best result: 0.998926
+GreedyMini time: 30.8912 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 196172 times out of 602453 times
+Swapper time: 30.9206 seconds. 
+Binary density: 0.115915
+DNA density upper bound: 0.115974
+	Command being timed: "./my_program -mode expected -w 13 -k 8"
+	User time (seconds): 3742.50
+	System time (seconds): 0.14
+	Percent of CPU this job got: 6047%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:01.88
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 20440
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 135
+	Minor (reclaiming a frame) page faults: 5131
+	Voluntary context switches: 605
+	Involuntary context switches: 2447
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 56
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=13, k=8
+Running: ./my_program -mode expected -w 13 -k 9
+
+Running for W = 13 and K = 9
+Alpha of the best result: 0.99953
+GreedyMini time: 59.3658 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 402507 times out of 1130434 times
+Swapper time: 59.4298 seconds. 
+Binary density: 0.114365
+DNA density upper bound: 0.114382
+	Command being timed: "./my_program -mode expected -w 13 -k 9"
+	User time (seconds): 7463.96
+	System time (seconds): 0.26
+	Percent of CPU this job got: 6277%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:58.90
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24616
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 117
+	Minor (reclaiming a frame) page faults: 7041
+	Voluntary context switches: 461
+	Involuntary context switches: 4324
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 88
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=13, k=9
+Running: ./my_program -mode expected -w 13 -k 10
+
+Running for W = 13 and K = 10
+Alpha of the best result: 0.999511
+GreedyMini time: 122.707 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 931166 times out of 2380593 times
+Swapper time: 122.784 seconds. 
+Binary density: 0.113499
+DNA density upper bound: 0.113515
+	Command being timed: "./my_program -mode expected -w 13 -k 10"
+	User time (seconds): 15499.65
+	System time (seconds): 0.41
+	Percent of CPU this job got: 6308%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:05.68
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24020
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 126
+	Minor (reclaiming a frame) page faults: 17113
+	Voluntary context switches: 665
+	Involuntary context switches: 8458
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 88
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=13, k=10
+Running: ./my_program -mode expected -w 13 -k 11
+
+Running for W = 13 and K = 11
+Alpha of the best result: 0.999351
+GreedyMini time: 252.272 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 1595205 times out of 3989708 times
+Swapper time: 252.466 seconds. 
+Binary density: 0.112983
+DNA density upper bound: 0.112988
+	Command being timed: "./my_program -mode expected -w 13 -k 11"
+	User time (seconds): 31879.66
+	System time (seconds): 0.90
+	Percent of CPU this job got: 6312%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 8:25.02
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22004
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 173
+	Minor (reclaiming a frame) page faults: 29500
+	Voluntary context switches: 1003
+	Involuntary context switches: 16538
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 120
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=13, k=11
+Running: ./my_program -mode expected -w 13 -k 12
+
+Running for W = 13 and K = 12
+Alpha of the best result: 0.996406
+GreedyMini time: 505.801 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 3054288 times out of 7546850 times
+Swapper time: 506.171 seconds. 
+Binary density: 0.112745
+DNA density upper bound: 0.112746
+	Command being timed: "./my_program -mode expected -w 13 -k 12"
+	User time (seconds): 63721.24
+	System time (seconds): 1.56
+	Percent of CPU this job got: 6293%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 16:52.53
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24180
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 236
+	Minor (reclaiming a frame) page faults: 60045
+	Voluntary context switches: 1630
+	Involuntary context switches: 30957
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 256
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=13, k=12
+Running: ./my_program -mode expected -w 13 -k 13
+
+Running for W = 13 and K = 13
+Alpha of the best result: 0.999121
+GreedyMini time: 1060.58 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 6668565 times out of 15152435 times
+Swapper time: 1061.3 seconds. 
+Binary density: 0.112687
+DNA density upper bound: 0.112691
+	Command being timed: "./my_program -mode expected -w 13 -k 13"
+	User time (seconds): 133386.97
+	System time (seconds): 4.86
+	Percent of CPU this job got: 6283%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 35:22.94
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24376
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 421
+	Minor (reclaiming a frame) page faults: 184339
+	Voluntary context switches: 5057
+	Involuntary context switches: 82241
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 312
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=13, k=13
+Running: ./my_program -mode expected -w 13 -k 14
+
+Running for W = 13 and K = 14
+Alpha of the best result: 0.998593
+GreedyMini time: 2147.24 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 11596071 times out of 26164152 times
+Swapper time: 2148.75 seconds. 
+Binary density: 0.112588
+DNA density upper bound: 0.112589
+	Command being timed: "./my_program -mode expected -w 13 -k 14"
+	User time (seconds): 271441.45
+	System time (seconds): 9.82
+	Percent of CPU this job got: 6315%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:11:38
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 25416
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 579
+	Minor (reclaiming a frame) page faults: 565461
+	Voluntary context switches: 7558
+	Involuntary context switches: 125444
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 576
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=13, k=14
+Running: ./my_program -mode expected -w 13 -k 15
+
+Running for W = 13 and K = 15
+Alpha of the best result: 0.999395
+GreedyMini time: 4353.6 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 21034364 times out of 47082936 times
+Swapper time: 4356.45 seconds. 
+Binary density: 0.111288
+DNA density upper bound: 0.111290
+	Command being timed: "./my_program -mode expected -w 13 -k 15"
+	User time (seconds): 549666.81
+	System time (seconds): 15.74
+	Percent of CPU this job got: 6308%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:25:14
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 75816
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 404
+	Minor (reclaiming a frame) page faults: 1202013
+	Voluntary context switches: 11007
+	Involuntary context switches: 246294
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 1096
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=13, k=15
+Running: ./my_program -mode expected -w 14 -k 3
+
+Running for W = 14 and K = 3
+Alpha of the best result: 0.998784
+GreedyMini time: 0.311586 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 1502 times out of 7762 times
+Swapper time: 0.327881 seconds. 
+Binary density: 0.142418
+DNA density upper bound: 0.146198
+	Command being timed: "./my_program -mode expected -w 14 -k 3"
+	User time (seconds): 38.78
+	System time (seconds): 0.03
+	Percent of CPU this job got: 5777%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.67
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 23992
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 677
+	Voluntary context switches: 270
+	Involuntary context switches: 57
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=14, k=3
+Running: ./my_program -mode expected -w 14 -k 4
+
+Running for W = 14 and K = 4
+Alpha of the best result: 0.999562
+GreedyMini time: 1.53071 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 2496 times out of 30461 times
+Swapper time: 1.54589 seconds. 
+Binary density: 0.120979
+DNA density upper bound: 0.123497
+	Command being timed: "./my_program -mode expected -w 14 -k 4"
+	User time (seconds): 193.01
+	System time (seconds): 0.02
+	Percent of CPU this job got: 6211%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.10
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22468
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 997
+	Voluntary context switches: 276
+	Involuntary context switches: 334
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=14, k=4
+Running: ./my_program -mode expected -w 14 -k 5
+
+Running for W = 14 and K = 5
+Alpha of the best result: 0.996639
+GreedyMini time: 5.13021 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 28287 times out of 124028 times
+Swapper time: 5.15093 seconds. 
+Binary density: 0.113356
+DNA density upper bound: 0.114728
+	Command being timed: "./my_program -mode expected -w 14 -k 5"
+	User time (seconds): 616.45
+	System time (seconds): 0.05
+	Percent of CPU this job got: 5968%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:10.32
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22488
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2290
+	Voluntary context switches: 304
+	Involuntary context switches: 822
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 56
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=14, k=5
+Running: ./my_program -mode expected -w 14 -k 6
+
+Running for W = 14 and K = 6
+Alpha of the best result: 0.99844
+GreedyMini time: 12.2725 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 63521 times out of 218632 times
+Swapper time: 12.2997 seconds. 
+Binary density: 0.111434
+DNA density upper bound: 0.112116
+	Command being timed: "./my_program -mode expected -w 14 -k 6"
+	User time (seconds): 1511.55
+	System time (seconds): 0.08
+	Percent of CPU this job got: 6139%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:24.62
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 23996
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 79
+	Minor (reclaiming a frame) page faults: 3371
+	Voluntary context switches: 441
+	Involuntary context switches: 1478
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 56
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=14, k=6
+Running: ./my_program -mode expected -w 14 -k 7
+
+Running for W = 14 and K = 7
+Alpha of the best result: 0.999262
+GreedyMini time: 29.1073 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 71928 times out of 309646 times
+Swapper time: 29.147 seconds. 
+Binary density: 0.110346
+DNA density upper bound: 0.110467
+	Command being timed: "./my_program -mode expected -w 14 -k 7"
+	User time (seconds): 3508.39
+	System time (seconds): 0.13
+	Percent of CPU this job got: 6015%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:58.32
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24000
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 103
+	Minor (reclaiming a frame) page faults: 5939
+	Voluntary context switches: 460
+	Involuntary context switches: 3678
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 56
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=14, k=7
+Running: ./my_program -mode expected -w 14 -k 8
+
+Running for W = 14 and K = 8
+Alpha of the best result: 0.998779
+GreedyMini time: 59.5921 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 198943 times out of 652815 times
+Swapper time: 59.6544 seconds. 
+Binary density: 0.108515
+DNA density upper bound: 0.108573
+	Command being timed: "./my_program -mode expected -w 14 -k 8"
+	User time (seconds): 7345.65
+	System time (seconds): 0.20
+	Percent of CPU this job got: 6155%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:59.34
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24016
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 93
+	Minor (reclaiming a frame) page faults: 7233
+	Voluntary context switches: 494
+	Involuntary context switches: 4893
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 56
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=14, k=8
+Running: ./my_program -mode expected -w 14 -k 9
+
+Running for W = 14 and K = 9
+Alpha of the best result: 0.999461
+GreedyMini time: 120.732 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 585187 times out of 1722090 times
+Swapper time: 120.793 seconds. 
+Binary density: 0.107311
+DNA density upper bound: 0.107328
+	Command being timed: "./my_program -mode expected -w 14 -k 9"
+	User time (seconds): 15187.08
+	System time (seconds): 0.47
+	Percent of CPU this job got: 6283%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:01.69
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22584
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 129
+	Minor (reclaiming a frame) page faults: 12212
+	Voluntary context switches: 588
+	Involuntary context switches: 8224
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 88
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=14, k=9
+Running: ./my_program -mode expected -w 14 -k 10
+
+Running for W = 14 and K = 10
+Alpha of the best result: 0.999452
+GreedyMini time: 250.126 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 1506844 times out of 3823424 times
+Swapper time: 250.224 seconds. 
+Binary density: 0.106223
+DNA density upper bound: 0.106263
+	Command being timed: "./my_program -mode expected -w 14 -k 10"
+	User time (seconds): 31627.13
+	System time (seconds): 0.78
+	Percent of CPU this job got: 6317%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 8:20.62
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24028
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 151
+	Minor (reclaiming a frame) page faults: 15812
+	Voluntary context switches: 842
+	Involuntary context switches: 16414
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 88
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=14, k=10
+Running: ./my_program -mode expected -w 14 -k 11
+
+Running for W = 14 and K = 11
+Alpha of the best result: 0.999586
+GreedyMini time: 516.065 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 2095008 times out of 5801076 times
+Swapper time: 516.438 seconds. 
+Binary density: 0.105640
+DNA density upper bound: 0.105656
+	Command being timed: "./my_program -mode expected -w 14 -k 11"
+	User time (seconds): 65071.70
+	System time (seconds): 1.50
+	Percent of CPU this job got: 6299%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 17:13.03
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24080
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 107
+	Minor (reclaiming a frame) page faults: 37215
+	Voluntary context switches: 864
+	Involuntary context switches: 31563
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 120
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=14, k=11
+Running: ./my_program -mode expected -w 14 -k 12
+
+Running for W = 14 and K = 12
+Alpha of the best result: 0.999328
+GreedyMini time: 1047.21 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 4791205 times out of 12046471 times
+Swapper time: 1047.92 seconds. 
+Binary density: 0.105338
+DNA density upper bound: 0.105342
+	Command being timed: "./my_program -mode expected -w 14 -k 12"
+	User time (seconds): 132031.15
+	System time (seconds): 2.69
+	Percent of CPU this job got: 6298%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 34:56.17
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22708
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 367
+	Minor (reclaiming a frame) page faults: 97008
+	Voluntary context switches: 1827
+	Involuntary context switches: 60380
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 256
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=14, k=12
+Running: ./my_program -mode expected -w 14 -k 13
+
+Running for W = 14 and K = 13
+Alpha of the best result: 0.999472
+GreedyMini time: 2144.66 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 9405833 times out of 22762605 times
+Swapper time: 2146.06 seconds. 
+Binary density: 0.105226
+DNA density upper bound: 0.105227
+	Command being timed: "./my_program -mode expected -w 14 -k 13"
+	User time (seconds): 270733.31
+	System time (seconds): 6.42
+	Percent of CPU this job got: 6306%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:11:32
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22332
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 365
+	Minor (reclaiming a frame) page faults: 233649
+	Voluntary context switches: 4751
+	Involuntary context switches: 117141
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 320
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=14, k=13
+Running: ./my_program -mode expected -w 14 -k 14
+
+Running for W = 14 and K = 14
+Alpha of the best result: 0.999101
+GreedyMini time: 4340.74 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 19606584 times out of 44794056 times
+Swapper time: 4343.54 seconds. 
+Binary density: 0.104973
+DNA density upper bound: 0.104974
+	Command being timed: "./my_program -mode expected -w 14 -k 14"
+	User time (seconds): 549643.71
+	System time (seconds): 13.38
+	Percent of CPU this job got: 6326%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:24:48
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 29500
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 776
+	Minor (reclaiming a frame) page faults: 747339
+	Voluntary context switches: 7908
+	Involuntary context switches: 241000
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 576
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=14, k=14
+Running: ./my_program -mode expected -w 14 -k 15
+
+Running for W = 14 and K = 15
+Alpha of the best result: 0.998591
+GreedyMini time: 9002.86 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 34618101 times out of 79883105 times
+Swapper time: 9008.48 seconds. 
+Binary density: 0.105380
+DNA density upper bound: 0.105381
+	Command being timed: "./my_program -mode expected -w 14 -k 15"
+	User time (seconds): 1138027.54
+	System time (seconds): 32.71
+	Percent of CPU this job got: 6315%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:00:19
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 79032
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1524
+	Minor (reclaiming a frame) page faults: 2798995
+	Voluntary context switches: 13583
+	Involuntary context switches: 528355
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 1088
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=14, k=15
+Running: ./my_program -mode expected -w 15 -k 3
+
+Running for W = 15 and K = 3
+Alpha of the best result: 0.971932
+GreedyMini time: 0.847272 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 1147 times out of 6840 times
+Swapper time: 0.870778 seconds. 
+Binary density: 0.138943
+DNA density upper bound: 0.141870
+	Command being timed: "./my_program -mode expected -w 15 -k 3"
+	User time (seconds): 87.86
+	System time (seconds): 0.02
+	Percent of CPU this job got: 5011%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.75
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24004
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 683
+	Voluntary context switches: 294
+	Involuntary context switches: 135
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=15, k=3
+Running: ./my_program -mode expected -w 15 -k 4
+
+Running for W = 15 and K = 4
+Alpha of the best result: 0.993711
+GreedyMini time: 3.41327 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 3956 times out of 27855 times
+Swapper time: 3.43706 seconds. 
+Binary density: 0.114389
+DNA density upper bound: 0.117504
+	Command being timed: "./my_program -mode expected -w 15 -k 4"
+	User time (seconds): 399.57
+	System time (seconds): 0.04
+	Percent of CPU this job got: 5799%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.89
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 24012
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1597
+	Voluntary context switches: 275
+	Involuntary context switches: 654
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 56
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=15, k=4
+Running: ./my_program -mode expected -w 15 -k 5
+
+Running for W = 15 and K = 5
+Alpha of the best result: 0.997789
+GreedyMini time: 11.1937 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 13567 times out of 72976 times
+Swapper time: 11.2204 seconds. 
+Binary density: 0.106664
+DNA density upper bound: 0.107973
+	Command being timed: "./my_program -mode expected -w 15 -k 5"
+	User time (seconds): 1265.68
+	System time (seconds): 0.10
+	Percent of CPU this job got: 5636%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:22.45
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 21952
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 43
+	Minor (reclaiming a frame) page faults: 2851
+	Voluntary context switches: 343
+	Involuntary context switches: 1251
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 56
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=15, k=5
+Running: ./my_program -mode expected -w 15 -k 6
+
+Running for W = 15 and K = 6
+Alpha of the best result: 0.996749
+GreedyMini time: 25.2993 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 49857 times out of 174443 times
+Swapper time: 25.3375 seconds. 
+Binary density: 0.104794
+DNA density upper bound: 0.105484
+	Command being timed: "./my_program -mode expected -w 15 -k 6"
+	User time (seconds): 3033.71
+	System time (seconds): 0.27
+	Percent of CPU this job got: 5984%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:50.69
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 23784
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 62
+	Minor (reclaiming a frame) page faults: 4121
+	Voluntary context switches: 359
+	Involuntary context switches: 3308
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 56
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=15, k=6
+Running: ./my_program -mode expected -w 15 -k 7
+
+Running for W = 15 and K = 7
+Alpha of the best result: 0.999394
+GreedyMini time: 56.8129 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 72472 times out of 295445 times
+Swapper time: 56.8664 seconds. 
+Binary density: 0.103779
+DNA density upper bound: 0.104118
+	Command being timed: "./my_program -mode expected -w 15 -k 7"
+	User time (seconds): 6894.54
+	System time (seconds): 0.37
+	Percent of CPU this job got: 6060%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:53.77
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22488
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 39
+	Minor (reclaiming a frame) page faults: 8341
+	Voluntary context switches: 472
+	Involuntary context switches: 4736
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=15, k=7
+Running: ./my_program -mode expected -w 15 -k 8
+
+Running for W = 15 and K = 8
+Preprocessing time for W: 15 and K: 8 is 0.481452 seconds
+Alpha of the best result: 0.998586
+GreedyMini time: 122.161 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 220971 times out of 624948 times
+Swapper time: 122.751 seconds. 
+Binary density: 0.102279
+DNA density upper bound: 0.102380
+	Command being timed: "./my_program -mode expected -w 15 -k 8"
+	User time (seconds): 14839.38
+	System time (seconds): 0.89
+	Percent of CPU this job got: 6043%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:05.54
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 23832
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 146
+	Minor (reclaiming a frame) page faults: 10729
+	Voluntary context switches: 738
+	Involuntary context switches: 8979
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 88
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=15, k=8
+Running: ./my_program -mode expected -w 15 -k 9
+
+Running for W = 15 and K = 9
+Preprocessing time for W: 15 and K: 9 is 0.960422 seconds
+Alpha of the best result: 0.99943
+GreedyMini time: 236.238 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 378306 times out of 1165464 times
+Swapper time: 237.398 seconds. 
+Binary density: 0.101327
+DNA density upper bound: 0.101360
+	Command being timed: "./my_program -mode expected -w 15 -k 9"
+	User time (seconds): 29757.17
+	System time (seconds): 0.67
+	Percent of CPU this job got: 6266%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 7:54.88
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 22988
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 112
+	Minor (reclaiming a frame) page faults: 16293
+	Voluntary context switches: 723
+	Involuntary context switches: 15451
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 128
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=15, k=9
+Running: ./my_program -mode expected -w 15 -k 10
+
+Running for W = 15 and K = 10
+Preprocessing time for W: 15 and K: 10 is 2.04477 seconds
+Alpha of the best result: 0.999463
+GreedyMini time: 489.518 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 754724 times out of 2295107 times
+Swapper time: 491.946 seconds. 
+Binary density: 0.100078
+DNA density upper bound: 0.100096
+	Command being timed: "./my_program -mode expected -w 15 -k 10"
+	User time (seconds): 61877.87
+	System time (seconds): 1.34
+	Percent of CPU this job got: 6288%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 16:24.05
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 23000
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 258
+	Minor (reclaiming a frame) page faults: 36116
+	Voluntary context switches: 910
+	Involuntary context switches: 30042
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 168
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=15, k=10
+Running: ./my_program -mode expected -w 15 -k 11
+
+Running for W = 15 and K = 11
+Preprocessing time for W: 15 and K: 11 is 3.81475 seconds
+Alpha of the best result: 0.999314
+GreedyMini time: 1014.86 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 1563703 times out of 4368825 times
+Swapper time: 1019.39 seconds. 
+Binary density: 0.099216
+DNA density upper bound: 0.099223
+	Command being timed: "./my_program -mode expected -w 15 -k 11"
+	User time (seconds): 128362.63
+	System time (seconds): 3.05
+	Percent of CPU this job got: 6295%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 33:59.08
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 23060
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 364
+	Minor (reclaiming a frame) page faults: 63931
+	Voluntary context switches: 1247
+	Involuntary context switches: 59034
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 296
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=15, k=11
+Running: ./my_program -mode expected -w 15 -k 12
+
+Running for W = 15 and K = 12
+Preprocessing time for W: 15 and K: 12 is 7.8734 seconds
+Alpha of the best result: 0.998991
+GreedyMini time: 2061.78 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 3153967 times out of 8375859 times
+Swapper time: 2071.06 seconds. 
+Binary density: 0.098755
+DNA density upper bound: 0.098757
+	Command being timed: "./my_program -mode expected -w 15 -k 12"
+	User time (seconds): 261195.85
+	System time (seconds): 8.08
+	Percent of CPU this job got: 6305%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:09:02
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 25236
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 559
+	Minor (reclaiming a frame) page faults: 169521
+	Voluntary context switches: 2092
+	Involuntary context switches: 126442
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 416
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=15, k=12
+Running: ./my_program -mode expected -w 15 -k 13
+
+Running for W = 15 and K = 13
+Preprocessing time for W: 15 and K: 13 is 15.0883 seconds
+Alpha of the best result: 0.999563
+GreedyMini time: 4322.49 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 6816790 times out of 17410527 times
+Swapper time: 4340.34 seconds. 
+Binary density: 0.098785
+DNA density upper bound: 0.098788
+	Command being timed: "./my_program -mode expected -w 15 -k 13"
+	User time (seconds): 543008.01
+	System time (seconds): 15.40
+	Percent of CPU this job got: 6254%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:24:41
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 23436
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 668
+	Minor (reclaiming a frame) page faults: 424069
+	Voluntary context switches: 5326
+	Involuntary context switches: 256419
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 744
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=15, k=13
+Running: ./my_program -mode expected -w 15 -k 14
+
+Running for W = 15 and K = 14
+Preprocessing time for W: 15 and K: 14 is 29.8259 seconds
+Alpha of the best result: 0.999536
+GreedyMini time: 8594.56 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 14473009 times out of 34306481 times
+Swapper time: 8629.93 seconds. 
+Binary density: 0.098543
+DNA density upper bound: 0.098543
+	Command being timed: "./my_program -mode expected -w 15 -k 14"
+	User time (seconds): 1089485.80
+	System time (seconds): 25.53
+	Percent of CPU this job got: 6311%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:47:42
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 23212
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1189
+	Minor (reclaiming a frame) page faults: 1413332
+	Voluntary context switches: 9642
+	Involuntary context switches: 487899
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 1400
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=15, k=14
+Running: ./my_program -mode expected -w 15 -k 15
+
+Running for W = 15 and K = 15
+Preprocessing time for W: 15 and K: 15 is 62.9968 seconds
+Alpha of the best result: 0.999377
+GreedyMini time: 17626.1 seconds, using 64 threads to run 4096 iterations
+Time limit reached, swapped 31235393 times out of 70033862 times
+Swapper time: 17700.2 seconds. 
+Binary density: 0.098356
+DNA density upper bound: 0.098357
+	Command being timed: "./my_program -mode expected -w 15 -k 15"
+	User time (seconds): 2240008.39
+	System time (seconds): 57.18
+	Percent of CPU this job got: 6326%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 9:50:05
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 83412
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1885
+	Minor (reclaiming a frame) page faults: 4454223
+	Voluntary context switches: 16662
+	Involuntary context switches: 1010909
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2672
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Completed: w=15, k=15
