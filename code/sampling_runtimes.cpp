@@ -27,9 +27,8 @@
 #include <unordered_map>
 #include <vector>
 #include <cstdint>
-#include <omp.h>
 #include <iostream>
-#include <utility> // for std::pair
+#include <utility> 
 #include "sampling_runtimes.h"
 
 
