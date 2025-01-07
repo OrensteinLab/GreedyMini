@@ -26,6 +26,7 @@
 #include <cstdlib>  // For std::stoul, std::stod
 #include <stdexcept>
 #include "Minimizers.h"
+#include "sampling_runtimes.h"
 
 
 
@@ -79,6 +80,13 @@ void update_config_expected(Config &config) {
 
 int main(int  argc, char* argv[])
 { 
+    // USED FOR TESTING ONLY, NOT PART OF THE OFFICIAL IMPLEMENTATION
+    perform_all_sampling_tests();
+    return 0;
+
+
+
+
     // Initialize variables with default values
     std::string mode;
     std::string path = "None";
