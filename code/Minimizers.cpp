@@ -81,8 +81,8 @@ void update_config_expected(Config &config) {
 int main(int  argc, char* argv[])
 { 
     // USED FOR TESTING ONLY, NOT PART OF THE OFFICIAL IMPLEMENTATION
-    perform_all_sampling_tests();
-    return 0;
+    //perform_all_sampling_tests();
+    //return 0;
 
 
 
