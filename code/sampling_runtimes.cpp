@@ -232,7 +232,7 @@ void perform_all_sampling_tests() {
 		ofs << k << ","
 			<< time_random << ","
 			<< time_gm_no_mem << ","
-			<< time_gm << ",";
+			<< time_gm << "\n";
 	}
 
 	// Close the file
