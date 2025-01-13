@@ -68,9 +68,12 @@ jobs:
         if: matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest'
         run: |
           if [[ "${{ matrix.os }}" == "macos-latest" ]]; then
-            cmake -S code -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+            cmake -S code -B build -G Ninja -DCMAKE_BUILD_TYPE=Release \
+                  -DCMAKE_CXX_FLAGS="-D_GLIBCXX_USE_CXX11_ABI=0"
           else
-            cmake -S code -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS="-static-libstdc++ -static-libgcc"
+            cmake -S code -B build -G Ninja -DCMAKE_BUILD_TYPE=Release \
+                  -DCMAKE_CXX_FLAGS="-D_GLIBCXX_USE_CXX11_ABI=0" \
+                  -DCMAKE_EXE_LINKER_FLAGS="-static-libstdc++ -static-libgcc"
           fi
           cmake --build build
 
