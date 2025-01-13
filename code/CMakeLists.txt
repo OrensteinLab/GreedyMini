@@ -38,3 +38,7 @@ add_executable(GreedyMini ${SOURCES})
 
 # Link against Boost libraries
 target_link_libraries(GreedyMini ${Boost_LIBRARIES})
+
+# Backwards compatible ABI
+add_definitions(-D_GLIBCXX_USE_CXX11_ABI=0)
+
