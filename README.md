@@ -37,6 +37,12 @@ Before you begin, ensure you have the following:
 Precompiled binaries are available for **Ubuntu** and **macOS**. You can download them from the [GitHub release page](https://github.com/OrensteinLab/GreedyMini/releases).
 
 
+#### Build Compatibility Note
+To ensure that the compiled Linux binaries do not depend on newer GLIBC or libstdc++ symbols (e.g., `GLIBC_2.38`, `GLIBCXX_3.4.31`), we build on Ubuntu 20.04. This ensures that our released executables can run on older Linux distributions without encountering linker errors about missing GLIBC/GLIBCXX versions.
+
+If your system is significantly older (e.g., it has GLIBC < 2.31), you may still need to build from source. Alternatively, you can run in a newer environment such as Docker or a more up-to-date Linux distribution.
+
+
 ### Compiling the Project Manually
 
 If you prefer to compile the project from source, follow the steps below.
