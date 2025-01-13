@@ -28,6 +28,7 @@
 
 
 
+
 void update_config_particular(Config &config) {
     config.path = "chr_x_1m.fasta";
     config.name = "chr_x_1m";
