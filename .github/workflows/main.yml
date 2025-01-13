@@ -28,6 +28,14 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y cmake musl musl-tools ninja-build libboost-all-dev
           sudo ln -sf /usr/bin/musl-gcc /usr/local/bin/musl-gcc  # Ensure musl-gcc is in PATH
+
+
+      - name: Install static Boost on Ubuntu
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo apt-get install -y libboost-system-dev libboost-filesystem-dev
+      
+                
       # **Install Dependencies on macOS**
       - name: Install dependencies on macOS
         if: matrix.os == 'macos-latest'
@@ -71,11 +79,16 @@ jobs:
           if [[ "${{ matrix.os }}" == "macos-latest" ]]; then
             cmake -S code -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
           else
-            CC=musl-gcc cmake -S code -B build -G Ninja -DCMAKE_BUILD_TYPE=Release \
-              -DCMAKE_CXX_FLAGS="-static -D_GLIBCXX_USE_CXX11_ABI=0" \
-              -DCMAKE_EXE_LINKER_FLAGS="-static"
+            cmake -S code -B build -G Ninja -DCMAKE_BUILD_TYPE=Release \
+                  -DCMAKE_C_COMPILER=/usr/local/bin/musl-gcc \
+                  -DCMAKE_CXX_COMPILER=/usr/local/bin/musl-g++ \
+                  -DCMAKE_CXX_FLAGS="-static -D_GLIBCXX_USE_CXX11_ABI=0" \
+                  -DCMAKE_EXE_LINKER_FLAGS="-static" \
+                  -DBoost_USE_STATIC_LIBS=ON \
+                  -DBoost_USE_STATIC_RUNTIME=ON
           fi
           cmake --build build
+
           
       # **Build the Project on Windows**
       - name: Build the project on Windows
