@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - 'v*'  # Trigger on tag pushes like v1.0
+  workflow_dispatch:    # Allows manual trigger from the GitHub Actions UI
 
 permissions:
   contents: write
@@ -13,8 +14,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        #os: [ubuntu-latest, macos-latest, windows-latest]
-        os: [ubuntu-latest, macos-latest]
+        #os: [ubuntu-22.04, macos-latest, windows-latest]
+        os: [ubuntu-22.04, macos-latest] # Worked well on 22.04
 
     steps:
       - name: Checkout repository
@@ -22,18 +23,16 @@ jobs:
 
       # **Install Dependencies on Ubuntu**
       - name: Install dependencies on Ubuntu
-        if: matrix.os == 'ubuntu-latest'
+        if: matrix.os == 'ubuntu-22.04'
         run: |
           sudo apt-get update
           sudo apt-get install -y cmake build-essential libboost-all-dev ninja-build
-
       # **Install Dependencies on macOS**
       - name: Install dependencies on macOS
         if: matrix.os == 'macos-latest'
         run: |
           brew update
           brew install cmake boost ninja
-
       # **Cache vcpkg and Boost for Windows**
       - name: Cache vcpkg and Boost
         if: matrix.os == 'windows-latest'
@@ -45,7 +44,6 @@ jobs:
           key: ${{ runner.os }}-vcpkg-${{ hashFiles('**/CMakeLists.txt') }}
           restore-keys: |
             ${{ runner.os }}-vcpkg-
-
       # **Install Dependencies on Windows**
       - name: Install dependencies on Windows
         if: matrix.os == 'windows-latest'
@@ -53,30 +51,20 @@ jobs:
         run: |
           # Install CMake and Ninja via Chocolatey
           choco install -y cmake --installargs 'ADD_CMAKE_TO_PATH=System' ninja
-
           # Check if vcpkg is already cached
           if (-Not (Test-Path "vcpkg")) {
             git clone https://github.com/microsoft/vcpkg.git
             .\vcpkg\bootstrap-vcpkg.bat
           }
-
           # Install Boost using vcpkg
           .\vcpkg\vcpkg.exe install boost
           
       # **Build the Project on Ubuntu and macOS**
       - name: Build the project on Ubuntu and macOS
-        if: matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest'
+        if: matrix.os == 'ubuntu-22.04' || matrix.os == 'macos-latest'
         run: |
-          if [[ "${{ matrix.os }}" == "macos-latest" ]]; then
-            cmake -S code -B build -G Ninja -DCMAKE_BUILD_TYPE=Release \
-                  -DCMAKE_CXX_FLAGS="-D_GLIBCXX_USE_CXX11_ABI=0"
-          else
-            cmake -S code -B build -G Ninja -DCMAKE_BUILD_TYPE=Release \
-                  -DCMAKE_CXX_FLAGS="-D_GLIBCXX_USE_CXX11_ABI=0" \
-                  -DCMAKE_EXE_LINKER_FLAGS="-static-libstdc++ -static-libgcc"
-          fi
+          cmake -S code -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
           cmake --build build
-
       # **Build the Project on Windows**
       - name: Build the project on Windows
         if: matrix.os == 'windows-latest'
@@ -86,10 +74,9 @@ jobs:
         run: |
           cmake -S code -B build -G "Ninja" -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE="$Env:VCPKG_ROOT\scripts\buildsystems\vcpkg.cmake"
           cmake --build build
-
       # **Set Execute Permissions for Unix-Based Systems**
       - name: Set Execute Permissions
-        if: matrix.os == 'macos-latest' || matrix.os == 'ubuntu-latest'
+        if: matrix.os == 'macos-latest' || matrix.os == 'ubuntu-22.04'
         run: chmod +x build/GreedyMini
 
       # **Package Executables into Archives for Windows**
@@ -99,33 +86,26 @@ jobs:
         run: |
           # Create package directory if it doesn't exist
           New-Item -ItemType Directory -Path package -Force
-
           # Rename the executable to ensure consistency
           Rename-Item -Path build\GreedyMini.exe -NewName GreedyMini.exe
-
           # Compress the executable into a zip archive
           Compress-Archive -Path build\GreedyMini.exe -DestinationPath package/windows.zip
-
       # **Package Executables into Archives for macOS**
       - name: Package Executable for macOS
         if: matrix.os == 'macos-latest'
         run: |
           # Create package directory if it doesn't exist
           mkdir -p package
-
           # Compress the executable into a zip archive
           zip -j package/macos.zip build/GreedyMini
-
       # **Package Executables into Archives for Ubuntu**
       - name: Package Executable for Ubuntu
-        if: matrix.os == 'ubuntu-latest'
+        if: matrix.os == 'ubuntu-22.04'
         run: |
           # Create package directory if it doesn't exist
           mkdir -p package
-
           # Compress the executable into a zip archive
           zip -j package/ubuntu.zip build/GreedyMini
-
       # **Upload Artifact**
       - name: Upload artifact
         uses: actions/upload-artifact@v3
@@ -135,7 +115,7 @@ jobs:
 
   release:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -167,7 +147,6 @@ jobs:
             upload_url="${{ steps.create_release.outputs.upload_url }}?name=$name"
             # Remove the placeholder '{?name,label}' from the URL
             upload_url=${upload_url/\{?name,label\}/}
-
             curl \
               -X POST \
               -H "Authorization: token $GITHUB_TOKEN" \
