@@ -463,10 +463,17 @@ void single_run_swapper(uint32_t W, uint32_t K, double min_alpha, double max_alp
 
 void single_run_swapper_v2(Config& config)
 {
+
     uint64_t max_time_seconds = 60;
     if (config.max_swapper_time_minutes != std::numeric_limits<uint32_t>::max()) {
-        uint64_t max_time_seconds = config.max_swapper_time_minutes * 60;
+        max_time_seconds = config.max_swapper_time_minutes * 60;
+        print_to_both(config, "Running swapper with max time: " + std::to_string(max_time_seconds) + " seconds\n");
+
     }
+    else {
+        print_to_both(config, "Running swapper with 1 minute max time limit (default)\n");
+    }
+
 
 
 

@@ -104,6 +104,7 @@ int main(int  argc, char* argv[])
 
 
 
+
     // Create Config object with all parameters
     Config config(
         mode,
@@ -119,6 +120,7 @@ int main(int  argc, char* argv[])
         max_swapper_time_minutes,
         n_cores
     );
+
 
     ensure_directories_exist();
 
