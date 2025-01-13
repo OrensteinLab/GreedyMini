@@ -26,8 +26,8 @@ jobs:
         if: matrix.os == 'ubuntu-latest'
         run: |
           sudo apt-get update
-          sudo apt-get install -y cmake build-essential libboost-all-dev ninja-build
-
+          sudo apt-get install -y cmake musl musl-tools ninja-build libboost-all-dev
+          sudo ln -sf /usr/bin/musl-gcc /usr/local/bin/musl-gcc  # Ensure musl-gcc is in PATH
       # **Install Dependencies on macOS**
       - name: Install dependencies on macOS
         if: matrix.os == 'macos-latest'
