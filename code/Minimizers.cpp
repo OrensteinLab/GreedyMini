@@ -86,7 +86,6 @@ int main(int  argc, char* argv[])
 
 
 
-
     // Initialize variables with default values
     std::string mode;
     std::string path = "None";
@@ -158,9 +157,14 @@ int main(int  argc, char* argv[])
 	} else if (config.mode == "expected") {
         short_compute_and_store_densities(w, k, config);
 
-	} else if (config.mode == "particular") {
+    }
+    else if (config.mode == "particular") {
         short_calculate_particular_density(w, k, config);
         clean_up_particular_temp_files(config, true);
+    } else if (config.mode == "swapper") {
+        print_to_both(config, "Starting swaps\n");
+        swaps_only(config);
+        print_to_both(config, "Finished swaps\n");
 	} else {
 		std::cerr << "Error: Unknown mode '" << config.mode << "'.\n";
 		return 1;
@@ -261,8 +265,8 @@ bool parse_arguments(int argc, char* argv[],
         return false;
     }
 
-    if (mode != "expected" && mode != "particular" && mode != "tests_e" && mode != "tests_p" && mode != "tests") {
-        std::cerr << "Error: '--mode' must be 'expected', 'particular', 'tests_e', 'tests_p', or 'tests'.\n";
+    if (mode != "expected" && mode != "particular" && mode != "tests_e" && mode != "tests_p" && mode != "tests" && mode != "swapper") {
+        std::cerr << "Error: '--mode' must be 'expected', 'particular', 'swapper', 'tests_e', 'tests_p', or 'tests'.\n";
         return false;
     }
 
@@ -275,6 +279,11 @@ bool parse_arguments(int argc, char* argv[],
         std::cerr << "Error: '--path' and '--name' are required when mode is 'particular'.\n";
         return false;
     }
+
+    if (mode == "swapper" && (path == "None" || !w_provided || !k_provided)) {
+		std::cerr << "Error: '--path', '--w', and '--k' are required when mode is 'swapper'.\n";
+		return false;
+	}
 
     // check min_alpha is between 0 and 1
     if (min_alpha <= 0 || min_alpha >= 1) {

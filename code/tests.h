@@ -55,5 +55,7 @@ void short_calculate_particular_density(uint32_t w, uint32_t k, Config& config);
 
 void calculate_particular_density_k_fixed_w_varying(uint32_t k, const int max_time_in_seconds, Config& config, std::set<std::pair<uint32_t, uint32_t>>& computed_pairs, std::map<uint32_t, std::map<uint32_t, double>>& normal_order, std::map<uint32_t, std::map<uint32_t, double>>& specifically_trained_order, std::map<uint32_t, std::map<uint32_t, double>>& normal_order_on_expected, std::map<uint32_t, std::map<uint32_t, double>>& specifically_trained_order_on_expected);
 
+void swaps_only(Config& config);
+
 void calculate_particular_density_w_fixed_k_varying(uint32_t w, const int max_time_in_seconds, Config& config, std::map<uint32_t, std::map<uint32_t, double>>& normal_order, std::map<uint32_t, std::map<uint32_t, double>>& specifically_trained_order, std::map<uint32_t, std::map<uint32_t, double>>& normal_order_on_expected, std::map<uint32_t, std::map<uint32_t, double>>& specifically_trained_order_on_expected, std::set<std::pair<uint32_t, uint32_t>>& computed_pairs);
 

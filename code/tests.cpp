@@ -659,3 +659,10 @@ void calculate_particular_density_k_fixed_w_varying(uint32_t k, const int max_ti
         computed_pairs.insert(std::make_pair(w, k));
     }
 }
+
+
+
+void swaps_only(Config& config) {
+    single_run_swapper_v2(config);
+ 
+}

@@ -348,6 +348,30 @@ bool does_order_exists_specific(uint32_t W, uint32_t K, double min_alpha, double
     return file_exists(filePath);
 }
 
+
+bool does_order_exist_path(const std::string& path) {
+	// check if the file exists
+	return file_exists(path);
+}
+
+std::vector<uint64_t> load_order_path(const std::string& path) {
+    // check if the file exists
+	if (!file_exists(path)) {
+		std::cerr << "File does not exist: " << path << std::endl;
+		// stop the program
+		exit(1);
+	}
+
+	// load original order from file
+	return load_vector_from_file(path);
+}
+
+void save_order_path(const std::string& path, const std::vector<uint64_t>& order) {
+	// save the order to file
+	save_vector_to_file(order, path);
+}
+
+
 std::vector<uint64_t> load_order(uint32_t W, uint32_t K, double min_alpha, double max_alpha, bool swapped) {
 	// construct the file path based on whether swapped is true or false
 	std::string filePath = "output/minimizers/" + std::to_string(W) + "_" + std::to_string(K) + "_" + std::to_string(min_alpha) + "_" + std::to_string(max_alpha);

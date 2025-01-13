@@ -461,6 +461,110 @@ void single_run_swapper(uint32_t W, uint32_t K, double min_alpha, double max_alp
 
 
 
+void single_run_swapper_v2(Config& config)
+{
+    uint64_t max_time_seconds = 60;
+    if (config.max_mins_per_step != std::numeric_limits<uint32_t>::max()) {
+        uint64_t max_time_seconds = config.max_swapper_time_minutes * 60;
+    }
+
+
+
+
+
+
+    // Load original order from file
+    std::vector<uint64_t> order = load_order_path(config.path);
+
+    // Start timing
+    auto start = std::chrono::high_resolution_clock::now();
+
+    // Number of threads to use
+    size_t num_threads = std::thread::hardware_concurrency();
+
+    // TODO: chjange later
+    num_threads /= 2;
+
+    // TODO: remove
+    num_threads = 1;
+
+    // Vector to store results from each thread
+    std::vector<std::pair<std::vector<uint64_t>, uint64_t>> results(num_threads);
+
+    // Vector of threads
+    std::vector<std::thread> threads;
+
+
+    for (size_t i = 0; i < num_threads; ++i) {
+        threads.emplace_back([&, i]() {
+            // Each thread needs its own copy of order
+            std::vector<uint64_t> order_copy = order;
+
+            bool verbose;
+            if (i == 0) {
+                // during testing it was true for this only
+                verbose = true;
+            }
+            else {
+                verbose = false;
+            }
+
+            // Run swapper_f_v5
+            auto result = swapper_f_v2(config.w, config.k, order_copy, max_time_seconds, verbose);
+
+            // Store result in results[i]
+            results[i] = result;
+
+            // Optional: Print thread completion
+            //std::cout << "Thread " << i + 1 << " completed with GC count: " << result.second << std::endl;
+            });
+    }
+
+    // Wait for all threads to finish
+    for (auto& t : threads) {
+        t.join();
+    }
+
+    // Find the result with the lowest swapped_gc_count
+    auto best_it = std::min_element(results.begin(), results.end(),
+        [](const auto& a, const auto& b) {
+            return a.second < b.second;
+        });
+
+    auto worst_it = std::max_element(results.begin(), results.end(),
+        [](const auto& a, const auto& b) {
+            return a.second < b.second;
+        });
+
+    std::vector<uint64_t> swapped_ans = best_it->first;
+    uint64_t swapped_gc_count = best_it->second;
+    uint64_t worst_swapped_gc_count = worst_it->second;
+
+    double density = calc_density(swapped_gc_count, config.k, config.w);
+    std::cout << "gc_count: " << swapped_gc_count << std::endl;
+    print_to_both(config, "Density after swap:" + std::to_string(density) + "\n");
+
+    // Stop timing
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> duration = end - start;
+
+    std::cout << "Swapper time: " << duration.count() << " seconds. " << std::endl;
+
+
+    // output path is same as input path but with _swapped added after .bin
+    std::string output_path = config.path;
+    output_path.insert(output_path.find(".bin"), "_swapped");
+
+
+
+    save_order_path(output_path, swapped_ans);
+
+}
+
+
+
+
+
 //void multiple_runs_swapper(uint32_t W, uint32_t K, double err, const double max_time_seconds, const uint32_t n_repetitions)
 //{
 //    // Load original order from file

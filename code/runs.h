@@ -32,5 +32,7 @@ void parallel_run(Config &config, uint32_t W, uint32_t K, const bool save_result
 void parallel_run_specific(Config &config, uint32_t W, uint32_t K,  const bool save_results);
 void single_run_swapper(uint32_t W, uint32_t K, double min_alpha, double max_alpha, const double max_time_seconds);
 
+void single_run_swapper_v2(Config& config);
+
 
 #endif // RUNS_H
