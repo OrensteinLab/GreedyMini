@@ -464,7 +464,7 @@ void single_run_swapper(uint32_t W, uint32_t K, double min_alpha, double max_alp
 void single_run_swapper_v2(Config& config)
 {
     uint64_t max_time_seconds = 60;
-    if (config.max_mins_per_step != std::numeric_limits<uint32_t>::max()) {
+    if (config.max_swapper_time_minutes != std::numeric_limits<uint32_t>::max()) {
         uint64_t max_time_seconds = config.max_swapper_time_minutes * 60;
     }
 

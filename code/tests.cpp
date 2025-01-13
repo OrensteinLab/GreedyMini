@@ -302,7 +302,7 @@ void short_compute_and_store_densities(uint32_t w, uint32_t k, Config& config) {
     }
 
     // this indicates same swapping time as the parallel run
-    if (config.max_mins_per_step == std::numeric_limits<uint32_t>::max()) {
+    if (config.max_swapper_time_minutes == std::numeric_limits<uint32_t>::max()) {
         single_run_swapper(w, k, config.min_alpha, config.max_alpha, elapsed_seconds_parallel_run);
     }
     else {
