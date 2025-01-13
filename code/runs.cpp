@@ -485,8 +485,6 @@ void single_run_swapper_v2(Config& config)
     // TODO: chjange later
     num_threads /= 2;
 
-    // TODO: remove
-    num_threads = 1;
 
     // Vector to store results from each thread
     std::vector<std::pair<std::vector<uint64_t>, uint64_t>> results(num_threads);
@@ -504,13 +502,14 @@ void single_run_swapper_v2(Config& config)
             if (i == 0) {
                 // during testing it was true for this only
                 verbose = true;
+                
             }
             else {
                 verbose = false;
             }
 
             // Run swapper_f_v5
-            auto result = swapper_f_v2(config.w, config.k, order_copy, max_time_seconds, verbose);
+            auto result = swapper_f_v2(config.w, config.k, order_copy, max_time_seconds, verbose, (i==0));
 
             // Store result in results[i]
             results[i] = result;

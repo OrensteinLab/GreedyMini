@@ -13,6 +13,6 @@ uint64_t cost_recursive(uint32_t w, uint32_t k, const std::vector<uint64_t>& ord
 
 std::pair<std::vector<uint64_t>, uint64_t> swapper_f(uint32_t w, uint32_t k, std::vector<uint64_t>& order, double max_time_seconds, bool verbose);
 
-std::pair<std::vector<uint64_t>, uint64_t> swapper_f_v2(uint32_t w, uint32_t k, std::vector<uint64_t>& order, double max_time_seconds, bool verbose);
+std::pair<std::vector<uint64_t>, uint64_t> swapper_f_v2(uint32_t w, uint32_t k, std::vector<uint64_t>& order, double max_time_seconds, bool verbose, bool is_first);
 
 #endif // SWAPPER_H

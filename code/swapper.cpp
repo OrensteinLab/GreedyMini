@@ -15,6 +15,7 @@
 #include <random>
 #include <chrono>
 #include <algorithm>
+#include "tools.h"
 
 uint64_t cost(uint32_t w, uint32_t k, const std::vector<uint64_t>& order, uint64_t u, uint64_t v, uint64_t y) {
     std::vector<uint64_t> kmer(w + 1, 0);   // kmers in active nodes of DFS
@@ -306,7 +307,7 @@ uint64_t dp_gc_count(uint32_t w, uint32_t k, uint32_t rank, std::vector<uint64_t
 
 
 
-std::pair<std::vector<uint64_t>, uint64_t> swapper_f_v2(uint32_t w, uint32_t k, std::vector<uint64_t>& order, double max_time_seconds, bool verbose) {
+std::pair<std::vector<uint64_t>, uint64_t> swapper_f_v2(uint32_t w, uint32_t k, std::vector<uint64_t>& order, double max_time_seconds, bool verbose, bool is_first) {
     uint64_t size = (1ULL << k) - std::count(order.begin(), order.end(), 1ULL << k);
     uint64_t n_kmers = (1ULL << k);
     uint64_t kmer_mask = (1ULL << k) - 1;
@@ -363,7 +364,11 @@ std::pair<std::vector<uint64_t>, uint64_t> swapper_f_v2(uint32_t w, uint32_t k, 
     }
 
     // print gc count, TODO: remove
-    std::cout << "GC count: " << gc_count << std::endl;
+    if (is_first) {
+        std::cout << "GC count: " << gc_count << std::endl;
+        double density = calc_density(gc_count, k, w);
+        std::cout << "Density: " << density << std::endl;
+    }
 
 
     uint64_t tries = 0;
