@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - 'v*'  # Trigger on tag pushes like v1.0
+  workflow_dispatch:    # Allows manual trigger from the GitHub Actions UI
 
 permissions:
   contents: write
@@ -63,20 +64,19 @@ jobs:
           # Install Boost using vcpkg
           .\vcpkg\vcpkg.exe install boost
           
-      # **Build the Project on Ubuntu and macOS**
+     # **Build the Project on Ubuntu and macOS**
       - name: Build the project on Ubuntu and macOS
         if: matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest'
         run: |
           if [[ "${{ matrix.os }}" == "macos-latest" ]]; then
-            cmake -S code -B build -G Ninja -DCMAKE_BUILD_TYPE=Release \
-                  -DCMAKE_CXX_FLAGS="-D_GLIBCXX_USE_CXX11_ABI=0"
+            cmake -S code -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
           else
-            cmake -S code -B build -G Ninja -DCMAKE_BUILD_TYPE=Release \
-                  -DCMAKE_CXX_FLAGS="-D_GLIBCXX_USE_CXX11_ABI=0" \
-                  -DCMAKE_EXE_LINKER_FLAGS="-static-libstdc++ -static-libgcc"
+            CC=musl-gcc cmake -S code -B build -G Ninja -DCMAKE_BUILD_TYPE=Release \
+              -DCMAKE_CXX_FLAGS="-static -D_GLIBCXX_USE_CXX11_ABI=0" \
+              -DCMAKE_EXE_LINKER_FLAGS="-static"
           fi
           cmake --build build
-
+          
       # **Build the Project on Windows**
       - name: Build the project on Windows
         if: matrix.os == 'windows-latest'
