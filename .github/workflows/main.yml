@@ -67,7 +67,11 @@ jobs:
       - name: Build the project on Ubuntu and macOS
         if: matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest'
         run: |
-          cmake -S code -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS="-static-libstdc++ -static-libgcc"
+          if [[ "${{ matrix.os }}" == "macos-latest" ]]; then
+            cmake -S code -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+          else
+            cmake -S code -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS="-static-libstdc++ -static-libgcc"
+          fi
           cmake --build build
 
       # **Build the Project on Windows**
