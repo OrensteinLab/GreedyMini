@@ -10,10 +10,10 @@ A tool to create low-density minimizer orders using a greedy approach. The repos
   - [Precompiled Binaries](#precompiled-binaries)
   - [Compiling the Project Manually](#compiling-the-project-manually)
 - [Usage](#usage)
-  - [Running Paper Tests](#running-paper-tests)
   - [Generating Minimizers For Expected Density](#generating-minimizers-for-expected-density)
   - [Generating Minimizers For Particular Density](#generating-minimizers-for-particular-density)
   - [Additional Parameters](#additional-parameters)
+  -  [Running Paper Tests](#running-paper-tests)
 - [Accessing the Minimizers](#accessing-the-minimizers)
   - [Locating the Minimizers](#locating-the-minimizers)
   - [Loading the Minimizers to Memory](#loading-the-minimizers-to-memory)
@@ -88,15 +88,8 @@ g++ -std=c++20 -O3 -march=native -I ~/boost_1_82_0 *.cpp -o GreedyMini
 
 After compiling or downloading the binary, you can run **GreedyMini** using different modes and parameters.
 
-### Running Paper Tests
 
-We ran our test on the first 1M nucleotides of chromosome X from [Genome assembly T2T-CHM13v2.0](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_009914755.1/). To do that we used the python notebook `shorten_fasta.ipynb` which is located in `various scripts/preprocessing chr x/`. We then put the resulting `.fasta` file in the same directory as the `GreedyMini` executable.
 
-Execute the following command to run all the tests from the paper:
-
-```bash
-./GreedyMini -mode tests
-```
 
 ### Generating Minimizers For Expected Density
 
@@ -156,6 +149,17 @@ Customize the behavior of GreedyMini with the following options:
 - `-min_alpha`: Minimum alpha value (default: `0.939088`)
 - `-max_alpha`: Maximum alpha value (default: `0.999590`)
 - `-max_swapper_time_minutes`: Maximum swapper time in minutes
+
+### Running Paper Tests
+
+We ran our test on the first 1M nucleotides of chromosome X from [Genome assembly T2T-CHM13v2.0](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_009914755.1/). To do that we used the python notebook `shorten_fasta.ipynb` which is located in `various scripts/preprocessing chr x/`. We then put the resulting `.fasta` file in the same directory as the `GreedyMini` executable.
+
+Execute the following command to run most of the tests from the paper:
+
+```bash
+./GreedyMini -mode tests
+```
+
 
 ## Accessing the Minimizers
 
