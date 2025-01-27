@@ -5,6 +5,7 @@ A toolkit to create low-density DNA minimizer orders using a greedy approach fir
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Precalculated Minimizers](#precalculated-minimizers)
 - [Prerequisites](#prerequisites)
 - [Installation and Compilation](#installation-and-compilation)
 - [Usage](#usage)
