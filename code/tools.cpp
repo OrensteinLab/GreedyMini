@@ -315,11 +315,19 @@ void save_order(uint32_t W, uint32_t K, double min_alpha, double max_alpha, cons
 	if (swapped) {
 		filePath += "_swapped";
 	}
-	filePath += ".bin";
+	filePath += ".gm";
 
 	// save the order to file
 	save_vector_to_file(order, filePath);
 }
+
+void save_order_simple_name(uint32_t W, uint32_t K, const std::vector<uint64_t>& order) {
+    std::string filePath = "output/minimizers/w" + std::to_string(W) + "_k" + std::to_string(K) + ".gm";
+    save_vector_to_file(order, filePath);
+
+}
+
+
 
 bool does_order_exist(uint32_t W, uint32_t K, double min_alpha, double max_alpha, bool swapped) {
 	// construct the file path based on whether swapped is true or false
@@ -327,7 +335,7 @@ bool does_order_exist(uint32_t W, uint32_t K, double min_alpha, double max_alpha
 	if (swapped) {
 		filePath += "_swapped";
 	}
-	filePath += ".bin";
+	filePath += ".gm";
 
 	// check if the file exists
 	return file_exists(filePath);
@@ -342,7 +350,7 @@ bool does_order_exists_specific(uint32_t W, uint32_t K, double min_alpha, double
     if (swapped) {
         filePath += "_swapped";
     }
-    filePath += ".bin";
+    filePath += ".gm";
 
     // check if the file exists
     return file_exists(filePath);
@@ -378,7 +386,7 @@ std::vector<uint64_t> load_order(uint32_t W, uint32_t K, double min_alpha, doubl
 	if (swapped) {
 		filePath += "_swapped";
 	}
-	filePath += ".bin";
+	filePath += ".gm";
 
 	// check if the file exists
 	if (!file_exists(filePath)) {
@@ -391,6 +399,25 @@ std::vector<uint64_t> load_order(uint32_t W, uint32_t K, double min_alpha, doubl
 	return load_vector_from_file(filePath);
 }
 
+void delete_order(uint32_t W, uint32_t K, double min_alpha, double max_alpha, bool swapped) {
+    // construct the file path based on whether swapped is true or false
+    std::string filePath = "output/minimizers/" + std::to_string(W) + "_" + std::to_string(K) + "_" + std::to_string(min_alpha) + "_" + std::to_string(max_alpha);
+    if (swapped) {
+        filePath += "_swapped";
+    }
+    filePath += ".gm";
+
+    // check if the file exists
+    if (!file_exists(filePath)) {
+        std::cerr << "File does not exist: " << filePath << std::endl;
+        // stop the program
+        exit(1);
+    }
+
+    // delete the file
+    std::filesystem::remove(filePath);
+}
+
 void save_order_specific(uint32_t W, uint32_t K, double min_alpha, double max_alpha, const std::vector<uint64_t>& order, bool swapped, const std::string& name) {
     // make sure subfolder exists
     std::filesystem::create_directories("output/minimizers/" + name);
@@ -400,11 +427,22 @@ void save_order_specific(uint32_t W, uint32_t K, double min_alpha, double max_al
 	if (swapped) {
 		filePath += "_swapped";
 	}
-	filePath += ".bin";
+	filePath += ".gm";
 
 	// save the order to file
 	save_vector_to_file(order, filePath);
 
+}
+
+void save_order_specific_simple_name(uint32_t W, uint32_t K, const std::vector<uint64_t>& order, const std::string& name) {
+	// make sure subfolder exists
+	std::filesystem::create_directories("output/minimizers/" + name);
+
+	// construct the file path based on whether swapped is true or false
+	std::string filePath = "output/minimizers/" + name + "/w" + std::to_string(W) + "_k" + std::to_string(K) + ".gm";
+
+	// save the order to file
+	save_vector_to_file(order, filePath);
 }
 
 std::vector<uint64_t> load_order_specific(uint32_t W, uint32_t K, double min_alpha, double max_alpha , bool swapped, std::string name) {
@@ -416,7 +454,7 @@ std::vector<uint64_t> load_order_specific(uint32_t W, uint32_t K, double min_alp
     if (swapped) {
         filePath += "_swapped";
     }
-    filePath += ".bin";
+    filePath += ".gm";
 
     // check if the file exists
     if (!file_exists(filePath)) {
@@ -427,6 +465,29 @@ std::vector<uint64_t> load_order_specific(uint32_t W, uint32_t K, double min_alp
 
     // load original order from file
     return load_vector_from_file(filePath);
+}
+
+
+void delete_order_specific(uint32_t W, uint32_t K, double min_alpha, double max_alpha, bool swapped, const std::string& name) {
+	// make sure subfolder exists
+	std::filesystem::create_directories("output/minimizers/" + name);
+
+	// construct the file path based on whether swapped is true or false
+	std::string filePath = "output/minimizers/" + name + "/" + std::to_string(W) + "_" + std::to_string(K) + "_" + std::to_string(min_alpha) + "_" + std::to_string(max_alpha);
+	if (swapped) {
+		filePath += "_swapped";
+	}
+	filePath += ".gm";
+
+	// check if the file exists
+	if (!file_exists(filePath)) {
+		std::cerr << "File does not exist: " << filePath << std::endl;
+		// stop the program
+		exit(1);
+	}
+
+	// delete the file
+	std::filesystem::remove(filePath);
 }
 
 void ensure_directories_exist() {
@@ -501,7 +562,7 @@ std::vector<uint64_t> get_explicitly_extended_order(const std::vector<uint64_t>&
     uint64_t new_size = 2 * original_size;
     std::vector<uint64_t> extended_order(new_size);
 
-    std::cout << "(DEBUG) New size: " << new_size << std::endl;
+   // std::cout << "(DEBUG) New size: " << new_size << std::endl;
 
     for (uint64_t i = 0; i < new_size; ++i) {
 		uint64_t first_k_bits = i >> 1;

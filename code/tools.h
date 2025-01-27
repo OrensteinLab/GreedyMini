@@ -56,14 +56,18 @@ void save_vector_of_vectors_to_file(const std::vector<std::vector<uint64_t>>& ve
 std::vector<std::vector<uint64_t>> load_vector_of_vectors_from_file(const std::string& filename);
 
 void save_order(uint32_t W, uint32_t K, double min_alpha, double max_alpha, const std::vector<uint64_t>& order, bool swapped);
+void save_order_simple_name(uint32_t W, uint32_t K, const std::vector<uint64_t>& order);
 bool does_order_exist(uint32_t W, uint32_t K, double min_alpha, double max_alpha, bool swapped);
 bool does_order_exists_specific(uint32_t W, uint32_t K, double min_alpha, double max_alpha, bool swapped, const std::string& name);
 bool does_order_exist_path(const std::string& path);
 std::vector<uint64_t> load_order_path(const std::string& path);
 void save_order_path(const std::string& path, const std::vector<uint64_t>& order);
 std::vector<uint64_t> load_order(uint32_t W, uint32_t K, double min_alpha, double max_alpha, bool swapped);
+void delete_order(uint32_t W, uint32_t K, double min_alpha, double max_alpha, bool swapped);
 void save_order_specific(uint32_t W, uint32_t K, double min_alpha, double max_alpha, const std::vector<uint64_t>& order, bool swapped, const std::string& name);
+void save_order_specific_simple_name(uint32_t W, uint32_t K, const std::vector<uint64_t>& order, const std::string& name);
 std::vector<uint64_t> load_order_specific(uint32_t W, uint32_t K, double min_alpha, double max_alpha, bool swapped, std::string name);
+void delete_order_specific(uint32_t W, uint32_t K, double min_alpha, double max_alpha, bool swapped, const std::string& name);
 void ensure_directories_exist();
 
 double sample_alpha(Config& config);

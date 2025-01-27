@@ -1,2 +1,2 @@
-# Allow .bin files in this directory
-!*.bin
+# Allow .gm files in this directory
+!*.gm

@@ -27,7 +27,7 @@
 #include <cstdint>
 #include <utility> 
 #include "sampling_runtimes.h"
-
+#include <functional> // for std::hash
 
 
 std::vector<bool> get_bits(uint64_t n_bits) {
@@ -50,11 +50,50 @@ std::vector<bool> get_bits(uint64_t n_bits) {
 
 
 
+double test_runtime_std_hash(uint32_t w, uint32_t k, uint64_t N, const std::vector<bool>& bits) {
+    uint64_t dna_k_mask = (1ull << (2 * k)) - 1;
+
+    std::hash<uint64_t> hash_fn; // Create a hash function instance
+    uint64_t sum = 0;
+
+    // Start timing
+    auto start = std::chrono::high_resolution_clock::now();
+
+    uint64_t current_kmer = 0;
+    for (uint64_t i = 0; i < N; i += 2) {
+        current_kmer = (current_kmer << 1) & dna_k_mask;
+        current_kmer |= (bits[i] << 1) | bits[i + 1];
+        uint64_t kmer_rank = hash_fn(current_kmer); // Use the hash function
+        sum += kmer_rank;
+    }
+
+    auto end = std::chrono::high_resolution_clock::now();
+
+    std::cout << "sum:\t" << sum << std::endl;
+
+    // Measure elapsed time in nanoseconds
+    auto elapsed_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count();
+    // Or microseconds
+    auto elapsed_us = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+
+    std::cout << "Time taken std::hash (ms):  " << elapsed_us / 1000.0 << "\n";
+
+    return elapsed_us / 1000.0;
+}
+
+
+
+
 double test_runtime_xor_hash(uint32_t w, uint32_t k, uint64_t N, const std::vector<bool>& bits) {
 	uint64_t k_mask = (1 << k) - 1;
 	uint64_t dna_k_mask = (1 << (2 * k)) - 1;
 
-	uint64_t random_number = 5215;
+	// Create a random number generator and distribution
+	std::random_device rd;  // Seed for randomness
+	std::mt19937_64 gen(rd()); // Mersenne Twister 64-bit generator
+	std::uniform_int_distribution<uint64_t> dist(0, dna_k_mask); // Range based on the dna_k_mask
+
+	uint64_t random_number = dist(gen); // Generate the random number
 
 
 	uint64_t sum = 0;
@@ -200,8 +239,6 @@ void perform_all_sampling_tests() {
 
 	std::vector<bool> bits = get_bits(N);
 
-
-
 	// Choose an output file name
 	std::string filename = "sampling_runtime.csv";
 
@@ -214,27 +251,36 @@ void perform_all_sampling_tests() {
 	}
 
 	// Write the CSV header
-	ofs << "k,time_random,time_gm_no_mem,time_gm\n";
+	ofs << "k,time_random,time_gm_no_mem,time_gm,time_random_std\n";
 
-
-	for (uint32_t k = 3; k <= 31; ++k)
-	{
+	for (uint32_t k = 3; k <= 31; ++k) {
 		std::cout << "\n\n\nRunning tests for k = " << k << std::endl;
-		double time_random = test_runtime_xor_hash(w, k, N, bits);
-		double time_gm_no_mem = test_runtime_gm_no_memory_access(w, k, N, bits);
-		double time_gm = test_runtime_gm(w, k, N, bits);
 
+		// Helper lambda to compute the average runtime of a function over 10 iterations
+		auto compute_average_runtime = [&](auto&& func) {
+			double total_time = 0.0;
+			for (int i = 0; i < 10; ++i) {
+				total_time += func();
+			}
+			return total_time / 10.0;
+			};
+
+		// Compute average runtimes for each test function
+		double time_random = compute_average_runtime([&]() { return test_runtime_xor_hash(w, k, N, bits); });
+		double time_gm_no_mem = compute_average_runtime([&]() { return test_runtime_gm_no_memory_access(w, k, N, bits); });
+		double time_gm = compute_average_runtime([&]() { return test_runtime_gm(w, k, N, bits); });
+		double time_random_std = compute_average_runtime([&]() { return test_runtime_std_hash(w, k, N, bits); });
 
 		// Write a single row of CSV output
 		ofs << k << ","
 			<< time_random << ","
 			<< time_gm_no_mem << ","
-			<< time_gm << "\n";
+			<< time_gm << ","
+			<< time_random_std << "\n";
 	}
 
 	// Close the file
 	ofs.close();
 
 	std::cout << "Results have been saved to " << filename << std::endl;
-
 }

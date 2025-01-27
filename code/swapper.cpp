@@ -208,7 +208,7 @@ std::pair<std::vector<uint64_t>, uint64_t> swapper_f(uint32_t w, uint32_t k, std
 
         if (elapsed.count() >= max_time_seconds) {
             if (verbose) {
-                std::cout << "Time limit reached, swapped " << n_swaps << " times out of " << tries << " times" << std::endl;
+                std::cout << "Time limit reached, swapped " << n_swaps << " times out of " << tries << " times (on main thread)" << std::endl;
             }
             break;
         }
@@ -364,11 +364,11 @@ std::pair<std::vector<uint64_t>, uint64_t> swapper_f_v2(uint32_t w, uint32_t k, 
     }
 
     // print gc count, TODO: remove
-    if (is_first) {
-        std::cout << "GC count: " << gc_count << std::endl;
-        double density = calc_density(gc_count, k, w);
-        std::cout << "Density: " << density << std::endl;
-    }
+    //if (is_first) {
+    //    std::cout << "GC count: " << gc_count << std::endl;
+    //    double density = calc_density(gc_count, k, w);
+    //    std::cout << "Density: " << density << std::endl;
+    //}
 
 
     uint64_t tries = 0;
@@ -389,7 +389,7 @@ std::pair<std::vector<uint64_t>, uint64_t> swapper_f_v2(uint32_t w, uint32_t k, 
 
         if (elapsed.count() >= max_time_seconds) {
             if (verbose) {
-                std::cout << "Time limit reached, swapped " << n_swaps << " times out of " << tries << " times" << std::endl;
+                std::cout << "Time limit reached, swapped " << n_swaps << " times out of " << tries << " times (on main thread)" << std::endl;
             }
             break;
         }

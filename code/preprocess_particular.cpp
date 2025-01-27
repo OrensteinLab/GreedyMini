@@ -139,7 +139,7 @@ bool ensure_sequence_is_processed(Config& config, uint32_t w, uint32_t k) {
 		return true;
 	}
 	else {
-		print_to_both(config, "Processing sequence for w+k = " + std::to_string(window_size) + "\n");
+		print_to_both(config, "Processing sequence for w + k = " + std::to_string(window_size) + "\n");
 		process_sequence(config, w, k);
 		return true;
 	}

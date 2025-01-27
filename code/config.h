@@ -19,7 +19,8 @@ public:
     std::string mode;
     std::string path;
     std::string name;
-    uint32_t greedy_mini_runs;
+    uint32_t greedyE_runs;
+    uint32_t greedyP_runs;
     uint32_t max_mins_per_step;
     double min_alpha;
     double max_alpha;
@@ -29,12 +30,16 @@ public:
     uint32_t k;
     uint32_t max_swapper_time_minutes;
     uint32_t n_cores;
+    uint32_t k_extended; // NEW
+    std::string save_format; // NEW
+
 
     // Updated constructor to accept new parameters
     Config(const std::string& mode_,
         const std::string& path_,
         const std::string& name_,
-        uint32_t greedy_mini_runs_,
+        uint32_t greedyE_runs,
+        uint32_t greedyP_runs,
         uint32_t max_mins_per_step_,
         double min_alpha_,
         double max_alpha_,
@@ -42,11 +47,14 @@ public:
         uint32_t w_,
         uint32_t k_,
         uint32_t max_swapper_time_minutes_,
-        uint32_t n_cores)
-        : mode(mode_),
+        uint32_t n_cores_,
+        uint32_t k_extended_,
+        const std::string& save_format_) :
+        mode(mode_),
         path(path_),
         name(name_),
-        greedy_mini_runs(greedy_mini_runs_),
+        greedyE_runs(greedyE_runs),
+        greedyP_runs(greedyP_runs),
         max_mins_per_step(max_mins_per_step_),
         min_alpha(min_alpha_),
         max_alpha(max_alpha_),
@@ -54,7 +62,9 @@ public:
         w(w_),
         k(k_),
         max_swapper_time_minutes(max_swapper_time_minutes_),
-        n_cores(n_cores) {
+        n_cores(n_cores_),
+        k_extended(k_extended_),
+        save_format(save_format_) {
 
         // Create the output directory
         std::string output_dir = "output/v_" + version_id;

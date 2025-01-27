@@ -1,1 +1,1 @@
-Need to have a folder named 'gm orders' with the .bin files.
+Need to have a folder named 'gm orders' with the .gm files.

@@ -123,7 +123,7 @@ void parallel_run(Config &config, uint32_t W, uint32_t K, const bool save_result
 
 
 
-    int total_iterations = config.greedy_mini_runs + (num_cores - (config.greedy_mini_runs % num_cores))%num_cores;
+    int total_iterations = config.greedyE_runs + (num_cores - (config.greedyE_runs % num_cores))%num_cores;
 
     // Calculate the number of iterations per thread
     int iterations_per_thread = total_iterations / num_cores;
@@ -144,7 +144,7 @@ void parallel_run(Config &config, uint32_t W, uint32_t K, const bool save_result
 
 
     // Print the actual error of the best result
-    std::cout << "Alpha of the best result: " << best_result.actual_alpha << std::endl;
+    //std::cout << "Alpha of the best result: " << best_result.actual_alpha << std::endl;
 
 
     // Stop timing
@@ -157,7 +157,7 @@ void parallel_run(Config &config, uint32_t W, uint32_t K, const bool save_result
     }
 
   
-    std::cout << "GreedyMini time: " << total_duration.count() << " seconds, using " << num_cores << " threads to run " << total_iterations << " iterations" << std::endl;
+    std::cout << "GreedyE time: " << total_duration.count() << " seconds, using " << num_cores << " threads to run " << total_iterations << " iterations" << std::endl;
 
     return;
 }
@@ -337,7 +337,7 @@ void parallel_run_specific(Config &config, uint32_t W, uint32_t K, const bool sa
     //num_cores /= 2;
 
 
-    int total_iterations = config.greedy_mini_runs + (num_cores - (config.greedy_mini_runs % num_cores)) % num_cores;
+    int total_iterations = config.greedyP_runs + (num_cores - (config.greedyP_runs % num_cores)) % num_cores;
 
   
 
@@ -362,7 +362,7 @@ void parallel_run_specific(Config &config, uint32_t W, uint32_t K, const bool sa
     }
 
     // Print the actual alpha of the best result
-    std::cout << "Alpha of the best result: " << best_result.actual_alpha << std::endl;
+    //std::cout << "Alpha of the best result: " << best_result.actual_alpha << std::endl;
 
 
 
@@ -380,7 +380,7 @@ void parallel_run_specific(Config &config, uint32_t W, uint32_t K, const bool sa
     }
 
 
-    std::cout << "GreedyMiniParticular time: " << total_duration.count() << " seconds, using " << num_cores << " threads to run " << total_iterations << " iterations" << std::endl;
+    std::cout << "GreedyP time: " << total_duration.count() << " seconds, using " << num_cores << " threads to run " << total_iterations << " iterations" << std::endl;
 
 }
 
@@ -454,7 +454,7 @@ void single_run_swapper(uint32_t W, uint32_t K, double min_alpha, double max_alp
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> duration = end - start;
 
-    std::cout << "Swapper time: " << duration.count() << " seconds. " << std::endl;
+    //std::cout << "SwapDFS time: " << duration.count() << " seconds. " << std::endl;
     save_order(W, K, min_alpha, max_alpha, swapped_ans, true);
 
 }
@@ -463,21 +463,13 @@ void single_run_swapper(uint32_t W, uint32_t K, double min_alpha, double max_alp
 
 void single_run_swapper_v2(Config& config)
 {
-
-    uint64_t max_time_seconds = 60;
-    if (config.max_swapper_time_minutes != std::numeric_limits<uint32_t>::max()) {
-        max_time_seconds = config.max_swapper_time_minutes * 60;
-        print_to_both(config, "Running swapper with max time: " + std::to_string(max_time_seconds) + " seconds\n");
-
-    }
-    else {
-        print_to_both(config, "Running swapper with 1 minute max time limit (default)\n");
-    }
+    print_to_both(config, "Running SwapDP for " + std::to_string(config.max_swapper_time_minutes) + " minutes\n");
 
 
 
 
 
+    double max_time_seconds = config.max_swapper_time_minutes * 60.0;
 
 
     // Load original order from file
@@ -515,7 +507,6 @@ void single_run_swapper_v2(Config& config)
                 verbose = false;
             }
 
-            // Run swapper_f_v5
             auto result = swapper_f_v2(config.w, config.k, order_copy, max_time_seconds, verbose, (i==0));
 
             // Store result in results[i]
@@ -545,25 +536,40 @@ void single_run_swapper_v2(Config& config)
     std::vector<uint64_t> swapped_ans = best_it->first;
     uint64_t swapped_gc_count = best_it->second;
     uint64_t worst_swapped_gc_count = worst_it->second;
+    print_to_both(config, "SwapDP done\n");
 
     double density = calc_density(swapped_gc_count, config.k, config.w);
-    std::cout << "gc_count: " << swapped_gc_count << std::endl;
-    print_to_both(config, "Density after swap:" + std::to_string(density) + "\n");
+
+
+
+    //std::vector<uint64_t> swapped_ans_reversed = get_reversed_order(swapped_ans);
+    //std::unordered_map<uint32_t, double> w_to_density = density_expected_binary_wide(config.w, config.k, swapped_ans_reversed, false);
+    //double density_reversed = w_to_density[config.w];
+
+    //double dna_density_upper_bound = (density + density_reversed) / 2.0;
+
+    print_to_both(config, "Binary density (approximately, the DNA density): " + std::to_string(density) + "\n");
+    //print_to_both(config, "DNA density upper bound: " + std::to_string(dna_density_upper_bound) + "\n");
+
 
     // Stop timing
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> duration = end - start;
 
-    std::cout << "Swapper time: " << duration.count() << " seconds. " << std::endl;
+    //std::cout << "Swapper time: " << duration.count() << " seconds. " << std::endl;
 
 
     // output path is same as input path but with _swapped added after .bin
     std::string output_path = config.path;
-    output_path.insert(output_path.find(".bin"), "_swapped");
+    std::string suffix = "_improved_w" + std::to_string(config.w);
+    output_path.insert(output_path.find(".gm"), suffix);
 
 
 
     save_order_path(output_path, swapped_ans);
+    print_to_both(config, "Order saved in " + output_path + "\n");
+
+
 
 }
 

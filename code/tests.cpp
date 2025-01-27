@@ -284,10 +284,12 @@ void calculate_density_matrix(Config& config, uint32_t max_w, uint32_t max_k, st
 
 
 void short_compute_and_store_densities(uint32_t w, uint32_t k, Config& config) {
-    print_to_both(config, "\nRunning for W = " + std::to_string(w) + " and K = " + std::to_string(k) + "\n");
+    print_to_both(config, "\nRunning for w = " + std::to_string(w) + " and k = " + std::to_string(k) + "\n");
 
     auto time_before_parallel_run = std::chrono::steady_clock::now();
+    print_to_both(config, "Running GreedyE for " + std::to_string(config.greedyE_runs) + " iterations\n");
     parallel_run(config, w, k, true);
+    print_to_both(config, "GreedyE done\n");
     auto elapsed_seconds_parallel_run = std::chrono::duration<double>(
         std::chrono::steady_clock::now() - time_before_parallel_run).count();
 
@@ -303,32 +305,36 @@ void short_compute_and_store_densities(uint32_t w, uint32_t k, Config& config) {
 
     // this indicates same swapping time as the parallel run
     if (config.max_swapper_time_minutes == std::numeric_limits<uint32_t>::max()) {
+        print_to_both(config, "Running SwapDFS for " + std::to_string(elapsed_seconds_parallel_run) + " seconds (Default, similar to GreedyE)\n");
         single_run_swapper(w, k, config.min_alpha, config.max_alpha, elapsed_seconds_parallel_run);
     }
     else {
+        print_to_both(config, "Running SwapDFS for " + std::to_string(config.max_swapper_time_minutes) + " minutes\n");
         single_run_swapper(w, k, config.min_alpha, config.max_alpha, config.max_swapper_time_minutes*60);
     }
+    print_to_both(config, "SwapDFS done\n");
 
     std::vector<uint64_t> best_order_after_swap = load_order(w, k, config.min_alpha, config.max_alpha, true);
+
+
+
     std::vector<uint64_t> best_order_after_swap_reversed = get_reversed_order(best_order_after_swap);
+    // remove temporary files
+    delete_order(w, k, config.min_alpha, config.max_alpha, true);
+    delete_order(w, k, config.min_alpha, config.max_alpha, false);
+    // save as simple format
+    save_order_simple_name(w, k, best_order);
 
 
 
     double binary_density_after_swap = density_expected_binary(w, k, best_order_after_swap);
     double binary_density_after_swap_reversed = density_expected_binary(w, k, best_order_after_swap_reversed);
-
     double dna_density_upper_bound = (binary_density_after_swap + binary_density_after_swap_reversed) / 2;
 
 
-    //double dna_density = density_expected_dna(w, k, best_order);
-    //double dna_density_after_swap = density_expected_dna(w, k, best_order_after_swap);
-
-    //print_to_both(config, "Binary density before swap: " + std::to_string(binary_density) + "\n");
     print_to_both(config, "Binary density: " + std::to_string(binary_density_after_swap) + "\n");
-    //print_to_both(config, "DNA density before swap: " + std::to_string(dna_density) + "\n");
-    //print_to_both(config, "DNA density after swap: " + std::to_string(dna_density_after_swap) + "\n");
-
     print_to_both(config, "DNA density upper bound: " + std::to_string(dna_density_upper_bound) + "\n");
+    print_to_both(config, "Order saved in output/minimizers/w" + std::to_string(w) + "_k" + std::to_string(k) + ".gm\n");
 
 
 
@@ -464,14 +470,18 @@ void big_k_extension(Config& config, uint32_t w, uint32_t initial_k, std::map<ui
 
 void improve_from_previous_k(Config& config,  uint32_t k, uint32_t w, double current_best_density, double max_swapping_time) {
     std::vector<uint64_t> order = load_order(w, k-1, config.min_alpha, config.max_alpha, true);
-    print_to_both(config, "Extending k and swapping for  (w,k) = (" + std::to_string(w) + ", " + std::to_string(k) + ")\n");
 
+    print_to_both(config, "Extending into  (w,k) = (" + std::to_string(w) + ", " + std::to_string(k) + ")\n");
     std::vector<uint64_t> explicit_k_extension_order = get_explicitly_extended_order(order);
 
 
 
     save_order(w, k, 2 + config.min_alpha, config.max_alpha, explicit_k_extension_order, false);
+
+    print_to_both(config, "Running SwapDFS for " + std::to_string(config.max_swapper_time_minutes) + " minutes\n");
     single_run_swapper(w, k, 2 + config.min_alpha, config.max_alpha, max_swapping_time);
+    print_to_both(config, "SwapDFS done\n");
+
     std::vector<uint64_t> explicit_k_extension_order_after_swap = load_order(w, k, 2 + config.min_alpha, config.max_alpha, true);
     double binary_density = density_expected_binary(w, k, explicit_k_extension_order_after_swap);
 
@@ -487,6 +497,30 @@ void improve_from_previous_k(Config& config,  uint32_t k, uint32_t w, double cur
     save_order(w, k, config.min_alpha, config.max_alpha, explicit_k_extension_order_after_swap, true);
 }
 
+void improve_from_previous_k_short(Config& config, uint32_t k, uint32_t w, double max_swapping_time) {
+    std::vector<uint64_t> order = load_order(w, k - 1, config.min_alpha, config.max_alpha, true);
+
+    print_to_both(config, "Extending into k = " + std::to_string(k) + "\n");
+    std::vector<uint64_t> explicit_k_extension_order = get_explicitly_extended_order(order);
+
+
+
+    save_order(w, k, config.min_alpha, config.max_alpha, explicit_k_extension_order, false);
+
+    print_to_both(config, "Running SwapDFS for " + std::to_string(config.max_swapper_time_minutes) + " minutes\n");
+    single_run_swapper(w, k, config.min_alpha, config.max_alpha, max_swapping_time);
+    print_to_both(config, "SwapDFS done\n");
+
+    std::vector <uint64_t> explicit_k_extension_order_after_swap = load_order(w, k, config.min_alpha, config.max_alpha, true);
+
+    double binary_density = density_expected_binary(w, k, explicit_k_extension_order_after_swap);
+
+    //print_to_both(config, "Current binary density estimate: " + std::to_string(binary_density) + "\n");
+
+}
+
+
+
 void save_particular_density_csvs(std::map<uint32_t, std::map<uint32_t, double>>& normal_order, Config& config, std::map<uint32_t, std::map<uint32_t, double>>& specifically_trained_order, std::map<uint32_t, std::map<uint32_t, double>>& normal_order_on_expected, std::map<uint32_t, std::map<uint32_t, double>>& specifically_trained_order_on_expected)
 {
     save_2d_to_csv(normal_order, "normal_order_dna_density", "W", "K", config);
@@ -501,9 +535,11 @@ void short_calculate_particular_density(uint32_t w, uint32_t k, Config& config) 
     auto start_time = std::chrono::steady_clock::now();
 
 
-    print_to_both(config, "\nRunning for W = " + std::to_string(w) + " and K = " + std::to_string(k) + "\n");
+    print_to_both(config, "\nRunning for w = " + std::to_string(w) + " and k = " + std::to_string(k) + "\n");
 
+    print_to_both(config, "Running GreedyP for " + std::to_string(config.greedyP_runs) + " iterations\n");
     parallel_run_specific(config, w, k, true);
+    print_to_both(config, "GreedyP done\n");
 
     // Load the best orders
     std::vector<uint64_t> best_specifically_trained_order = load_order_specific(w, k, config.min_alpha, config.max_alpha, false, config.name);
@@ -513,20 +549,31 @@ void short_calculate_particular_density(uint32_t w, uint32_t k, Config& config) 
     double particular_dna_density_specific = density_particular_dna(w, k, config, best_specifically_trained_order);
     double particular_dna_density_specific_reversed = density_particular_dna(w, k, config, best_specifically_trained_order_reversed);
     if (particular_dna_density_specific_reversed < particular_dna_density_specific) {
-        print_to_both(config, "Particular reverse order is better (" + std::to_string(particular_dna_density_specific_reversed) + " < " + std::to_string(particular_dna_density_specific) + ")\n");
+        //print_to_both(config, "Particular reverse order is better (" + std::to_string(particular_dna_density_specific_reversed) + " < " + std::to_string(particular_dna_density_specific) + ")\n");
         best_specifically_trained_order = best_specifically_trained_order_reversed;
         particular_dna_density_specific = particular_dna_density_specific_reversed;
         save_order_specific(w, k, config.min_alpha, config.max_alpha, best_specifically_trained_order, false, config.name);
     }
 
+    // load the best order and save it as simple format
+    std::vector<uint64_t> best_order = load_order_specific(w, k, config.min_alpha, config.max_alpha, false, config.name);
+    delete_order_specific(w, k, config.min_alpha, config.max_alpha, false, config.name);
+    save_order_specific_simple_name(w, k, best_order, config.name);
 
-    print_to_both(config, "Density for best specifically trained order: " + std::to_string(particular_dna_density_specific) + "\n");
+
+
+    print_to_both(config, "DNA density: " + std::to_string(particular_dna_density_specific) + "\n");
 
 
 
     auto current_time = std::chrono::steady_clock::now();
     auto elapsed_seconds = std::chrono::duration_cast<std::chrono::seconds>(current_time - start_time).count();
-    print_to_both(config, "Total time taken: " + std::to_string(elapsed_seconds) + " seconds\n");
+    //print_to_both(config, "Total time taken: " + std::to_string(elapsed_seconds) + " seconds\n");
+
+    std::string filePath = "output/minimizers/" + config.name + "/w" + std::to_string(w) + "_k" + std::to_string(k) + ".gm";
+    print_to_both(config, "Order saved in " + filePath + "\n");
+
+
 }
 
 
@@ -664,5 +711,172 @@ void calculate_particular_density_k_fixed_w_varying(uint32_t k, const int max_ti
 
 void swaps_only(Config& config) {
     single_run_swapper_v2(config);
- 
+}
+
+
+void extend_k(Config& config) {
+    // Load original order from file
+    std::vector<uint64_t> order = load_order_path(config.path);
+
+    double binary_density = density_expected_binary(config.w, config.k, order);
+    print_to_both(config, "Current binary density estimate: " + std::to_string(binary_density) + "\n");
+
+
+    // save it as the normal format
+    save_order(config.w, config.k, config.min_alpha, config.max_alpha, order, true);
+
+
+    for (uint32_t current_k = config.k+1; current_k <= config.k_extended; current_k++) {
+        improve_from_previous_k_short(config, current_k, config.w, config.max_swapper_time_minutes*60);
+        delete_order(config.w, current_k-1, config.min_alpha, config.max_alpha, true);
+        delete_order(config.w, current_k, config.min_alpha, config.max_alpha, false);
+        double current_density = density_expected_binary(config.w, current_k, order);
+        if (current_k < config.k_extended) {
+			order = load_order(config.w, current_k, config.min_alpha, config.max_alpha, true);
+            binary_density = density_expected_binary(config.w, current_k, order);
+            print_to_both(config, "Current binary density estimate: " + std::to_string(binary_density) + "\n");
+		}
+    }
+
+    std::vector<uint64_t> best_order = load_order(config.w, config.k_extended, config.min_alpha, config.max_alpha, true);
+    delete_order(config.w, config.k_extended, config.min_alpha, config.max_alpha, true);
+
+    double best_density_after_swap = density_expected_binary(config.w, config.k_extended, best_order);
+
+    std::vector<uint64_t> best_order_reversed = get_reversed_order(best_order);
+    double best_density_reversed = density_expected_binary(config.w, config.k_extended, best_order_reversed);
+
+    double dna_density_upper_bound = (best_density_after_swap + best_density_reversed) / 2;
+
+    print_to_both(config, "Binary density: " + std::to_string(best_density_after_swap) + "\n");
+    print_to_both(config, "DNA density upper bound: " + std::to_string(dna_density_upper_bound) + "\n");
+
+    std::string output_path = config.path;
+    std::string suffix = "_extended_k" + std::to_string(config.k_extended);
+    output_path.insert(output_path.find(".gm"), suffix);
+
+    save_order_path(output_path, best_order);
+    print_to_both(config, "Order saved in " + output_path + "\n");
+
+   
+}
+
+void export_minimizer(Config& config) {
+    // Load the vector from the given path
+    std::vector<uint64_t> order = load_order_path(config.path);
+
+    // Prepare the output path by replacing .gm with the appropriate extension
+    std::string output_path = config.path;
+    size_t pos = output_path.find(".gm");
+    if (pos != std::string::npos) {
+        output_path.replace(pos, 3, config.save_format == "csv" ? ".csv" : ".txt");
+    }
+    else {
+        std::cerr << "Error: The path does not contain '.gm'!" << std::endl;
+        return;
+    }
+
+    // Check the format
+    std::string format = config.save_format;
+
+    if (format == "txt") {
+        // Save the vector to the file in .txt format (one number per line)
+        std::ofstream output_file(output_path);
+        if (!output_file.is_open()) {
+            std::cerr << "Error: Could not open file for writing: " << output_path << std::endl;
+            return;
+        }
+
+        for (size_t i = 0; i < order.size(); ++i) {
+            output_file << order[i];
+            if (i != order.size() - 1) {
+                output_file << std::endl; // Add a newline only if it's not the last number
+            }
+        }
+
+
+        output_file.close();
+        std::cout << "Vector successfully saved to: " << output_path << std::endl;
+
+    }
+    else if (format == "csv") {
+        // Save the vector to the file in .csv format with k-mers and ranks
+
+        // Calculate the value of k based on the size of the vector
+        size_t size = order.size();
+        if (size == 0 || (size & (size - 1)) != 0) {
+            std::cerr << "Error: Vector size must be a power of 2!" << std::endl;
+            return;
+        }
+
+        int k = static_cast<int>(std::log2(size));
+        std::ofstream output_file(output_path);
+        if (!output_file.is_open()) {
+            std::cerr << "Error: Could not open file for writing: " << output_path << std::endl;
+            return;
+        }
+
+        // Write the CSV header
+        output_file << "k-mer,rank\n";
+
+        // Write the k-mers and their corresponding ranks
+        for (size_t i = 0; i < size; ++i) {
+            std::bitset<64> bits(i); // Using 64 bits to represent k-mers as binary
+            std::string kmer = bits.to_string().substr(64 - k); // Extract the rightmost k bits
+            output_file << kmer << "," << order[i] << '\n';
+        }
+
+        output_file.close();
+        std::cout << "Vector successfully saved to: " << output_path << std::endl;
+
+    }
+    else {
+        std::cerr << "Error: Unsupported format '" << format << "'!" << std::endl;
+    }
+}
+
+
+void measure_and_save_average(
+    const std::string& path_to_order,
+    const std::string& output_csv,
+    uint32_t k = 12
+) {
+    // 1) Load forward and reversed orders
+    std::vector<uint64_t> order = load_order_path(path_to_order);
+    std::vector<uint64_t> reversed_order = get_reversed_order(order);
+
+    // 2) Compute densities
+    //    (Here, the 100 and 12 are placeholders—adjust if needed.)
+    std::unordered_map<uint32_t, double> w_to_density =
+        density_expected_binary_wide(100, k, order, true);
+
+    std::unordered_map<uint32_t, double> w_to_density_reversed =
+        density_expected_binary_wide(100, k, reversed_order, true);
+
+    // 3) Write the average to CSV
+    std::ofstream file(output_csv);
+    file << "W,Density\n";
+
+    for (auto& [w, density] : w_to_density) {
+        // Safely get reversed density (assuming same keys exist in both)
+        double reversed_density = w_to_density_reversed.at(w);
+
+        // Compute the average
+        double avg_density = (density + reversed_density) / 2.0;
+
+        file << w << "," << avg_density << "\n";
+    }
+    // file will close when going out of scope
+}
+
+// Main function that does w20, w25, w30
+void measure_extended_order() {
+    // Measure for w20
+    measure_and_save_average("w20_k12.bin", "w20_k12_extended.csv");
+
+    // Measure for w25
+    measure_and_save_average("w25_k12.bin", "w25_k12_extended.csv");
+
+    // Measure for w30
+    measure_and_save_average("w30_k12.bin", "w30_k12_extended.csv");
 }

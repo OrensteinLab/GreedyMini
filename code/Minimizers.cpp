@@ -23,6 +23,7 @@
 #include <cstdlib>  
 #include <stdexcept>
 #include "Minimizers.h"
+// commented out if not testing
 //#include "sampling_runtimes.h"
 
 
@@ -79,6 +80,7 @@ int main(int  argc, char* argv[])
 { 
     // USED FOR TESTING ONLY, NOT PART OF THE OFFICIAL IMPLEMENTATION
     //perform_all_sampling_tests();
+    //measure_extended_order();
     //return 0;
 
 
@@ -88,18 +90,20 @@ int main(int  argc, char* argv[])
     std::string path = "None";
     std::string name = "None";
     std::string version_id;
-    uint32_t greedy_mini_runs = 4096;
+    uint32_t greedyE_runs = 4096;
+    uint32_t greedyP_runs = 4096;
     uint32_t max_swapper_time_minutes = std::numeric_limits<uint32_t>::max();
     std::string output_folder = "final";    
     double min_alpha = 0.939088;
     double max_alpha = 0.999590;
     uint32_t w;
     uint32_t k;
+    uint32_t k_extended = 0;
     uint32_t n_cores = static_cast<uint32_t>(std::thread::hardware_concurrency() / 2);
+    std::string save_format = "txt";
 
 
-
-    bool success = parse_arguments(argc, argv, mode, path, name, greedy_mini_runs, max_swapper_time_minutes, output_folder, min_alpha, max_alpha, version_id, w,k, n_cores);
+    bool success = parse_arguments(argc, argv, mode, path, name, greedyE_runs, greedyP_runs, max_swapper_time_minutes, output_folder, min_alpha, max_alpha, version_id, w,k, n_cores, k_extended, save_format);
     if (!success) return -1;
 
 
@@ -110,7 +114,8 @@ int main(int  argc, char* argv[])
         mode,
         path,
         name,
-        greedy_mini_runs,
+        greedyE_runs,
+        greedyP_runs,
         max_swapper_time_minutes,
         min_alpha,
         max_alpha,
@@ -118,7 +123,9 @@ int main(int  argc, char* argv[])
         w,
         k,
         max_swapper_time_minutes,
-        n_cores
+        n_cores,
+        k_extended,
+        save_format
     );
 
 
@@ -155,16 +162,20 @@ int main(int  argc, char* argv[])
         config.log_file.close();
 	} else if (config.mode == "expected") {
         short_compute_and_store_densities(w, k, config);
-
     }
     else if (config.mode == "particular") {
         short_calculate_particular_density(w, k, config);
         clean_up_particular_temp_files(config, true);
-    } else if (config.mode == "swapper") {
-        print_to_both(config, "Starting swaps\n");
+    } else if (config.mode == "improve") {
         swaps_only(config);
-        print_to_both(config, "Finished swaps\n");
-	} else {
+	}
+    else if (config.mode == "extend_k") {
+        extend_k(config);
+    }
+    else if (config.mode == "export") {
+        export_minimizer(config);
+    }
+    else {
 		std::cerr << "Error: Unknown mode '" << config.mode << "'.\n";
 		return 1;
 	}
@@ -176,7 +187,8 @@ bool parse_arguments(int argc, char* argv[],
     std::string& mode,
     std::string& path,
     std::string& name,
-    uint32_t& greedy_mini_runs,
+    uint32_t& greedyE_runs,
+    uint32_t& greedyP_runs,
     uint32_t& max_swapper_time_minutes,
     std::string& output_folder,
     double& min_alpha,
@@ -184,10 +196,15 @@ bool parse_arguments(int argc, char* argv[],
     std::string& version_id,
     uint32_t& w,
     uint32_t& k,
-    uint32_t& n_cores) {
+    uint32_t& n_cores,
+    uint32_t& k_extended,
+    std::string& save_format) {
     // Initialize flags to check if w and k were provided
     bool w_provided = false;
     bool k_provided = false;
+    bool k_extended_provided = false;
+    bool swapper_time_provided = false;
+    bool format_provided = false;
 
     // Parse command-line arguments
     for (int i = 1; i < argc; ++i) {
@@ -224,12 +241,16 @@ bool parse_arguments(int argc, char* argv[],
         else if (arg == "name") {
             name = argv[++i];
         }
-        else if (arg == "greedy_mini_runs") {
-            greedy_mini_runs = static_cast<uint32_t>(std::stoul(argv[++i]));
+        else if (arg == "greedyE_runs") {
+            greedyE_runs = static_cast<uint32_t>(std::stoul(argv[++i]));
         }
+        else if (arg == "greedyP_runs") {
+			greedyP_runs = static_cast<uint32_t>(std::stoul(argv[++i]));
+		}
         else if (arg == "max_swapper_time_minutes") {
             std::string max_swapper_time_minutes_str = argv[++i];
             max_swapper_time_minutes = static_cast<uint32_t>(std::stoul(max_swapper_time_minutes_str));
+            swapper_time_provided = true;
 
         }
         else if (arg == "output_folder") {
@@ -252,6 +273,14 @@ bool parse_arguments(int argc, char* argv[],
             k = static_cast<uint32_t>(std::stoul(argv[++i]));
             k_provided = true;
         }
+		else if (arg == "k_extended") {
+			k_extended = static_cast<uint32_t>(std::stoul(argv[++i]));
+            k_extended_provided = true;
+		}
+		else if (arg == "save_format") {
+			save_format = argv[++i];
+            format_provided = true;
+		}
         else {
             std::cerr << "Error: Unknown parameter '--" << arg << "'.\n";
             return false;
@@ -264,8 +293,8 @@ bool parse_arguments(int argc, char* argv[],
         return false;
     }
 
-    if (mode != "expected" && mode != "particular" && mode != "tests_e" && mode != "tests_p" && mode != "tests" && mode != "swapper") {
-        std::cerr << "Error: '--mode' must be 'expected', 'particular', 'swapper', 'tests_e', 'tests_p', or 'tests'.\n";
+    if (mode != "expected" && mode != "particular" && mode != "tests_e" && mode != "tests_p" && mode != "tests" && mode != "improve" && mode != "extend_k" && mode != "export") {
+        std::cerr << "Error: '--mode' must be 'expected', 'particular', 'improve', 'extend_k', 'export', 'tests_e', 'tests_p', or 'tests'.\n";
         return false;
     }
 
@@ -279,9 +308,17 @@ bool parse_arguments(int argc, char* argv[],
         return false;
     }
 
-    if (mode == "swapper" && (path == "None" || !w_provided || !k_provided)) {
-		std::cerr << "Error: '--path', '--w', and '--k' are required when mode is 'swapper'.\n";
+    if (mode == "improve" && (path == "None" || !w_provided || !k_provided || !swapper_time_provided)) {
+		std::cerr << "Error: '--path', '--w', '--k', and '--max_swapper_time_minutes' are required when mode is 'improve'.\n";
 		return false;
+	}
+
+    if (mode == "extend_k" && (path == "None" || !w_provided || !k_provided || !k_extended_provided || !swapper_time_provided)) {
+        std::cerr << "Error: '--path', '--w', '--k', '--k_extended', and '--max_swapper_time_minutes' are required when mode is 'extend_k'.\n";
+    }
+
+    if (mode == "export" && (path == "None" || !format_provided)) {
+		std::cerr << "Error: '--path' and '--save_format' are required when mode is 'export'.\n";
 	}
 
     // check min_alpha is between 0 and 1
@@ -303,10 +340,38 @@ bool parse_arguments(int argc, char* argv[],
 	}
 
     // check that w + k < 64
-    if (w + k >= 64) {
+    if (w + k >= 64 && k_provided && w_provided) {
 		std::cerr << "Error: '--w' + '--k' must be strictly less than 64.\n";
 		return false;
 	}
+
+    // check that w + k_extended < 64
+    if (w + k_extended >= 64 && w_provided && k_extended_provided) {
+		std::cerr << "Error: '--w' + '--k_extended' must be strictly less than 64.\n";
+		return false;
+	}
+
+    // check that save format is either csv or txt
+    if (save_format != "csv" && save_format != "txt") {
+        std::cerr << "Error: '--save_format' must be 'csv' or 'txt'.\n";
+        return false;
+    }
+
+    // if both k and k_extended are provided, check that k < k_extended
+    if (k_extended_provided && k >= k_extended) {
+		std::cerr << "Error: '--k_extended' must be strictly greater than '--k'.\n";
+		return false;
+	}
+
+
+    // round number of GreedyE/GreedyP
+    if (mode == "expected") {
+        greedyE_runs = greedyE_runs + (n_cores - (greedyE_runs % n_cores)) % n_cores;
+    }
+    if (mode == "particular") {
+		greedyP_runs = greedyP_runs + (n_cores - (greedyP_runs % n_cores)) % n_cores;
+	}
+
 
     // Use output_folder as version_id
     version_id = output_folder;
