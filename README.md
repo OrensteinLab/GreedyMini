@@ -23,7 +23,7 @@ A toolkit to create low-density DNA minimizer orders using a greedy approach fir
 
 All methods described here generate a *binary* minimizer order, in order to transform the binary minimizer to a DNA minimizer, we first encode the DNA sequence into binary, we then apply the GreedyMini order on the odd bits, apply a lexicographical order on the even bits (or any other order) and then concatenate the results. The upper bounds for DNA density shown in this toolkit are for the lowest density order between extending a binary minimizer to DNA using odd bits for GreedyMini and even for lexicographic and extending a binary minimizer to DNA using even bits for GreedyMini and odd bits for lexicographic. Note that in both cases the most significant bits come from GreedyMini.
 
-<img src="github%20figures/example_binary_to_dna.svg" alt="Extending to DNA" width="600">
+<img src="github%20figures/example_binary_to_dna.png" alt="Extending to DNA" width="600">
 
 
 ## Prerequisites
