@@ -128,6 +128,10 @@ Where:
 - `{k}`: The k-mer size.
 - `-max_swapper_time_minutes`: Maximum SwapDP time in minutes
 
+An example run would be:
+```bash
+./GreedyMini -mode improve -path output/minimizers/w5_k4.gm -w 30 -k 4 -max_swapper_time_minutes 5
+```
 #### Additional Parameters
 
 - `-n_cores`: Number of CPU cores to use (default: half the total available threads due to hyper-threading)
@@ -148,6 +152,10 @@ Where:
 - `{k_extended}`: The k-mer size of the output order.
 - `-max_swapper_time_minutes`: Maximum SwapDFS time in minutes - per each increase in k
 
+An example run would be:
+```bash
+./GreedyMini -mode extend_k -path output/minimizers/w5_k4.gm -w 5 -k 4 -k_extended 8 -max_swapper_time_minutes 5
+```
 
 #### Additional Parameters
 
@@ -155,9 +163,6 @@ Where:
 
 
 ### Using the minimizers
-
-
-
 
 ## Accessing the Minimizers
 
@@ -176,6 +181,12 @@ To export the minimizers to a `.csv` or `.txt` format, run:
 Where:
 - `{path}`: A path to a GreedyMini order ('*.gm').
 - `-output_format`: Either 'csv' or 'txt'.
+
+An example run would be:
+```bash
+./GreedyMini -mode export -path output/minimizers/w5_k4.gm -output_format txt
+```
+
 
 ### Loading the Minimizers to Memory
 
