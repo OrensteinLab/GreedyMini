@@ -172,8 +172,6 @@ An example run would be:
 
 Generated minimizers will appear inside the `output/minimizers` folder. For particular density minimizers, they will appear in a subfolder with the selected name.
 
----
-
 ### Exporting the Minimizers
 
 To export the minimizers to a `.csv` or `.txt` format, run:
