@@ -1,6 +1,6 @@
 # GreedyMini
 
-A toolkit to create low-density DNA minimizer orders using a greedy approach first proposed in the paper *GreedyMini: Generating low-density DNA minimizers*. 
+A toolkit to create low-density DNA minimizer orders using a greedy approach, first proposed in the paper *GreedyMini: Generating low-density DNA minimizers*. 
 
 ## Table of Contents
 
