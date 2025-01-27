@@ -1,6 +1,6 @@
 # GreedyMini
 
-A tool to create low-density minimizer orders using a greedy approach. The repository for the paper *Generating low-density minimizers*. We implemented two variants of GreedyMini: **GreedyMini+**, for generating low expected density minimizer orders, and **GreedyMiniParticular+**, for generating low particular density minimizer orders.
+A toolkit to create low-density DNA minimizer orders using a greedy approach first proposed in the paper *GreedyMini: Generating low-density DNA minimizers*. 
 
 ## Table of Contents
 
@@ -21,7 +21,10 @@ A tool to create low-density minimizer orders using a greedy approach. The repos
 
 ## Introduction
 
-This document provides step-by-step instructions to use the **GreedyMini** variants.
+All methods described here generate a *binary* minimizer order, in order to transform the binary minimizer to a DNA minimizer, we first encode the DNA sequence into binary, we then apply the GreedyMini order on the odd bits, apply a lexicographical order on the even bits (or any other order) and then concatenate the results. The upper bounds for DNA density shown in this toolkit are for the lowest density order between extending a binary minimizer to DNA using odd bits for GreedyMini and even for lexicographic and extending a binary minimizer to DNA using even bits for GreedyMini and odd bits for lexicographic. Note that in both cases the most significant bits come from GreedyMini.
+
+<img src="github%20figures/example_binary_to_dna.svg" alt="Extending to DNA" width="600">
+
 
 ## Prerequisites
 
