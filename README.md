@@ -31,6 +31,8 @@ To generate minimizers for various w and k values, we reccomend first running GM
 
 Another option, is to generate an order for k' < k, and then rank the first k' bits using GreedyMini and rank the rest lexicographically (Before extending to DNA), very similarly to how we concatenate the ranks in the figure.  One can also generate an order for w' < w (as it would still rank all k-mers) and use that. If time allows it's always better to either generate an order from GM-expected, or GM-improve and use the aforementioned methods only if necessary.
 
+## Precalculated Minimizers
+We provide minimizers that were created during our benchmarking of GreedyMini in [here](minimizer%20loading%20example).
 
 ## Prerequisites
 
