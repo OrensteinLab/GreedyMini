@@ -38,6 +38,10 @@ Before you begin, ensure you have the following:
 ### Precompiled Binaries
 
 Precompiled binaries are available for **Ubuntu** and **macOS**. You can download them from the [GitHub release page](https://github.com/OrensteinLab/GreedyMini/releases).
+If you are using **Ubuntu**, ensure that the program has execution permissions by running the following command:  
+```bash
+chmod +x ./GreedyMini
+```
 
 
 #### Build Compatibility Note
@@ -94,7 +98,7 @@ After compiling or downloading the binary, you can run **GreedyMini** using diff
 
 
 
-### Generating Minimizers For Expected Density
+### GM-expected: Generating Minimizers For Expected Density
 
 To generate a minimizer with low expected density, run:
 
@@ -102,19 +106,25 @@ To generate a minimizer with low expected density, run:
 ./GreedyMini -mode expected -w {w} -k {k}
 ```
 
-Replace `{w}` and `{k}` with your desired values:
+Where:
 
 - `{w}`: The window size.
 - `{k}`: The k-mer size.
-
-> **Note:** Ensure that **`w + k < 64`** (due to 64 bit reliance).
 
 An example run would be:
 ```
 ./GreedyMini -mode expected -w 5 -k 4
 ```
 
-### Generating Minimizers For Particular Density
+#### Additional Parameters
+
+- `-greedyE_runs`: Number of runs of GreedyE (default: `4096`)
+- `-n_cores`: Number of CPU cores to use (default: half the total available threads due to hyper-threading)
+- `-min_alpha`: Minimum alpha value (default: `0.939088`)
+- `-max_alpha`: Maximum alpha value (default: `0.999590`)
+- `-max_swapper_time_minutes`: Maximum SwapDFS time in minutes
+
+### GM-particular: Generating Minimizers For Particular Density
 
 #### Sequence format
 
@@ -143,17 +153,81 @@ An example run would be:
 ```
 ./GreedyMini -mode particular -w 5 -k 4 -path chr_x_1m.fasta -name 1M
 ```
-### Additional Parameters
+#### Additional Parameters
 
-Customize the behavior of GreedyMini with the following options:
-
-- `-greedy_mini_runs`: Number of runs of GreedyMini (default: `4096`)
+- `-greedyP_runs`: Number of runs of GreedyP (default: `4096`)
 - `-n_cores`: Number of CPU cores to use (default: half the total available threads due to hyper-threading)
 - `-min_alpha`: Minimum alpha value (default: `0.939088`)
 - `-max_alpha`: Maximum alpha value (default: `0.999590`)
-- `-max_swapper_time_minutes`: Maximum swapper time in minutes
 
-### Running Paper Tests
+### GM-improve: Generating Minimizers for Large W
+To generate a minimizer for large w (from a previous starting point), or to improve an existing minimizer, run:
+
+```bash
+./GreedyMini -mode improve -path {path} -w {w} -k {k} -max_swapper_time_minutes {max_swapper_time_minutes}
+```
+
+Where:
+- `{path}`: A path to a GreedyMini order ('*.gm').
+- `{w}`: The window size for the output minimizer (Not necessarily the w for which it was originally created for)
+- `{k}`: The k-mer size.
+- `-max_swapper_time_minutes`: Maximum SwapDP time in minutes
+
+#### Additional Parameters
+
+- `-n_cores`: Number of CPU cores to use (default: half the total available threads due to hyper-threading)
+
+
+### GM-k: Generating Minimizers for Large K
+
+To generate a minimizer for large k (from a previous starting point), run:
+
+```bash
+./GreedyMini -mode extend_k -path {path} -w {w} -k {k} -k_extended {k_extended} -max_swapper_time_minutes {max_swapper_time_minutes}
+```
+
+Where:
+- `{path}`: A path to a GreedyMini order ('*.gm').
+- `{w}`: The window size.
+- `{k}`: The k-mer size of the original order.
+- `{k_extended}`: The k-mer size of the output order.
+- `-max_swapper_time_minutes`: Maximum SwapDFS time in minutes - per each increase in k
+
+
+#### Additional Parameters
+
+- `-n_cores`: Number of CPU cores to use (default: half the total available threads due to hyper-threading)
+
+
+### Using the minimizers
+
+
+
+
+## Accessing the Minimizers
+
+### Locating the Minimizers
+
+Generated minimizers will appear inside the `output/minimizers` folder. For particular density minimizers, they will appear in a subfolder with the selected name.
+
+### Exporting the Minimizers
+
+To export the minimizers to a `.csv` or `.txt` format, run:
+
+```bash
+./GreedyMini -mode export -path {path} -output_format {output_format}
+```
+
+Where:
+- `{path}`: A path to a GreedyMini order ('*.gm').
+- `-output_format`: Either 'csv' or 'txt'.
+
+### Loading the Minimizers to Memory
+
+We provide the Python notebook `load_order.ipynb` alongside the best minimizer orders from the paper, both located in the folder `minimizer loading example`. The notebook showcases how to load a minimizer to memory and print the order of each k-mer. For C++, we recommend looking at the functions `load_order()` and `load_vector_from_file()` located in `code/tools.cpp`.
+
+
+## Running Paper Tests
 
 We ran our test on the first 1M nucleotides of chromosome X from [Genome assembly T2T-CHM13v2.0](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_009914755.1/). To do that we used the python notebook `shorten_fasta.ipynb` which is located in `various scripts/preprocessing chr x/`. We then put the resulting `.fasta` file in the same directory as the `GreedyMini` executable.
 
@@ -163,24 +237,6 @@ Execute the following command to run most of the tests from the paper:
 ./GreedyMini -mode tests
 ```
 
-
-## Accessing the Minimizers
-
-### Locating the Minimizers
-
-Generated minimizers will appear inside the `output/minimizers` folder. For particular density minimizers, they will appear in a subfolder with the selected name.
-
-Example filename:
-
-```
-{w}_{k}_{min_alpha}_{max_alpha}_swapped.bin
-```
-
-See [Additional Parameters](#additional-parameters) for the default values of `min_alpha` and `max_alpha`.
-
-### Loading the Minimizers to Memory
-
-We provide the Python notebook `load_order.ipynb` alongside the best minimizer orders from the paper, both located in the folder `minimizer loading example`. The notebook showcases how to load a minimizer to memory and print the order of each k-mer. For C++, we recommend looking at the functions `load_order()` and `load_vector_from_file()` located in `code/tools.cpp`.
 
 
 ## Contact
