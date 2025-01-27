@@ -24,16 +24,16 @@ A toolkit to create low-density DNA minimizer orders using a greedy approach fir
 
 ## Introduction
 
-All methods described here generate a *binary* minimizer order, in order to transform the binary minimizer to a DNA minimizer, we first encode the DNA sequence into binary, we then apply the GreedyMini order on the odd bits, apply a lexicographical order on the even bits (or any other order) and then concatenate the results. The upper bounds for DNA density shown in this toolkit are for the lowest density order between extending a binary minimizer to DNA using odd bits for GreedyMini and even for lexicographic and extending a binary minimizer to DNA using even bits for GreedyMini and odd bits for lexicographic. Note that in both cases the most significant bits come from GreedyMini.
+All methods described here generate a *binary* minimizer order, in order to transform the binary minimizer to a DNA minimizer, we first encode the DNA sequence into binary, we then apply the GreedyMini order on the odd bits, apply a lexicographical order on the even bits (or any other order) and then concatenate the results to get the final rank. The upper bounds for DNA density shown in this toolkit are for the lowest density order between: (1) extending a binary minimizer to DNA using odd bits for GreedyMini and even for lexicographic (2) extending a binary minimizer to DNA using even bits for GreedyMini and odd bits for lexicographic. Note that in both cases the most significant bits come from GreedyMini when calculating the final rank.
 
 <img src="github%20figures/example_binary_to_dna.png" alt="Extending to DNA" width="600">
 
-To generate minimizers for various w and k values, we reccomend first running GM-expected to generate a minimizer for the set of required w and k values. In case GM-expected would take too much time (i.e., w+k is large), one can create an order for smaller set of w or k, and then extend them using GM-improve or GM-k, respectively. Usually it's better to run for smaller w and run GM-improve. 
+To generate minimizers for various w and k values, we reccomend first running GM-expected to generate a minimizer for the set of required w and k values. In case GM-expected would take too much time (i.e., w+k is large), one can generate an minimizer for smaller set of w or k, and then extend them using GM-improve or GM-k, respectively. Usually it's better to run for smaller w and run GM-improve. 
 
-Another option, is to generate an order for k' < k, and then rank the first k' bits using GreedyMini and rank the rest lexicographically (Before extending to DNA), very similarly to how we concatenate the ranks in the figure.  One can also generate an order for w' < w (as it would still rank all k-mers) and use that. If time allows it's always better to either generate an order from GM-expected, or GM-improve and use the aforementioned methods only if necessary.
+Another option, is to generate a minimizer for k' < k, and then rank the first k' bits using GreedyMini and rank the rest lexicographically (Before extending to DNA), very similarly to how we concatenate the ranks in the figure.  One can also generate a minimizer for w' < w (as it would still rank all k-mers) and use that. If time allows it's always better to either generate a minimizer from GM-expected, or GM-improve and use the aforementioned methods only if necessary.
 
 ## Precalculated Minimizers
-We provide minimizers that were created during our benchmarking of GreedyMini in [here](minimizer%20loading%20example).
+We provide minimizers that were generated during our benchmarking of GreedyMini in [here](minimizer%20loading%20example).
 
 ## Prerequisites
 
@@ -107,7 +107,7 @@ Where:
 - `{w}`: The window size.
 - `{k}`: The k-mer size.
 - `{path}`: a path to the `fasta` file containing the sequence.
-- `{name}`: The name for the generated orders.
+- `{name}`: The name for the folder of the generated minimizer.
 
 An example run would be:
 ```
@@ -128,7 +128,7 @@ To generate a minimizer for large w (from a previous starting point), or to impr
 ```
 
 Where:
-- `{path}`: A path to a GreedyMini order ('*.gm').
+- `{path}`: A path to a GreedyMini minimizer ('*.gm').
 - `{w}`: The window size for the output minimizer (Not necessarily the w for which it was originally created for)
 - `{k}`: The k-mer size.
 - `-max_swapper_time_minutes`: Maximum SwapDP time in minutes
@@ -151,10 +151,10 @@ To generate a minimizer for large k (from a previous starting point), run:
 ```
 
 Where:
-- `{path}`: A path to a GreedyMini order ('*.gm').
+- `{path}`: A path to a GreedyMini minimizer ('*.gm').
 - `{w}`: The window size.
-- `{k}`: The k-mer size of the original order.
-- `{k_extended}`: The k-mer size of the output order.
+- `{k}`: The k-mer size of the original minimizer.
+- `{k_extended}`: The k-mer size of the output minimizer.
 - `-max_swapper_time_minutes`: Maximum SwapDFS time in minutes - per each increase in k
 
 An example run would be:
@@ -184,7 +184,7 @@ To export the minimizers to a `.csv` or `.txt` format, run:
 ```
 
 Where:
-- `{path}`: A path to a GreedyMini order ('*.gm').
+- `{path}`: A path to a GreedyMini minimizer ('*.gm').
 - `-output_format`: Either 'csv' or 'txt'.
 
 An example run would be:
@@ -195,10 +195,10 @@ An example run would be:
 
 ### Loading the Minimizers to Memory
 
-We provide the Python notebook `load_order.ipynb` alongside the best minimizer orders from the paper, both located in the folder `minimizer loading example`. The notebook showcases how to load a minimizer to memory and print the order of each k-mer. For C++, we recommend looking at the functions `load_order()` and `load_vector_from_file()` located in `code/tools.cpp`.
+We provide the Python notebook `load_order.ipynb` alongside the best minimizer orders from the paper, both located in the folder `minimizer loading example`. The notebook showcases how to load a minimizer to memory and print the rank of each k-mer. For C++, we recommend looking at the functions `load_order()` and `load_vector_from_file()` located in `code/tools.cpp`.
 
 
-## Misc.
+## Miscellaneous
 
 ### Compiling GreedyMini Manually
 
