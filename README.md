@@ -35,67 +35,22 @@ Before you begin, ensure you have the following:
 
 ## Installation and Compilation
 
-### Precompiled Binaries
-
 Precompiled binaries are available for **Ubuntu** and **macOS**. You can download them from the [GitHub release page](https://github.com/OrensteinLab/GreedyMini/releases).
 If you are using **Ubuntu**, ensure that the program has execution permissions by running the following command:  
 ```bash
 chmod +x ./GreedyMini
 ```
 
-
-#### Build Compatibility Note
 To ensure that the compiled Linux binaries do not depend on newer GLIBC or libstdc++ symbols (e.g., `GLIBC_2.38`, `GLIBCXX_3.4.31`), we build on Ubuntu 20.04. This ensures that our released executables can run on older Linux distributions without encountering linker errors about missing GLIBC/GLIBCXX versions.
 
 If your system is significantly older (e.g., it has GLIBC < 2.31), you may still need to build from source. Alternatively, you can run in a newer environment such as Docker or a more up-to-date Linux distribution.
 
+Additionally, we provide instructions for manual compilation in the **[Compiling GreedyMini Manually](#compiling-greedymini-manually)** section.
 
-### Compiling the Project Manually
-
-If you prefer to compile the project from source, follow the steps below.
-
-#### Step 1: Check for a Compiler
-
-Verify that you have a suitable C++ compiler installed:
-
-```bash
-g++ --version
-```
-
-You should see output similar to:
-
-```
-g++ (GCC) 10.2.0
-```
-
-If you don't have `g++` or it's outdated, you may need to use `clang++` or install a newer version locally.
-
-#### Step 2: Install Boost Locally
-
-Download and extract the Boost headers:
-
-```bash
-cd ~
-wget https://boostorg.jfrog.io/artifactory/main/release/1.82.0/source/boost_1_82_0.tar.gz
-tar -xzf boost_1_82_0.tar.gz
-```
-
-This will create a `boost_1_82_0` directory in your home directory.
-
-#### Step 3: Compile the Project
-
-Navigate to the `GreedyMini` directory and compile the project:
-
-```bash
-cd ~/GreedyMini
-g++ -std=c++20 -O3 -march=native -I ~/boost_1_82_0 *.cpp -o GreedyMini
-```
 
 ## Usage
 
 After compiling or downloading the binary, you can run **GreedyMini** using different modes and parameters.
-
-
 
 
 ### GM-expected: Generating Minimizers For Expected Density
@@ -227,7 +182,50 @@ Where:
 We provide the Python notebook `load_order.ipynb` alongside the best minimizer orders from the paper, both located in the folder `minimizer loading example`. The notebook showcases how to load a minimizer to memory and print the order of each k-mer. For C++, we recommend looking at the functions `load_order()` and `load_vector_from_file()` located in `code/tools.cpp`.
 
 
-## Running Paper Tests
+## Misc.
+
+### Compiling GreedyMini Manually
+
+If you prefer to compile the project from source, follow the steps below.
+
+#### Step 1: Check for a Compiler
+
+Verify that you have a suitable C++ compiler installed:
+
+```bash
+g++ --version
+```
+
+You should see output similar to:
+
+```
+g++ (GCC) 10.2.0
+```
+
+If you don't have `g++` or it's outdated, you may need to use `clang++` or install a newer version locally.
+
+#### Step 2: Install Boost Locally
+
+Download and extract the Boost headers:
+
+```bash
+cd ~
+wget https://boostorg.jfrog.io/artifactory/main/release/1.82.0/source/boost_1_82_0.tar.gz
+tar -xzf boost_1_82_0.tar.gz
+```
+
+This will create a `boost_1_82_0` directory in your home directory.
+
+#### Step 3: Compile the Project
+
+Navigate to the `GreedyMini` directory and compile the project:
+
+```bash
+cd ~/GreedyMini
+g++ -std=c++20 -O3 -march=native -I ~/boost_1_82_0 *.cpp -o GreedyMini
+```
+
+### Running Paper Tests
 
 We ran our test on the first 1M nucleotides of chromosome X from [Genome assembly T2T-CHM13v2.0](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_009914755.1/). To do that we used the python notebook `shorten_fasta.ipynb` which is located in `various scripts/preprocessing chr x/`. We then put the resulting `.fasta` file in the same directory as the `GreedyMini` executable.
 
