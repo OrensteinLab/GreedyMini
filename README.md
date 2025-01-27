@@ -251,4 +251,4 @@ Execute the following command to run most of the tests from the paper:
 
 
 ## Contact
-In case of issues with the tool, you may contact us at tziony.i@gmail.com.
+In case of issues with GreedyMini, you may contact us at tziony.i@gmail.com.
