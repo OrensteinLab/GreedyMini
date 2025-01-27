@@ -14,7 +14,6 @@ A toolkit to create low-density DNA minimizer orders using a greedy approach fir
   - [GM-improve: Generating Minimizers for Large W](#gm-improve-generating-minimizers-for-large-w)
   - [GM-k: Generating Minimizers for Large K](#gm-k-generating-minimizers-for-large-k)
 - [Accessing the Minimizers](#accessing-the-minimizers)
-  - [Locating the Minimizers](#locating-the-minimizers)
   - [Exporting the Minimizers](#exporting-the-minimizers)
   - [Loading the Minimizers to Memory](#loading-the-minimizers-to-memory)
 - [Miscellaneous](#miscellaneous)
@@ -170,8 +169,6 @@ An example run would be:
 
 
 ## Accessing the Minimizers
-
-### Locating the Minimizers
 
 Generated minimizers will appear inside the `output/minimizers` folder. For particular density minimizers, they will appear in a subfolder with the selected name.
 
