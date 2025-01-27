@@ -796,7 +796,7 @@ void export_minimizer(Config& config) {
 
 
         output_file.close();
-        std::cout << "Vector successfully saved to: " << output_path << std::endl;
+        std::cout << "Order successfully saved to: " << output_path << std::endl;
 
     }
     else if (format == "csv") {
@@ -827,7 +827,7 @@ void export_minimizer(Config& config) {
         }
 
         output_file.close();
-        std::cout << "Vector successfully saved to: " << output_path << std::endl;
+        std::cout << "Order successfully saved to: " << output_path << std::endl;
 
     }
     else {

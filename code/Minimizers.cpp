@@ -315,10 +315,12 @@ bool parse_arguments(int argc, char* argv[],
 
     if (mode == "extend_k" && (path == "None" || !w_provided || !k_provided || !k_extended_provided || !swapper_time_provided)) {
         std::cerr << "Error: '--path', '--w', '--k', '--k_extended', and '--max_swapper_time_minutes' are required when mode is 'extend_k'.\n";
+    	return false;
     }
 
     if (mode == "export" && (path == "None" || !format_provided)) {
 		std::cerr << "Error: '--path' and '--save_format' are required when mode is 'export'.\n";
+        return false;
 	}
 
     // check min_alpha is between 0 and 1
