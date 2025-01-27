@@ -18,7 +18,7 @@ A toolkit to create low-density DNA minimizer orders using a greedy approach fir
   - [Exporting the Minimizers](#exporting-the-minimizers)
   - [Loading the Minimizers to Memory](#loading-the-minimizers-to-memory)
 - [Miscellaneous](#miscellaneous)
-  - [Compiling GreedyMini Manually](#compiling-greedymini-manually-1)
+  - [Compiling GreedyMini Manually](#compiling-greedymini-manually)
   - [Running Paper Tests](#running-paper-tests)
 - [Contact](#contact)
 
@@ -59,9 +59,6 @@ Additionally, we provide instructions for manual compilation in the **[Compiling
 
 ## Usage
 
-After compiling or downloading the binary, you can run **GreedyMini** using different modes and parameters.
-
-
 ### GM-expected: Generating Minimizers For Expected Density
 
 To generate a minimizer with low expected density, run:
@@ -87,6 +84,8 @@ An example run would be:
 - `-min_alpha`: Minimum alpha value (default: `0.939088`)
 - `-max_alpha`: Maximum alpha value (default: `0.999590`)
 - `-max_swapper_time_minutes`: Maximum SwapDFS time in minutes
+
+---
 
 ### GM-particular: Generating Minimizers For Particular Density
 
@@ -120,6 +119,8 @@ An example run would be:
 - `-min_alpha`: Minimum alpha value (default: `0.939088`)
 - `-max_alpha`: Maximum alpha value (default: `0.999590`)
 
+---
+
 ### GM-improve: Generating Minimizers for Large W
 To generate a minimizer for large w (from a previous starting point), or to improve an existing minimizer, run:
 
@@ -141,6 +142,7 @@ An example run would be:
 
 - `-n_cores`: Number of CPU cores to use (default: half the total available threads due to hyper-threading)
 
+---
 
 ### GM-k: Generating Minimizers for Large K
 
@@ -166,8 +168,6 @@ An example run would be:
 
 - `-n_cores`: Number of CPU cores to use (default: half the total available threads due to hyper-threading)
 
-
-### Using the minimizers
 
 ## Accessing the Minimizers
 
