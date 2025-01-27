@@ -27,6 +27,10 @@ All methods described here generate a *binary* minimizer order, in order to tran
 
 <img src="github%20figures/example_binary_to_dna.png" alt="Extending to DNA" width="600">
 
+To generate minimizers for various w and k values, we reccomend first running GM-expected to generate a minimizer for the set of required w and k values. In case GM-expected would take too much time (i.e., w+k is large), one can create an order for smaller set of w or k, and then extend them using GM-improve or GM-k, respectively. Usually it's better to run for smaller w and run GM-improve. 
+
+Another option, is to generate an order for k' < k, and then rank the first k' bits using GreedyMini and rank the rest lexicographically (Before extending to DNA), very similarly to how we concatenate the ranks in the figure.  One can also generate an order for w' < w (as it would still rank all k-mers) and use that. If time allows it's always better to either generate an order from GM-expected, or GM-improve and use the aforementioned methods only if necessary.
+
 
 ## Prerequisites
 
@@ -85,7 +89,7 @@ An example run would be:
 
 #### Sequence format
 
-`GreedyMiniParticular+` expects a `.fasta` file containing exactly one sequence.
+`GreedyMini` expects a `.fasta` file containing exactly one sequence.
 
 #### Running
 
@@ -101,10 +105,6 @@ Where:
 - `{k}`: The k-mer size.
 - `{path}`: a path to the `fasta` file containing the sequence.
 - `{name}`: The name for the generated orders.
-
-> **Note:** Ensure that **`w + k < 64`** (due to 64 bit reliance).
-
-In our paper we used `chr_x_1m.fasta` as the path.
 
 An example run would be:
 ```
