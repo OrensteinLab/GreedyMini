@@ -175,6 +175,8 @@ An example run would be:
 
 Generated minimizers will appear inside the `output/minimizers` folder. For particular density minimizers, they will appear in a subfolder with the selected name.
 
+---
+
 ### Exporting the Minimizers
 
 To export the minimizers to a `.csv` or `.txt` format, run:
@@ -192,6 +194,7 @@ An example run would be:
 ./GreedyMini -mode export -path output/minimizers/w5_k4.gm -output_format txt
 ```
 
+---
 
 ### Loading the Minimizers to Memory
 
@@ -240,6 +243,8 @@ Navigate to the `GreedyMini` directory and compile the project:
 cd ~/GreedyMini
 g++ -std=c++20 -O3 -march=native -I ~/boost_1_82_0 *.cpp -o GreedyMini
 ```
+
+---
 
 ### Running Paper Tests
 
