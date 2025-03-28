@@ -1,6 +1,6 @@
 # GreedyMini
 
-A toolkit to create low-density DNA minimizer orders using a greedy approach first proposed in the paper *GreedyMini: Generating low-density DNA minimizers*. 
+A toolkit to create low-density DNA minimizer orders using a greedy approach, first proposed in the paper *GreedyMini: Generating low-density DNA minimizers*. 
 
 ## Table of Contents
 
@@ -14,7 +14,6 @@ A toolkit to create low-density DNA minimizer orders using a greedy approach fir
   - [GM-improve: Generating Minimizers for Large W](#gm-improve-generating-minimizers-for-large-w)
   - [GM-k: Generating Minimizers for Large K](#gm-k-generating-minimizers-for-large-k)
 - [Accessing the Minimizers](#accessing-the-minimizers)
-  - [Locating the Minimizers](#locating-the-minimizers)
   - [Exporting the Minimizers](#exporting-the-minimizers)
   - [Loading the Minimizers to Memory](#loading-the-minimizers-to-memory)
 - [Miscellaneous](#miscellaneous)
@@ -28,7 +27,7 @@ All methods described here generate a *binary* minimizer order, in order to tran
 
 <img src="github%20figures/example_binary_to_dna.png" alt="Extending to DNA" width="1200">
 
-To generate minimizers for various w and k values, we reccomend first running GM-expected to generate a minimizer for the set of required w and k values. In case GM-expected would take too much time (i.e., w+k is large), one can generate an minimizer for smaller set of w or k, and then extend them using GM-improve or GM-k, respectively. Usually it's better to run for smaller w and run GM-improve. 
+To generate minimizers for various w and k values, we recommend first running GM-expected to generate a minimizer for the set of required w and k values. In case GM-expected would take too much time (i.e., w+k is large), one can generate an minimizer for smaller value of w or k, and then extend them using GM-improve or GM-k, respectively. Usually it's better to run for smaller w and run GM-improve. 
 
 Another option, is to generate a minimizer for k' < k, and then rank the first k' bits using GreedyMini and rank the rest lexicographically (Before extending to DNA), very similarly to how we concatenate the ranks in the figure.  One can also generate a minimizer for w' < w (as it would still rank all k-mers) and use that. If time allows it's always better to either generate a minimizer from GM-expected, or GM-improve and use the aforementioned methods only if necessary.
 
@@ -52,9 +51,7 @@ chmod +x ./GreedyMini
 
 To ensure that the compiled Linux binaries do not depend on newer GLIBC or libstdc++ symbols (e.g., `GLIBC_2.38`, `GLIBCXX_3.4.31`), we build on Ubuntu 20.04. This ensures that our released executables can run on older Linux distributions without encountering linker errors about missing GLIBC/GLIBCXX versions.
 
-If your system is significantly older (e.g., it has GLIBC < 2.31), you may still need to build from source. Alternatively, you can run in a newer environment such as Docker or a more up-to-date Linux distribution.
-
-Additionally, we provide instructions for manual compilation in the **[Compiling GreedyMini Manually](#compiling-greedymini-manually)** section.
+If your system is significantly older (e.g., it has GLIBC < 2.31), you may still need to build from source (**[Compiling GreedyMini Manually](#compiling-greedymini-manually)**). Alternatively, you can run in a newer environment such as Docker or a more up-to-date Linux distribution.
 
 
 ## Usage
@@ -171,11 +168,7 @@ An example run would be:
 
 ## Accessing the Minimizers
 
-### Locating the Minimizers
-
 Generated minimizers will appear inside the `output/minimizers` folder. For particular density minimizers, they will appear in a subfolder with the selected name.
-
----
 
 ### Exporting the Minimizers
 
